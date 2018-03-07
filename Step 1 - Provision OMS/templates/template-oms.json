@@ -1,0 +1,59 @@
+{
+    "$schema": "http://schema.management.azure.com/schemas/2014-04-01-preview/deploymentTemplate.json#",
+    "contentVersion": "1.0.0.0",
+    "parameters": {
+        "EnvironmentCode": {
+            "AllowedValues": [
+                "dev",
+                "qa",
+                "stg",
+                "prod"
+            ],
+            "maxLength": 4,
+            "type": "string",
+            "metadata": {
+                "description": "The base name of the solution. Up to 7 characters."
+            }
+        }, 
+        "AppName": {
+            "maxLength": 7,
+            "type": "string",
+            "metadata": {
+                "description": "The base name of the solution. Up to 7 characters."
+            }
+        },
+        "location": {
+            "type": "string",
+            "defaultValue": "East US"
+        },
+        "sku": {
+            "type": "string"
+        },
+        "searchVersion": {
+            "type": "int"
+        }
+    },
+    "variables": {
+        "uniqueString": "[uniqueString(subscription().id, resourceGroup().id, resourceGroup().location)]",
+        "baseNamePattern": "[toLower( concat(parameters('appName'), '-', parameters('EnvironmentCode'), '-{role}-', variables('uniqueString')) )]",
+        "baseStorageNamePattern": "[replace( variables('baseNamePattern'), '-', '0' )]",
+        "workspaceName": "[replace(variables('baseNamePattern'),'{role}', 'oms-all')]"
+
+    },
+    "resources": [
+        {
+            "type": "Microsoft.OperationalInsights/workspaces",
+            "name": "[variables('workspaceName')]",
+            "apiVersion": "2017-03-15-preview",
+            "location": "[parameters('location')]",
+            "properties": {
+                "sku": {
+                    "name": "[parameters('sku')]"
+                },
+                "features": {
+                    "searchVersion": "[parameters('searchVersion')]"
+                }
+            }
+        }
+    ]
+}

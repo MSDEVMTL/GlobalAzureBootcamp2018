@@ -1,0 +1,417 @@
+{
+    "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
+    "contentVersion": "1.0.0.0",
+    "parameters": {
+        "EnvironmentCode": {
+            "AllowedValues": [
+                "dev",
+                "qa",
+                "stg",
+                "prod"
+            ],
+            "maxLength": 4,
+            "type": "string",
+            "metadata": {
+                "description": "The base name of the solution. Up to 7 characters."
+            }
+        },        
+        "AppName": {
+            "maxLength": 7,
+            "type": "string",
+            "metadata": {
+                "description": "The base name of the solution. Up to 7 characters."
+            }
+        },
+        "VirtualMachineAdminUsername": {
+            "type": "securestring"
+            
+        },
+        "VirtualMachineAdminPassword": {
+            "type": "securestring"
+        }
+    },
+    "variables": {
+        "uniqueString": "[uniqueString(subscription().id, resourceGroup().id, resourceGroup().location)]",
+
+        "defaultResourceLocation": "[resourceGroup().location]",
+
+        "baseNamePattern": "[toLower( concat(parameters('appName'), '-', parameters('EnvironmentCode'), '-{role}-', variables('uniqueString')) )]",
+        "baseStorageNamePattern": "[replace( variables('baseNamePattern'), '-', '0' )]",
+
+        "storage": {
+            "itemIndexes": [ "data", "diag", "func" ],
+            "items": {
+                "data": {
+                    "name": "[substring(replace(variables('baseStorageNamePattern'),'{role}', 'data'), 0, 23)]",
+                    "location": "[variables('defaultResourceLocation')]",
+                    "kind": "Storage",
+                    "sku": {
+                        "Name": "Standard_LRS",
+                        "tier": "Standard"
+                    },
+                    "properties": {}
+                },
+                "diag": {
+                    "name": "[substring(replace(variables('baseStorageNamePattern'),'{role}', 'diag'), 0, 23)]",
+                    "location": "[variables('defaultResourceLocation')]",
+                    "kind": "Storage",
+                    "sku": {
+                        "Name": "Standard_LRS",
+                        "tier": "Standard"
+                    },
+                    "properties": {}
+                },                
+                "func": {
+                    "name": "[substring(replace(variables('baseStorageNamePattern'),'{role}', 'func'), 0, 23)]",
+                    "location": "[variables('defaultResourceLocation')]",
+                    "kind": "Storage",
+                    "sku": {
+                        "Name": "Standard_LRS",
+                        "tier": "Standard"
+                    },
+                    "properties": {}
+                }
+            }
+        },
+
+        "appServicePlanFunction": {
+            "name": "[replace(variables('baseNamePattern'),'{role}', 'asp-func')]",
+            "location": "[variables('defaultResourceLocation')]",
+            "sku": {
+                "name": "Y1",
+                "tier": "Dynamic",
+                "size": "Y1",
+                "family": "Y",
+                "capacity": 0
+            }
+        },
+        "functionApp": {
+            "name": "[replace(variables('baseNamePattern'),'{role}', 'func-app')]",
+            "location": "[variables('defaultResourceLocation')]",
+            "kind": "functionapp",
+            "serverFarmId": "[resourceId('Microsoft.Web/serverfarms', variables('appServicePlanFunction').name)]"
+        },
+        "appServicePlanWeb": {
+            "name": "[replace(variables('baseNamePattern'),'{role}', 'asp-web')]",
+            "location": "[variables('defaultResourceLocation')]",
+            "sku": {
+                "name": "F1",
+                "tier": "Free",
+                "capacity": 1
+            }
+        },
+        "webApp": {
+            "name": "[replace(variables('baseNamePattern'),'{role}', 'web-app')]",
+            "location": "[variables('defaultResourceLocation')]",
+            "kind": "app",
+            "serverFarmId": "[resourceId('Microsoft.Web/serverfarms', variables('appServicePlanWeb').name)]"
+        },
+
+        "documentDB": {
+            "name": "[replace(variables('baseNamePattern'),'{role}', 'docdb-all')]",
+            "location": "[variables('defaultResourceLocation')]",
+            "kind": "GlobalDocumentDB",
+            "databaseAccountOfferType": "Standard",
+            "consistencyPolicy": {
+                "defaultConsistencyLevel": "Session"
+            }
+        },
+
+        "appInsights": {
+            "name": "[replace(variables('baseNamePattern'),'{role}', 'ai-all')]",
+            "location": "East US",
+            "kind": "web",
+            "LinkedApplicationId": "[resourceId('Microsoft.Web/sites', variables('webApp').name)]"
+
+        },
+
+        "vmPdf": {
+            "name": "[replace(variables('baseNamePattern'),'{role}', 'vm-pdf')]",
+            "machineName": "[concat('gab2018-', parameters('environmentCode'))]", 
+            "location": "[variables('defaultResourceLocation')]",
+            "networkCard": {
+                "name": "[replace(variables('baseNamePattern'),'{role}', 'vm-pdf_nic')]"
+            },
+            "publicIp": {
+                "name": "[replace(variables('baseNamePattern'),'{role}', 'vm-pdf_pip')]"
+            },
+            "osDisk": {
+                "name": "[replace(variables('baseNamePattern'),'{role}', 'vm-pdf_osDisk')]"
+            }
+        },
+
+        "vnet": {
+            "name": "[replace(variables('baseNamePattern'),'{role}', 'vnet-all')]",
+            "machineName": "[concat('gab2018-', parameters('environmentCode'))]", 
+            "location": "[variables('defaultResourceLocation')]",
+            "subnetName": "lan"
+        },
+
+        "config": {
+            "appInsights": "[variables('appInsights')]",
+            "appServicePlanFunction": "[variables('appServicePlanFunction')]",
+            "appServicePlanWeb": "[variables('appServicePlanWeb')]",
+            "documentDB": "[variables('documentDB')]",
+            "functionApp": "[variables('functionApp')]",
+            "storage": "[variables('storage')]",
+            "webApp": "[variables('webApp')]",
+            "vmPdf": "[variables('vmPdf')]",
+            "vnet": "[variables('vnet')]"
+            
+        }
+    },
+    "resources": [
+        {
+            "comments": "Storage Accounts",
+            "type": "Microsoft.Storage/storageAccounts",
+            "name": "[variables('config').storage.items[variables('config').storage.itemIndexes[copyIndex()]].name]",
+            "apiVersion": "2016-01-01",
+            "location": "[variables('config').storage.items[variables('config').storage.itemIndexes[copyIndex()]].location]",
+            "copy": {
+                "name": "storageAccounts",
+                "count": "[length(variables('config').storage.itemIndexes)]"
+            },
+            "sku": "[variables('config').storage.items[variables('config').storage.itemIndexes[copyIndex()]].sku]",
+            "kind": "[variables('config').storage.items[variables('config').storage.itemIndexes[copyIndex()]].kind]",
+            "tags": {},
+            "properties": "[variables('config').storage.items[variables('config').storage.itemIndexes[copyIndex()]].properties]"
+        },
+        {
+            "comments": "AppService Plan - Function",
+            "type": "Microsoft.Web/serverfarms",
+            "name": "[variables('config').appServicePlanFunction.name]",
+            "apiVersion": "2016-09-01",
+            "location": "[variables('config').appServicePlanFunction.location]",
+            "sku": "[variables('config').appServicePlanFunction.sku]",
+            "tags": {},
+            "properties": {}
+        },
+        {
+            "comments": "FunctionApp",
+            "type": "Microsoft.Web/sites",
+            "name": "[variables('config').functionApp.name]",
+            "apiVersion": "2015-08-01",
+            "location": "[variables('config').functionApp.location]",
+            "kind": "[variables('config').functionApp.kind]",
+            "tags": {},
+            "properties": {
+                "siteConfig": {
+                    "appSettings": [
+                        {
+                            "name": "AzureWebJobsDashboard",
+                            "value": "[concat('DefaultEndpointsProtocol=https;AccountName=', variables('config').storage.items['func'].name, ';AccountKey=', listKeys(resourceId('Microsoft.Storage/storageAccounts', variables('config').storage.items['func'].name),'2016-01-01').keys[0].value)]"
+                        },
+                        {
+                            "name": "AzureWebJobsStorage",
+                            "value": "[concat('DefaultEndpointsProtocol=https;AccountName=', variables('config').storage.items['func'].name, ';AccountKey=', listKeys(resourceId('Microsoft.Storage/storageAccounts', variables('config').storage.items['func'].name),'2016-01-01').keys[0].value)]"
+                        },
+                        {
+                            "name": "WEBSITE_CONTENTAZUREFILECONNECTIONSTRING",
+                            "value": "[concat('DefaultEndpointsProtocol=https;AccountName=', variables('config').storage.items['func'].name, ';AccountKey=', listKeys(resourceId('Microsoft.Storage/storageAccounts', variables('config').storage.items['func'].name),'2016-01-01').keys[0].value)]"
+                        },
+                        {
+                            "name": "WEBSITE_CONTENTSHARE",
+                            "value": "[variables('config').functionApp.name]"
+                        },
+                        {
+                            "name": "FUNCTIONS_EXTENSION_VERSION",
+                            "value": "~1"
+                        },
+                        {
+                            "name": "WEBSITE_NODE_DEFAULT_VERSION",
+                            "value": "6.5.0"
+                        }
+                    ]
+                }
+            },
+            "dependsOn": [
+                "[variables('config').functionApp.serverFarmId]",
+                "[resourceId('Microsoft.Storage/storageAccounts', variables('config').storage.items['func'].name)]"
+            ]
+        },
+        {
+            "comments": "AppService Plan - Web",
+            "type": "Microsoft.Web/serverfarms",
+            "name": "[variables('config').appServicePlanWeb.name]",
+            "apiVersion": "2016-09-01",
+            "location": "[variables('config').appServicePlanWeb.location]",
+            "sku": "[variables('config').appServicePlanWeb.sku]",
+            "tags": {},
+            "properties": {},
+            "dependsOn": [
+                "[variables('config').functionApp.serverFarmId]"
+            ]
+        },
+        {
+            "comments": "WebApp",
+            "type": "Microsoft.Web/sites",
+            "name": "[variables('config').webApp.name]",
+            "apiVersion": "2015-08-01",
+            "location": "[variables('config').webApp.location]",
+            "kind": "[variables('config').webApp.kind]",
+            "tags": {},
+            "properties": {
+                "serverFarmId": "[variables('config').webApp.serverFarmId]"
+            },
+            "dependsOn": [
+                "[variables('config').webApp.serverFarmId]"
+            ],
+            "resources": [
+                {
+                    "type": "config",
+                    "name": "appsettings",
+                    "apiVersion": "2015-08-01",
+                    "properties": {
+                        "appInsightInstrumentationKey": "[reference(resourceId('Microsoft.Insights/components', variables('config').appInsights.name), '2014-04-01').InstrumentationKey]"
+                    },
+                    "dependsOn": [
+                        "[resourceId('Microsoft.Web/sites', variables('config').webApp.name)]"
+                    ]
+                }
+            ]
+        },        
+        {
+            "comments": "DocumentDB",
+            "name": "[variables('config').documentDB.name]",
+            "type": "Microsoft.DocumentDB/databaseAccounts",
+            "apiVersion": "2015-04-08",
+            "location": "[variables('config').documentDB.location]",
+            "kind": "[variables('config').documentDB.kind]",
+            "tags": {},
+            "properties": {
+                "databaseAccountOfferType": "[variables('config').documentDB.databaseAccountOfferType]",
+                "consistencyPolicy": "[variables('config').documentDB.consistencyPolicy]"
+            }
+        },
+        {
+            "comments": "Application Insights",
+            "name": "[variables('config').appInsights.name]",
+            "type": "Microsoft.Insights/components",
+            "apiVersion": "2014-04-01",
+            "location": "[variables('config').appInsights.location]",
+            "kind": "[variables('config').appInsights.kind]",
+            "tags": {},
+            "properties": {
+                "ApplicationId": "[variables('config').appInsights.linkedApplicationId]"
+            },
+            "dependsOn": [
+                "[variables('config').appInsights.linkedApplicationId]"
+            ]
+        },
+        {
+            "apiVersion": "2015-06-15",
+            "type": "Microsoft.Network/publicIPAddresses",
+            "name": "[variables('config').vmPdf.publicIp.name]",
+            "location": "[variables('config').vmPdf.location]",
+            "tags": {},
+            "properties": {
+                "publicIPAllocationMethod": "Dynamic",
+                "dnsSettings": {
+                    "domainNameLabel": "[variables('config').vmPdf.name]"
+                }
+            }
+        },
+        {
+            "apiVersion": "2015-06-15",
+            "type": "Microsoft.Network/virtualNetworks",
+            "name": "[variables('config').vnet.name]",
+            "location": "[variables('config').vnet.location]",
+            "tags": {},
+            "properties": {
+                "addressSpace": {
+                    "addressPrefixes": [
+                        "10.0.0.0/16"
+                    ]
+                },
+                "subnets": [
+                    {
+                        "name": "[variables('config').vnet.subnetName]",
+                        "properties": {
+                            "addressPrefix": "10.0.0.0/24"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "apiVersion": "2015-06-15",
+            "type": "Microsoft.Network/networkInterfaces",
+            "name": "[variables('config').vmPdf.networkCard.name]",
+            "location": "[resourceGroup().location]",
+            "dependsOn": [
+                "[resourceId('Microsoft.Network/publicIPAddresses', variables('config').vmPdf.publicIp.name)]",
+                "[resourceId('Microsoft.Network/virtualNetworks', variables('config').vnet.name)]"
+            ],
+            "tags": { },
+            "properties": {
+                "ipConfigurations": [
+                    {
+                        "name": "ipconfig1",
+                        "properties": {
+                            "privateIPAllocationMethod": "Dynamic",
+                            "publicIPAddress": {
+                                "id": "[resourceId('Microsoft.Network/publicIPAddresses', variables('config').vmPdf.publicIp.name)]"
+                            },
+                            "subnet": {
+                                "id": "[resourceId('Microsoft.Network/virtualNetworks/subnets', variables('config').vnet.name, variables('config').vnet.subnetName)]"
+                            }
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "apiVersion": "2017-03-30",
+            "type": "Microsoft.Compute/virtualMachines",
+            "name": "[variables('config').vmPdf.name]",
+            "location": "[resourceGroup().location]",
+            "dependsOn": [
+                "[resourceId('Microsoft.Network/networkInterfaces', variables('config').vmPdf.networkCard.name)]"
+            ],
+            "tags": { },
+            "properties": {
+                "hardwareProfile": {
+                    "vmSize": "Standard_DS1_v2"
+                },
+                "osProfile": {
+                    "computerName": "[variables('config').vmPdf.machineName]",
+                    "adminUsername": "[parameters('VirtualMachineAdminUsername')]",
+                    "adminPassword": "[parameters('VirtualMachineAdminPassword')]"
+                },
+                "storageProfile": {
+                    "imageReference": {
+                        "publisher": "MicrosoftWindowsServer",
+                        "offer": "WindowsServer",
+                        "sku": "2016-Datacenter",
+                        "version": "latest"
+                    },
+                    "osDisk": {
+                        "name": "[variables('config').vmPdf.osDisk.name]",
+                        "caching": "ReadWrite",
+                        "createOption": "FromImage"
+                    }
+                },
+                "networkProfile": {
+                    "networkInterfaces": [
+                        {
+                            "id": "[resourceId('Microsoft.Network/networkInterfaces', variables('config').vmPdf.networkCard.name)]"
+                        }
+                    ]
+                },
+                "diagnosticsProfile": {
+                    "bootDiagnostics": {
+                        "enabled": true,
+                        "storageUri":  "[reference(resourceId('Microsoft.storage/storageAccounts', variables('config').storage.items['diag'].name), '2017-10-01').primaryEndpoints.blob]"
+                    }
+                }
+            },
+            "resources": [ ]
+        }        
+    ],
+    "outputs": {
+        "config": {
+            "type": "object",
+            "value": "[variables('config')]"
+        }
+    }
+}

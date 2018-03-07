@@ -286,3 +286,6 @@ __pycache__/
 *.btm.cs
 *.odx.cs
 *.xsd.cs
+
+# temporary provisioning files
+azuredeploy.parameters.tmp.json
