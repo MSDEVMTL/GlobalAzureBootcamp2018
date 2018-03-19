@@ -1,14 +1,32 @@
 # Global Azure Bootcamp 2018 - Montréal & Ottawa, Canada
 
-<img align="left" src="https://global.azurebootcamp.net/wp-content/uploads/2014/11/logo-2018-500x444-300x266.png" width="250">
+![gablogo][gablogo]
 
 All around the world user groups and communities want to learn about Azure and Cloud Computing!
 
 On **April 21, 2018**, all communities will come together once again in the fifth great [Global Azure Bootcamp](https://global.azurebootcamp.net/) event!
 
-You will find included in this repository all materials use during the demo so you can try it at home.
+You will find included in this repository all materials use during the demos so you can try them at home.
 
-## Technology Stack for the Global Azure Bootcamp 2017
+## Life after initial deployment
+Life has been going very well at *Contoso* as they just released the first version of their latest product in production.
+
+Yesterday, *Contoso* lack of visibility in production bite them back as issues started to appear, the support & development teams didn't have much information to help troubleshoot the errors. After a long retrospective meeting, they decided to improve their maturity in troubleshooting and management of their cloud infrastructure.
+
+At the end of their meeting they agreed on the following:
+
+* Use an Application Performance Management (APM) tool to improve the visibility of their application
+* Centralize the logs of their application and activities in Azure
+* Have an audit logs of VMs remote access in production
+* Better control the network traffic reaching virtual machines
+* Be better at troubleshooting hard to diagnose problems like high CPU or memory leaks
+* Reduce the noise to ensure people are not flooded by emails when a problem occurs
+* Ensure only the right people have access to the cloud infrastructure
+* Allow people to create/maintain cloud resources which are aligned with the company new governance.
+
+The team has been assigned a couple of days to find tools & put new processes in place to check all the action items of the list above. Excited, the team will actively start documenting themselves and working on this tomorrow.
+
+## Technology Stack for the Global Azure Bootcamp 2018
 
 * TBD
 
@@ -23,3 +41,5 @@ Make sure to have your account up and ready before the bootcamp.
 [Create your free Azure account today](https://azure.microsoft.com/en-us/free/)
 
 *more detail soon...*
+
+[gablogo]: ./media/logo-2018-500x444.png "Global Azure Bootcamp logo"
