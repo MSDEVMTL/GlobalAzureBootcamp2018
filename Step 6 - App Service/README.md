@@ -46,6 +46,12 @@ Explain that if they have the Cloud Explorer installed, they can do the same thi
 Hitting a breakpoint will stop the execution thread in Azure.  Demonstrate that by opening the same page in a new browser tab.  Execution has stopped on both page.  INSIST ON TELLING THE AUDIENCE THAT THEY SHOULD ONLY DO THIS ON NON PRODUCTION APPS!!!
 
 
+Take the time to watch this video that explains the whole process:
+
+<a href="http://www.youtube.com/watch?feature=player_embedded&v=2-Dt8521Ixk" target="_blank"><img src="http://img.youtube.com/vi/2-Dt8521Ixk/0.jpg" 
+alt="IMAGE ALT TEXT HERE" width="240" height="180" border="10" /></a>
+
+
 ## The Kudu tools
 
 ## The Monaco editor
