@@ -70,6 +70,8 @@ Explain that this will launch a new browser window with the Kudu tools.  Show th
 ### Step 2 - Environment info
 Click on Environment and explain that they get server information useful for debugging like the App Settings, the connection strings and HTTP headers.
 
+![alt text][Kudu0]
+
 ### Step 3 - Process Explorer
 Click on Process Explorer and explain that the screen will list the IIS process running.  Explain that the one with SCM is the one running Kudu.
 
@@ -106,6 +108,7 @@ From there, you can edit the files directly.  **It is VERY IMPORTANT that you st
 [Monaco1]: https://raw.githubusercontent.com/MSDEVMTL/2018-04-21-GlobalAzureBootcamp2018/master/Step%206%20-%20App%20Service/media/Monaco1.png "Monaco"
 [Monaco2]: https://raw.githubusercontent.com/MSDEVMTL/2018-04-21-GlobalAzureBootcamp2018/master/Step%206%20-%20App%20Service/media/Monaco2.png "Monaco"
 
+[Kudu0]: https://raw.githubusercontent.com/MSDEVMTL/2018-04-21-GlobalAzureBootcamp2018/master/Step%206%20-%20App%20Service/media/Kudu0.png "Kudu"
 [Kudu1]: https://raw.githubusercontent.com/MSDEVMTL/2018-04-21-GlobalAzureBootcamp2018/master/Step%206%20-%20App%20Service/media/Kudu1.png "Kudu"
 [Kudu2]: https://raw.githubusercontent.com/MSDEVMTL/2018-04-21-GlobalAzureBootcamp2018/master/Step%206%20-%20App%20Service/media/Kudu2.png "Kudu"
 [Kudu3]: https://raw.githubusercontent.com/MSDEVMTL/2018-04-21-GlobalAzureBootcamp2018/master/Step%206%20-%20App%20Service/media/Kudu3.png "Kudu"
