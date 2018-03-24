@@ -63,7 +63,7 @@ alt="IMAGE ALT TEXT HERE" width="240" height="180" border="10" /></a>
 ### Step 1 - Launch the Kudu tools
 There's a little known cool feature called Kudu that provides a ton of helpful information.  In the Development Tools section of our App Service, click on Advanced Tools and then click Go.
 
-[insert screenshot]
+![alt text][Kudu1]
 
 Explain that this will launch a new browser window with the Kudu tools.  Show the URL and point to the SCM inserted in the URL.  This is how that can directly reach Kudu for their Web sites.
 
@@ -73,20 +73,21 @@ Click on Environment and explain that they get server information useful for deb
 ### Step 3 - Process Explorer
 Click on Process Explorer and explain that the screen will list the IIS process running.  Explain that the one with SCM is the one running Kudu.
 
-[insert screenshot]
+![alt text][Kudu2]
 
 Explain that you can look at the process properties and even profile it.  Scrolling down the General tab will show a Kill button.  Very usefull if you can't retart the Web App from the Portal.
 
-[insert screenshot]
+![alt text][Kudu3]
 
 ### Step 4 - Debug Console
 Click on Debug Console and select CMD.  This will launch a Command Prompt console.  Explain that you can navigate using the UI at the top of type commands in the console section.
 
-[insert screenshot]
+![alt text][Kudu4]
+![alt text][Kudu5]
 
 Show that you can edit a file directly in the browser.  **It is VERY IMPORTANT that you state that this is against best practices since the changes made outside of the normal source control and deployment process.**
 
-[insert screenshot]
+![alt text][Kudu5]
 
 ## The App Service Editor (Monaco)
 The App Service Editor provides scaled down version Of Visual Studio Code but in a browser.  In the Development Tools section of our App Service, click on App Service Editor and then click Go.  This will launch the editor in a new browser window.
@@ -103,6 +104,11 @@ From there, you can edit the files directly.  **It is VERY IMPORTANT that you st
 [gablogo]: ../media/logo-2018-500x444.png "Global Azure Bootcamp logo"
 
 [Monaco1]: https://raw.githubusercontent.com/MSDEVMTL/2018-04-21-GlobalAzureBootcamp2018/master/Step%206%20-%20App%20Service/media/Monaco1.png "Monaco"
-
 [Monaco2]: https://raw.githubusercontent.com/MSDEVMTL/2018-04-21-GlobalAzureBootcamp2018/master/Step%206%20-%20App%20Service/media/Monaco2.png "Monaco"
 
+[Kudu1]: https://raw.githubusercontent.com/MSDEVMTL/2018-04-21-GlobalAzureBootcamp2018/master/Step%206%20-%20App%20Service/media/Kudu1.png "Kudu"
+[Kudu2]: https://raw.githubusercontent.com/MSDEVMTL/2018-04-21-GlobalAzureBootcamp2018/master/Step%206%20-%20App%20Service/media/Kudu2.png "Kudu"
+[Kudu3]: https://raw.githubusercontent.com/MSDEVMTL/2018-04-21-GlobalAzureBootcamp2018/master/Step%206%20-%20App%20Service/media/Kudu3.png "Kudu"
+[Kudu4]: https://raw.githubusercontent.com/MSDEVMTL/2018-04-21-GlobalAzureBootcamp2018/master/Step%206%20-%20App%20Service/media/Kudu4.png "Kudu"
+[Kudu5]: https://raw.githubusercontent.com/MSDEVMTL/2018-04-21-GlobalAzureBootcamp2018/master/Step%206%20-%20App%20Service/media/Kudu4-2.png "Kudu"
+[Kudu6]: https://raw.githubusercontent.com/MSDEVMTL/2018-04-21-GlobalAzureBootcamp2018/master/Step%206%20-%20App%20Service/media/Kudu5.png "Kudu"
