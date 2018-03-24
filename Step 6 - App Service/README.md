@@ -91,14 +91,18 @@ Show that you can edit a file directly in the browser.  **It is VERY IMPORTANT t
 ## The App Service Editor (Monaco)
 The App Service Editor provides scaled down version Of Visual Studio Code but in a browser.  In the Development Tools section of our App Service, click on App Service Editor and then click Go.  This will launch the editor in a new browser window.
 
-[insert screenshot]
+![alt text][Monaco1]
 
 From there, you can edit the files directly.  **It is VERY IMPORTANT that you state that this is against best practices since the changes made outside of the normal source control and deployment process.**  When continous deployment is configured, the editor will display a warning in the in the toolbar.  Clicking on the warning provides detailed info on this. 
 
-[insert screenshot]
+![alt text][Monaco2]
 
 # End
 
 
 [gablogo]: ../media/logo-2018-500x444.png "Global Azure Bootcamp logo"
+
+[Monaco1]: https://raw.githubusercontent.com/MSDEVMTL/2018-04-21-GlobalAzureBootcamp2018/master/Step%206%20-%20App%20Service/media/Monaco1.png "Monaco"
+
+[Monaco2]: https://raw.githubusercontent.com/MSDEVMTL/2018-04-21-GlobalAzureBootcamp2018/master/Step%206%20-%20App%20Service/media/Monaco2.png "Monaco"
 
