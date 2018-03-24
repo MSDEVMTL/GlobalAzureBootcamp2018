@@ -106,12 +106,12 @@ From there, you can edit the files directly.  **It is VERY IMPORTANT that you st
 
 [gablogo]: ../media/logo-2018-500x444.png "Global Azure Bootcamp logo"
 
-[Debug0]: https://raw.githubusercontent.com/MSDEVMTL/2018-04-21-GlobalAzureBootcamp2018/master/Step%206%20-%20App%20Service/media/Debug0.png "Debug"
-[Debug1]: https://raw.githubusercontent.com/MSDEVMTL/2018-04-21-GlobalAzureBootcamp2018/master/Step%206%20-%20App%20Service/media/Debug1.png "Debug"
-[Debug2]: https://raw.githubusercontent.com/MSDEVMTL/2018-04-21-GlobalAzureBootcamp2018/master/Step%206%20-%20App%20Service/media/Debug2.png "Debug"
-[Debug3]: https://raw.githubusercontent.com/MSDEVMTL/2018-04-21-GlobalAzureBootcamp2018/master/Step%206%20-%20App%20Service/media/Debug3.png "Debug"
-[Debug4]: https://raw.githubusercontent.com/MSDEVMTL/2018-04-21-GlobalAzureBootcamp2018/master/Step%206%20-%20App%20Service/media/Debug4.png "Debug"
-[Debug5]: https://raw.githubusercontent.com/MSDEVMTL/2018-04-21-GlobalAzureBootcamp2018/master/Step%206%20-%20App%20Service/media/Debug5.png "Debug"
+[Debug0]: https://raw.githubusercontent.com/MSDEVMTL/2018-04-21-GlobalAzureBootcamp2018/master/Step%206%20-%20App%20Service/media/debug0.png "Debug"
+[Debug1]: https://raw.githubusercontent.com/MSDEVMTL/2018-04-21-GlobalAzureBootcamp2018/master/Step%206%20-%20App%20Service/media/debug1.png "Debug"
+[Debug2]: https://raw.githubusercontent.com/MSDEVMTL/2018-04-21-GlobalAzureBootcamp2018/master/Step%206%20-%20App%20Service/media/debug2.png "Debug"
+[Debug3]: https://raw.githubusercontent.com/MSDEVMTL/2018-04-21-GlobalAzureBootcamp2018/master/Step%206%20-%20App%20Service/media/debug3.png "Debug"
+[Debug4]: https://raw.githubusercontent.com/MSDEVMTL/2018-04-21-GlobalAzureBootcamp2018/master/Step%206%20-%20App%20Service/media/debug4.png "Debug"
+[Debug5]: https://raw.githubusercontent.com/MSDEVMTL/2018-04-21-GlobalAzureBootcamp2018/master/Step%206%20-%20App%20Service/media/debug5.png "Debug"
 
 [Monaco1]: https://raw.githubusercontent.com/MSDEVMTL/2018-04-21-GlobalAzureBootcamp2018/master/Step%206%20-%20App%20Service/media/Monaco1.png "Monaco"
 [Monaco2]: https://raw.githubusercontent.com/MSDEVMTL/2018-04-21-GlobalAzureBootcamp2018/master/Step%206%20-%20App%20Service/media/Monaco2.png "Monaco"
