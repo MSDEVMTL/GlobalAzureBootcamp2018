@@ -14,29 +14,36 @@ We have an issue with a page when it's running in Azure!
 
 Navigate to the [insert page name] page and explain that this error only happens when the app is deployed in Azure.  
 [insert screenshot]
+
 One way to get the information we need is run the app in debug mode in Visual Studio but how do do you attach the debugger to a live app running in Azure?
 
-Step 1 - Enable remote debugging
+### Step 1 - Enable remote debugging
 Navigate to the Azure portal.  In the App Service Settings section of our Web App, click on Application Settings.  Scroll to the Debugging section and turn remote debugging ON and select the Visual Studio version
 [insert screenshot]
 
-Step 2 - Configure Web.config and place a breakpoint
+### Step 2 - Configure Web.config and place a breakpoint
 In Visual Studio, open the Web.config file and validate that the debug attribute of the compilation setting is set to true.
 [insert screenshot]
+
 Open the [page name] page and place a breakpoint on this line:
 [insert screenshot]
 
-Step 3 - Configure Visual Studio
+### Step 3 - Configure Visual Studio
 Open the Tools/Options dialog and select the Debugging/General section.  Uncheck the Enable Just My Code setting.
 [insert screenshot]
 
-Step 4 - Publish in debug mode
+### Step 4 - Publish in debug mode
 The app was previously published in release mode.  We need to change this to Debug.  In Solution Explorer, right-click on the project name and select Publish.  Click on Setting and in the Publish dialog, click Settings.  Change the Configuration to Debug and the Save button
 [insert screenshot]
 
-Step 5 - Publish, attach the debugger and debug
-Click Publish.  Visual Studio will launch the application browser but the debugger is not attached yet.
+### Step 5 - Publish, attach the debugger and debug
+Click Publish.  Visual Studio will launch the application browser but the debugger is not attached yet.  Open the Server Explorer window, select the App Service, right-clik on the Web App and select Attach Debugger.
+[insert screenshot]
 
+Explain that if they have the Cloud Explorer installed, they can do the same thing from that window.  Visual Studio will launch a browser and run the app with the debugger attached.  Navigate to the page and the breakpoint will be hit.
+
+### Step 6 - Demonstrate the issue with this technique
+Hitting a breakpoint will stop the execution thread in Azure.  Demonstrate that by opening the same page in a new browser tab.  Execution has stopped on both page.  INSIST ON TELLING THE AUDIENCE THAT THEY SHOULD ONLY DO THIS ON NON PRODUCTION APPS!!!
 
 
 ## The Kudu tools
