@@ -21,12 +21,12 @@ One way to get the information we need is run the app in debug mode in Visual St
 ### Step 1 - Enable remote debugging
 Navigate to the Azure portal.  In the App Service Settings section of our Web App, click on Application Settings.  Scroll to the Debugging section and turn remote debugging ON and select the Visual Studio version
 
-[insert screenshot]
+![alt text][Debug0]
 
 ### Step 2 - Configure Web.config and place a breakpoint
 In Visual Studio, open the Web.config file and validate that the debug attribute of the compilation setting is set to true.
 
-[insert screenshot]
+![alt text][Debug1]
 
 Open the [page name] page and place a breakpoint on this line:
 
@@ -35,17 +35,18 @@ Open the [page name] page and place a breakpoint on this line:
 ### Step 3 - Configure Visual Studio
 Open the Tools/Options dialog and select the Debugging/General section.  Uncheck the Enable Just My Code setting.
 
-[insert screenshot]
+![alt text][Debug2]
 
 ### Step 4 - Publish in debug mode
 The app was previously published in release mode.  We need to change this to Debug.  In Solution Explorer, right-click on the project name and select Publish.  Click on Setting and in the Publish dialog, click Settings.  Change the Configuration to Debug and the Save button
 
-[insert screenshot]
+![alt text][Debug3]
 
 ### Step 5 - Publish, attach the debugger and debug
 Click Publish.  Visual Studio will launch the application browser but the debugger is not attached yet.  Open the Server Explorer window, select the App Service, right-clik on the Web App and select Attach Debugger.
 
-[insert screenshot]
+![alt text][Debug4]
+![alt text][Debug5]
 
 Explain that if they have the Cloud Explorer installed, they can do the same thing from that window.  Visual Studio will launch a browser and run the app with the debugger attached.  Navigate to the page and the breakpoint will be hit.
 
@@ -104,6 +105,13 @@ From there, you can edit the files directly.  **It is VERY IMPORTANT that you st
 
 
 [gablogo]: ../media/logo-2018-500x444.png "Global Azure Bootcamp logo"
+
+[Debug0]: https://raw.githubusercontent.com/MSDEVMTL/2018-04-21-GlobalAzureBootcamp2018/master/Step%206%20-%20App%20Service/media/Debug0.png "Debug"
+[Debug1]: https://raw.githubusercontent.com/MSDEVMTL/2018-04-21-GlobalAzureBootcamp2018/master/Step%206%20-%20App%20Service/media/Debug1.png "Debug"
+[Debug2]: https://raw.githubusercontent.com/MSDEVMTL/2018-04-21-GlobalAzureBootcamp2018/master/Step%206%20-%20App%20Service/media/Debug2.png "Debug"
+[Debug3]: https://raw.githubusercontent.com/MSDEVMTL/2018-04-21-GlobalAzureBootcamp2018/master/Step%206%20-%20App%20Service/media/Debug3.png "Debug"
+[Debug4]: https://raw.githubusercontent.com/MSDEVMTL/2018-04-21-GlobalAzureBootcamp2018/master/Step%206%20-%20App%20Service/media/Debug4.png "Debug"
+[Debug5]: https://raw.githubusercontent.com/MSDEVMTL/2018-04-21-GlobalAzureBootcamp2018/master/Step%206%20-%20App%20Service/media/Debug5.png "Debug"
 
 [Monaco1]: https://raw.githubusercontent.com/MSDEVMTL/2018-04-21-GlobalAzureBootcamp2018/master/Step%206%20-%20App%20Service/media/Monaco1.png "Monaco"
 [Monaco2]: https://raw.githubusercontent.com/MSDEVMTL/2018-04-21-GlobalAzureBootcamp2018/master/Step%206%20-%20App%20Service/media/Monaco2.png "Monaco"
