@@ -87,7 +87,7 @@ Click on Debug Console and select CMD.  This will launch a Command Prompt consol
 
 Show that you can edit a file directly in the browser.  **It is VERY IMPORTANT that you state that this is against best practices since the changes made outside of the normal source control and deployment process.**
 
-![alt text][Kudu5]
+![alt text][Kudu6]
 
 ## The App Service Editor (Monaco)
 The App Service Editor provides scaled down version Of Visual Studio Code but in a browser.  In the Development Tools section of our App Service, click on App Service Editor and then click Go.  This will launch the editor in a new browser window.
