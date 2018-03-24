@@ -2,7 +2,7 @@
 # Goal
 Some bugs will only appear when the application is deployed in Azure like a typo in a connection string.  How do you troubleshoot and fix these issues?  In this section, you'll attach the Visual Studio 2017 bebugger to the process running in Azure.  **It is VERY IMPORTANT that you insist that this should not be done on apps in production since it will block the execution thread.**
 
-You'll use the Kudu tools and Monaco to edit files directly in production.  Let's say you're visiting uncle Bob, it's 11PM, the site is down and you don't have your laptop.  What do you do to fix the issue?  **Again, it is VERY IMPORTANT that you state that this is against best practices since the changes made outside of the normal source control and deployment process.**
+You'll use the Kudu tools and the App Service Editor (Monaco) to edit files directly in production.  Let's say you're visiting uncle Bob, it's 11PM, the site is down and you don't have your laptop.  What do you do to fix the issue?  **Again, it is VERY IMPORTANT that you state that this is against best practices since the changes made outside of the normal source control and deployment process.**
 
 # Reference
 How to configure remote debugging for Web Apps & Visual Studio 2017
@@ -88,7 +88,14 @@ Show that you can edit a file directly in the browser.  **It is VERY IMPORTANT t
 
 [insert screenshot]
 
-## The Monaco editor
+## The App Service Editor (Monaco)
+The App Service Editor provides scaled down version Of Visual Studio Code but in a browser.  In the Development Tools section of our App Service, click on App Service Editor and then click Go.  This will launch the editor in a new browser window.
+
+[insert screenshot]
+
+From there, you can edit the files directly.  **It is VERY IMPORTANT that you state that this is against best practices since the changes made outside of the normal source control and deployment process.**  When continous deployment is configured, the editor will display a warning in the in the toolbar.  Clicking on the warning provides detailed info on this. 
+
+[insert screenshot]
 
 # End
 
