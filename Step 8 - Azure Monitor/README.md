@@ -49,6 +49,15 @@ This is an important part of monitoring.  As it allows you to get notified and t
 
 You can set alerts on your metrics to keep check on the health and performance of your resources.
 
+![New Alert experience](Media/NewAlertMenu.PNG)
+Alerts experience in Azure has a fresh look and updated functionality. This new experience is available from the Alerts tab under Azure Monitor. The following are some of the advantages of using the new Alerts experience compared to Alerts (Classic) experience:
+
+* Separation of Fired alerts and Alert Rules - In the new Alerts experience, Alert Rules (the definition of condition that triggers an alert), and Fired Alerts (an instance of the alert rule firing) are differentiated, so the operational and configuration views are separated.
+* A unified authoring experience for metric, activity log and log alerts - The new Alerts authoring experience guides the user along the process of configuring an alert rule, which makes it simpler to discover the right things to get alerted on.
+* View fired Log Analytics alerts in Azure portal - In the Alerts experience, you can now also see fired Log Analytics alerts in your subscription.
+
+In other word, no need to use Azure Alert Classic
+
 When you set an alert, you set the criteria first and than choose how you want to be notified. Via SMS, email, or trigger a ticket in your incident management system or for more customization you can use Logic APP where you can define any custom workflow. 
 
 ### Get smarter alerts with Logic App
