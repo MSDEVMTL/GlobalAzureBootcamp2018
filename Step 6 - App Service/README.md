@@ -55,8 +55,9 @@ You can now step by using the F10 key like you're debugging local code.  Where's
 ```xml
 <add key="StorageConnectionString" value="UseDevelopmentStorage=true;" />
 ```
-If times permit, create a new App Setting key in the portal named **StorageConnectionString** with the storage account connection string as the value but don't spend too much time doing.
+If times permit, create a new App Setting key in the portal named **StorageConnectionString** with the storage account connection string as the value but don't spend too much time doing this as this is not the actual goal.
 
+![alt text][Debug11]
 
 ### Step 6 - Demonstrate the issue with this technique
 Hitting a breakpoint will stop the execution thread in Azure.  Demonstrate that by opening the same page in a new browser tab.  Execution has stopped on both page.  **INSIST ON TELLING THE AUDIENCE THAT THEY SHOULD ONLY DO THIS ON NON PRODUCTION APPS!!!**
@@ -118,6 +119,7 @@ From there, you can edit the files directly.  **It is VERY IMPORTANT that you st
 [Debug0]: https://raw.githubusercontent.com/MSDEVMTL/2018-04-21-GlobalAzureBootcamp2018/master/Step%206%20-%20App%20Service/media/debug0.png "Debug"
 [Debug1]: https://raw.githubusercontent.com/MSDEVMTL/2018-04-21-GlobalAzureBootcamp2018/master/Step%206%20-%20App%20Service/media/debug1.png "Debug"
 [Debug10]: https://raw.githubusercontent.com/MSDEVMTL/2018-04-21-GlobalAzureBootcamp2018/master/Step%206%20-%20App%20Service/media/debug10.png "Debug"
+[Debug11]: https://raw.githubusercontent.com/MSDEVMTL/2018-04-21-GlobalAzureBootcamp2018/master/Step%206%20-%20App%20Service/media/debug11.png "Debug"
 [Debug2]: https://raw.githubusercontent.com/MSDEVMTL/2018-04-21-GlobalAzureBootcamp2018/master/Step%206%20-%20App%20Service/media/debug2.png "Debug"
 [Debug3]: https://raw.githubusercontent.com/MSDEVMTL/2018-04-21-GlobalAzureBootcamp2018/master/Step%206%20-%20App%20Service/media/debug3.png "Debug"
 [Debug4]: https://raw.githubusercontent.com/MSDEVMTL/2018-04-21-GlobalAzureBootcamp2018/master/Step%206%20-%20App%20Service/media/debug4.png "Debug"
