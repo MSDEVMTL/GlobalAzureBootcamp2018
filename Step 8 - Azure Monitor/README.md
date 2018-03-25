@@ -56,7 +56,5 @@ When you set an alert, you set the criteria first and than choose how you want t
 ### Routing your logs
 If you want to route for depeer analytics of your log, you can select your preferred way by customizing the diagnostics settings.  You can choose to stream the telemetry to your event hubs, or archive it in your storage account.
 
-# End
-
 
 [gablogo]: ../media/logo-2018-500x444.png "Global Azure Bootcamp logo"
