@@ -1,10 +1,10 @@
 ![gablogo][gablogo]
 
-# Explore monitoring and diagnostics with Azure Monitor
+# Explore monitoring and troubleshooting with Azure Monitor
 
-Azure Monitor is a platform that gives you visibility into the performance, health and states of your Azure resources.
+Azure Monitor is a platform that gives you visibility into the performance, health and states of your Azure resources. With Azure Monitor, you can consume metrics and logs within the portal and via APIs.
 
-During this session, you will learn how to use Azure Monitor, logs and diagnostics to perform troubleshooting. You will understand how Azure Monitor can help you to have a better visibility into anything that can impact your app availability and performance. 
+During this session, you will learn how to use Azure Monitor to perform troubleshooting. You will understand how Azure Monitor can help you to have a better visibility into anything that can impact your app availability and performance. 
 
 We will show you how you can use Azure monitor to stay on top of things by generating notifications when a degradation happens. Because no matter what you do, they happen.
 
