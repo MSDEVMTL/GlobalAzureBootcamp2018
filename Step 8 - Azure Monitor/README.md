@@ -2,21 +2,20 @@
 
 # Explore monitoring and troubleshooting with Azure Monitor
 
-Azure Monitor is a platform that gives you visibility into the performance, health and states of your Azure resources. With Azure Monitor, you can consume metrics and logs within the portal and via APIs.
+Azure Monitor is a service that gives you visibility into the performance, health and states of your Azure resources. With Azure Monitor, you can consume metrics and logs within the portal and via APIs.
 
 During this session, you will learn how to use Azure Monitor to perform troubleshooting. You will understand how Azure Monitor can help you to have a better visibility into anything that can impact your app availability and performance. 
 
-We will show you how you can use Azure monitor to stay on top of things by generating notifications when a degradation happens. Because no matter what you do, they happen.
-
-## What is Azure Monitor
-
-Azure Monitor is a service that provides a single source for monitoring Azure resources.
-
-With it you can visualize, query and take action on the metrics and logs coming from resources in Azure.
+We will show you how you can use Azure monitor to stay on top of things by generating notifications when a degradation happens. Because no matter what you do, it always happens.
 
 ### Oversee your insights with Azure dashboard
 
-These insights can be visualized within an Azure dashboard giving you an end-to end monitoring experience for infrastructure metrics, for your most important resources such as VM and web servers, for your Application Telemetry, such as response time and application dependencies and aggregated view of operational insights such as missing patches and change activity. And last but not least, security health and recommendations.
+These insights can be visualized within an Azure dashboard giving you an end-to end monitoring experience:
+
+* Infrastructure metrics
+* VM and web servers
+* Application telemetry, such as response time and application dependencies
+* Security health and recommendations.
 
 Azure dashboards are shareable and entirely customizable the way is important for you.
 
@@ -65,5 +64,6 @@ When you set an alert, you set the criteria first and than choose how you want t
 ### Routing your logs
 If you want to route for depeer analytics of your log, you can select your preferred way by customizing the diagnostics settings.  You can choose to stream the telemetry to your event hubs, or archive it in your storage account.
 
+## Wrapping up
 
 [gablogo]: ../media/logo-2018-500x444.png "Global Azure Bootcamp logo"
