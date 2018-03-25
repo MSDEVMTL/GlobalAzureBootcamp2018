@@ -12,9 +12,9 @@ https://www.youtube.com/watch?v=2-Dt8521Ixk
 ## Debugging in Azure
 We have an issue with a page when it's running in Azure!
 
-Navigate to the [insert page name] page and explain that this error only happens when the app is deployed in Azure.
+Navigate to the CreateMessage page, fill and submit the form. Explain that this error only happens when the app is deployed in Azure.
 
-[insert screenshot]
+![alt text][Debug00]
 
 One way to get the information we need is run the app in debug mode in Visual Studio but how do do you attach the debugger to a live app running in Azure?
 
@@ -28,9 +28,9 @@ In Visual Studio, open the Web.config file and validate that the debug attribute
 
 ![alt text][Debug1]
 
-Open the [page name] page and place a breakpoint on this line:
+Open the QueueController.cs class and place a breakpoint in the CreateMessage method on this line:
 
-[insert screenshot]
+![alt text][Debug10]
 
 ### Step 3 - Configure Visual Studio
 Open the Tools/Options dialog and select the Debugging/General section.  Uncheck the Enable Just My Code setting.
@@ -49,6 +49,14 @@ Click Publish.  Visual Studio will launch the application browser but the debugg
 ![alt text][Debug5]
 
 Explain that if they have the Cloud Explorer installed, they can do the same thing from that window.  Visual Studio will launch a browser and run the app with the debugger attached.  Navigate to the page and the breakpoint will be hit.
+
+You can now step by using the F10 key like you're debugging local code.  Where's the error?  We're missing the storage account connection string! It was working locally because we used dev storage.
+
+```xml
+<add key="StorageConnectionString" value="UseDevelopmentStorage=true;" />
+```
+If times permit, create a new App Setting key in the portal named **StorageConnectionString** with the storage account connection string as the value but don't spend too much time doing.
+
 
 ### Step 6 - Demonstrate the issue with this technique
 Hitting a breakpoint will stop the execution thread in Azure.  Demonstrate that by opening the same page in a new browser tab.  Execution has stopped on both page.  **INSIST ON TELLING THE AUDIENCE THAT THEY SHOULD ONLY DO THIS ON NON PRODUCTION APPS!!!**
@@ -106,8 +114,10 @@ From there, you can edit the files directly.  **It is VERY IMPORTANT that you st
 
 [gablogo]: ../media/logo-2018-500x444.png "Global Azure Bootcamp logo"
 
+[Debug00]: https://raw.githubusercontent.com/MSDEVMTL/2018-04-21-GlobalAzureBootcamp2018/master/Step%206%20-%20App%20Service/media/debug00.png "Debug"
 [Debug0]: https://raw.githubusercontent.com/MSDEVMTL/2018-04-21-GlobalAzureBootcamp2018/master/Step%206%20-%20App%20Service/media/debug0.png "Debug"
 [Debug1]: https://raw.githubusercontent.com/MSDEVMTL/2018-04-21-GlobalAzureBootcamp2018/master/Step%206%20-%20App%20Service/media/debug1.png "Debug"
+[Debug10]: https://raw.githubusercontent.com/MSDEVMTL/2018-04-21-GlobalAzureBootcamp2018/master/Step%206%20-%20App%20Service/media/debug10.png "Debug"
 [Debug2]: https://raw.githubusercontent.com/MSDEVMTL/2018-04-21-GlobalAzureBootcamp2018/master/Step%206%20-%20App%20Service/media/debug2.png "Debug"
 [Debug3]: https://raw.githubusercontent.com/MSDEVMTL/2018-04-21-GlobalAzureBootcamp2018/master/Step%206%20-%20App%20Service/media/debug3.png "Debug"
 [Debug4]: https://raw.githubusercontent.com/MSDEVMTL/2018-04-21-GlobalAzureBootcamp2018/master/Step%206%20-%20App%20Service/media/debug4.png "Debug"
