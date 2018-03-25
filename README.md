@@ -40,6 +40,6 @@ Make sure to have your account up and ready before the bootcamp.
 
 [Create your free Azure account today](https://azure.microsoft.com/en-us/free/)
 
-*more detail soon...*
+*more detail soon....*
 
 [gablogo]: ./media/logo-2018-500x444.png "Global Azure Bootcamp logo"

@@ -1,0 +1,35 @@
+﻿@model IEnumerable<WebApp.Models.SentimentAnalysisModel>
+@{
+    ViewBag.Title = "ViewSentimentAnalysis";
+}
+
+<h2>ViewSentiment</h2>
+
+<table class="table">
+    <tr>
+        <th>
+            Message
+        </th>
+        <th>
+            Sentiment
+        </th>
+        <th>
+            Language
+        </th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.message)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.sentimentScore)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.language)
+        </td>
+    </tr>
+}
+
+</table>
