@@ -2,44 +2,45 @@
 
 # Explore monitoring and troubleshooting with Azure Monitor
 
-Azure Monitor is a service that gives you visibility into the performance, health and states of your Azure resources. With Azure Monitor, you can consume metrics and logs within the portal and via APIs.
+Azure Monitor is a service that gives you visibility into the performance, health and states of your Azure resources. 
+
+Azure Monitor is available for almost every Azure resource and provides almost "free" out of the box monitoring otion. 
 
 During this session, you will learn how to use Azure Monitor to perform troubleshooting. You will understand how Azure Monitor can help you to have a better visibility into anything that can impact your app availability and performance. 
 
 We will show you how you can use Azure monitor to stay on top of things by generating notifications when a degradation happens. Because no matter what you do, it always happens.
 
-### Oversee your insights with Azure dashboard
-
-These insights can be visualized within an Azure dashboard giving you an end-to end monitoring experience:
-
-* Infrastructure metrics
-* VM and web servers
-* Application telemetry, such as response time and application dependencies
-* Security health and recommendations.
-
-Azure dashboards are shareable and entirely customizable the way is important for you.
-
-### Inside Azure Monitor
+## Inside Azure Monitor
 
 At the heart of Azure Monitor is a telemetry pipeline that connects to your Azure services.  And there are over 30 services that you can pull data from now. And the list keeps growing.
 
-Azure monitor is collecting metrics, logs, health and service events from these services.
+Azure Monitor has 3 categories of monitoring data: 
 
-### How to start using Azure Monitor
+* Activity Logs
+* Diagnostic Logs
+* Metrics
 
-To get Azure Monitoting working for you back in the Azure portal and navigate to this monitoring icon.
+## How can you start using Azure Monitor?
 
-If you don't see it, just add it as your favorite this way (see screenshot)
+To get Azure Monitor working for you, we just need to go back in the Azure portal and navigate to Azure Monitor section.
 
-### Logs
+### Activity Logs
+Activity logs gives you information about events such as when VM shutdown or deployment failure.
+It require you to create a storage account to store your logs. Charges will occured. ref ![Step 4 - Log Analytics](../Step 4 - Log Analytics)
 
-From Azure Monitoring you can explorer all the raw telemetry from your Azure services, such as activity log ( navigate to activity log ) which gives you information about events such as when VM shutdown or deployment failure.
-
-### Diagnostics
-And if you want more information, you can always look at diagnostic logs .
+### Diagnostics Logs
+What can we do if we need additional performance data? E.g. memory. 
 
 ### Metrics
-We can move over to metrics, which shows you all the performance telemetry from your servers and apps
+
+Right of the bat, metrics (telemetry data \ performance counters) are already configured. Just wait a few minutes after creating your virtual machines and you should see available metrics that you wish to display. That is it. No cost. No configuration, but a limited range of metrics.  
+
+Metrics are:
+
+* Collected at one minute frequency
+* Available immediately
+* Retained for 30 days
+
 
 ### Alerts
 You will also notice that we have alerts here.
