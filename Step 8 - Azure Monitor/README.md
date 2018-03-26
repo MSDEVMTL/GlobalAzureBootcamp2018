@@ -2,9 +2,7 @@
 
 # Explore monitoring and troubleshooting with Azure Monitor
 
-Azure Monitor is a service that gives you visibility into the performance, health and states of your Azure resources. 
-
-Azure Monitor is available for almost every Azure resource and provides almost "free" out of the box monitoring otion. 
+Azure Monitor is a landing page that helps users to have a better visibility into the performance, health and states of your Azure resources. 
 
 During this session, you will learn how to use Azure Monitor to perform troubleshooting. You will understand how Azure Monitor can help you to have a better visibility into anything that can impact your app availability and performance. 
 
@@ -16,8 +14,8 @@ At the heart of Azure Monitor is a telemetry pipeline that connects to your Azur
 
 Azure Monitor has 3 categories of monitoring data: 
 
-* Activity Logs
-* Diagnostic Logs
+* Activity logs
+* Diagnostic logs
 * Metrics
 
 ## How can you start using Azure Monitor?
@@ -43,13 +41,13 @@ Metrics are:
 
 
 ### Alerts
-You will also notice that we have alerts here.
 
-This is an important part of monitoring.  As it allows you to get notified and take action against a specific event.
+Alert allows you to get notified and take action against a specific event.
 
 You can set alerts on your metrics to keep check on the health and performance of your resources.
 
 ![New Alert experience](Media/NewAlertMenu.PNG)
+
 Alerts experience in Azure has a fresh look and updated functionality. This new experience is available from the Alerts tab under Azure Monitor. The following are some of the advantages of using the new Alerts experience compared to Alerts (Classic) experience:
 
 * Separation of Fired alerts and Alert Rules - In the new Alerts experience, Alert Rules (the definition of condition that triggers an alert), and Fired Alerts (an instance of the alert rule firing) are differentiated, so the operational and configuration views are separated.
@@ -58,13 +56,41 @@ Alerts experience in Azure has a fresh look and updated functionality. This new 
 
 In other word, no need to use Azure Alert Classic
 
-When you set an alert, you set the criteria first and than choose how you want to be notified. Via SMS, email, or trigger a ticket in your incident management system or for more customization you can use Logic APP where you can define any custom workflow. 
-
 ### Get smarter alerts with Logic App
 
-### Routing your logs
-If you want to route for depeer analytics of your log, you can select your preferred way by customizing the diagnostics settings.  You can choose to stream the telemetry to your event hubs, or archive it in your storage account.
+[DEMO HERE]
 
-## Wrapping up
+### Routing your logs
+If you want to route for depeer analytics of your log, you can select your preferred way by customizing the diagnostics settings.  You can stream monitoring data to other locations.
+
+Examples include:
+
+* Send to Application Insights so you can use its richer visualization and analysis tools.
+* Send to Event Hubs so you can route to third-party tools.
+
+### Store and Archive
+Some monitoring data is already stored and available in Azure Monitor for a set amount of time.
+
+* Metrics are stored for 30 days.
+* Activity log entries are stored for 90 days.
+* Diagnostics logs are not stored at all.
+
+### Visualize
+Visualizing your monitoring data in graphics and charts helps you find trends quicker than looking through the data itself.
+
+A few visualization methods include:
+
+* Use the Azure portal
+* Route data to Azure Application Insights
+* Route data to Microsoft PowerBI
+* Route the data to a third-party visualization tool using either live streaming or by having the tool read from an archive in Azure storage
+
+### Dashboard
+You can create multiple dashboards and share them with others who have access to your Azure subscriptions. 
+
+### Reference
+* https://docs.microsoft.com/en-us/azure/monitoring-and-diagnostics/monitoring-overview-azure-monitor
+* https://docs.microsoft.com/en-us/azure/azure-portal/azure-portal-dashboards
+
 
 [gablogo]: ../media/logo-2018-500x444.png "Global Azure Bootcamp logo"
