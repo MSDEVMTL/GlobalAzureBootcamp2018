@@ -18,26 +18,31 @@ Azure Monitor has 3 categories of monitoring data:
 * Diagnostic logs
 * Metrics
 
-## How can you start using Azure Monitor?
-
-To get Azure Monitor working for you, we just need to go back in the Azure portal and navigate to Azure Monitor section.
-
-### Activity Logs
-Activity logs gives you information about events such as when VM shutdown or deployment failure.
-It require you to create a storage account to store your logs. Charges will occured. ref ![Step 4 - Log Analytics](../Step 4 - Log Analytics)
-
-### Diagnostics Logs
-What can we do if we need additional performance data? E.g. memory. 
-
 ### Metrics
 
-Right of the bat, metrics (telemetry data \ performance counters) are already configured. Just wait a few minutes after creating your virtual machines and you should see available metrics that you wish to display. That is it. No cost. No configuration, but a limited range of metrics.  
+Right of the bat, metrics (telemetry data \ performance counters) are already configured. Just wait a few minutes after creating your virtual machines and you should see available metrics that you wish to display. That is it. No cost. No configuration, but a limited range of metrics by default.  
 
 Metrics are:
 
 * Collected at one minute frequency
 * Available immediately
 * Retained for 30 days
+
+### Metrics (Preview)
+
+### Activity Logs
+Activity logs gives you information about events such as when VM shutdown or deployment failure.
+It require you to create a storage account to store your logs. Charges will occured. ref ![Step 4 - Log Analytics](../Step 4 - Log Analytics)
+
+### Service Health
+
+
+### Diagnostics Logs
+What can we do if we need additional performance data? E.g. memory. 
+
+
+### Service issues
+Service Health 
 
 
 ### Alerts
@@ -85,12 +90,13 @@ A few visualization methods include:
 * Route data to Microsoft PowerBI
 * Route the data to a third-party visualization tool using either live streaming or by having the tool read from an archive in Azure storage
 
-### Dashboard
+### Pin to your Dashboard
 You can create multiple dashboards and share them with others who have access to your Azure subscriptions. 
 
 ### Reference
 * https://docs.microsoft.com/en-us/azure/monitoring-and-diagnostics/monitoring-overview-azure-monitor
 * https://docs.microsoft.com/en-us/azure/azure-portal/azure-portal-dashboards
+* https://azure.microsoft.com/en-us/blog/the-next-generation-of-azure-alerts-has-arrived/
 
 
 [gablogo]: ../media/logo-2018-500x444.png "Global Azure Bootcamp logo"
