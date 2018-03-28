@@ -38,6 +38,9 @@ The Azure Activity Log is primarily for activities that occur in Azure Resource 
 You can retrieve events from your Activity Log using the Azure portal, CLI, PowerShell cmdlets, and Azure Monitor REST API.
 
 ### Service Health
+Microsoft Azure service health 
+* Personalized dashboard
+* Targeted notification
 
 
 ### Diagnostics Logs
@@ -45,8 +48,7 @@ What can we do if we need additional performance data? E.g. memory.
 
 
 ### Service issues
-Service Health 
-
+Service Health is your personalized dashboard in the Azure Portal for receiving notifications when Azure service issues, update or planned maintenance that could affect your resources
 
 ### Alerts
 
@@ -106,6 +108,7 @@ You can create multiple dashboards and share them with others who have access to
 * [Supported metrics with Azure Monitor](https://docs.microsoft.com/en-us/azure/monitoring-and-diagnostics/monitoring-supported-metrics)
 * [Monitor Subscription Activity with the Azure Activity Log](https://docs.microsoft.com/en-us/azure/monitoring-and-diagnostics/monitoring-overview-activity-logs)
 * [Azure Monitor Pricing](https://azure.microsoft.com/en-us/pricing/details/monitor/)
+* [Azure diagnostic logs](https://docs.microsoft.com/en-us/azure/cdn/cdn-azure-diagnostic-logs)
 
 
 [gablogo]: ../media/logo-2018-500x444.png "Global Azure Bootcamp logo"
