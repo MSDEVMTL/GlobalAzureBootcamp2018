@@ -31,8 +31,11 @@ Metrics are:
 ### Metrics (Preview)
 
 ### Activity Logs
-Activity logs gives you information about events such as when VM shutdown or deployment failure.
-It require you to create a storage account to store your logs. Charges will occured. ref ![Step 4 - Log Analytics](../Step 4 - Log Analytics)
+The Azure Activity Log is a subscription log that provides insight into subscription-level events that have occurred in Azure.  Using the Activity Log, you can determine the ‘what, who, and when’ for any write operations (PUT, POST, DELETE) taken on the resources in your subscription.
+
+The Azure Activity Log is primarily for activities that occur in Azure Resource Manager. It does not track resources using the Classic/RDFE model. 
+
+You can retrieve events from your Activity Log using the Azure portal, CLI, PowerShell cmdlets, and Azure Monitor REST API.
 
 ### Service Health
 
@@ -94,11 +97,15 @@ A few visualization methods include:
 You can create multiple dashboards and share them with others who have access to your Azure subscriptions. 
 
 ### Reference
-* https://docs.microsoft.com/en-us/azure/monitoring-and-diagnostics/monitoring-overview-azure-monitor
-* https://docs.microsoft.com/en-us/azure/azure-portal/azure-portal-dashboards
-* https://azure.microsoft.com/en-us/blog/the-next-generation-of-azure-alerts-has-arrived/
-* https://azure.microsoft.com/en-us/blog/azure-monitor-general-availability-of-multi-dimensional-metrics-apis/
-* https://docs.microsoft.com/en-us/azure/monitoring-and-diagnostics/monitoring-supported-metrics
+* [Overview of Azure Monitor](https://docs.microsoft.com/en-us/azure/monitoring-and-diagnostics/monitoring-overview-azure-monitor)
+* [View activity logs to audit actions on resources](https://docs.microsoft.com/en-us/azure/azure-resource-manager/resource-group-audit)
+
+* [Create and share dashboards in the Azure portal](https://docs.microsoft.com/en-us/azure/azure-portal/azure-portal-dashboards)
+* [The next generation of Azure Alerts has arrived](https://azure.microsoft.com/en-us/blog/the-next-generation-of-azure-alerts-has-arrived/)
+* [Azure Monitor–General availability of multi-dimensional metrics APIs](https://azure.microsoft.com/en-us/blog/azure-monitor-general-availability-of-multi-dimensional-metrics-apis/)
+* [Supported metrics with Azure Monitor](https://docs.microsoft.com/en-us/azure/monitoring-and-diagnostics/monitoring-supported-metrics)
+* [Monitor Subscription Activity with the Azure Activity Log](https://docs.microsoft.com/en-us/azure/monitoring-and-diagnostics/monitoring-overview-activity-logs)
+
 
 
 [gablogo]: ../media/logo-2018-500x444.png "Global Azure Bootcamp logo"
