@@ -105,7 +105,7 @@ You can create multiple dashboards and share them with others who have access to
 * [Azure Monitor–General availability of multi-dimensional metrics APIs](https://azure.microsoft.com/en-us/blog/azure-monitor-general-availability-of-multi-dimensional-metrics-apis/)
 * [Supported metrics with Azure Monitor](https://docs.microsoft.com/en-us/azure/monitoring-and-diagnostics/monitoring-supported-metrics)
 * [Monitor Subscription Activity with the Azure Activity Log](https://docs.microsoft.com/en-us/azure/monitoring-and-diagnostics/monitoring-overview-activity-logs)
-
+* [Azure Monitor Pricing](https://azure.microsoft.com/en-us/pricing/details/monitor/)
 
 
 [gablogo]: ../media/logo-2018-500x444.png "Global Azure Bootcamp logo"
