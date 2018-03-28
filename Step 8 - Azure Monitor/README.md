@@ -97,6 +97,8 @@ You can create multiple dashboards and share them with others who have access to
 * https://docs.microsoft.com/en-us/azure/monitoring-and-diagnostics/monitoring-overview-azure-monitor
 * https://docs.microsoft.com/en-us/azure/azure-portal/azure-portal-dashboards
 * https://azure.microsoft.com/en-us/blog/the-next-generation-of-azure-alerts-has-arrived/
+* https://azure.microsoft.com/en-us/blog/azure-monitor-general-availability-of-multi-dimensional-metrics-apis/
+* https://docs.microsoft.com/en-us/azure/monitoring-and-diagnostics/monitoring-supported-metrics
 
 
 [gablogo]: ../media/logo-2018-500x444.png "Global Azure Bootcamp logo"
