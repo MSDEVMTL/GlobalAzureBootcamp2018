@@ -44,8 +44,6 @@ What can we do if we need additional performance data? E.g. memory.
 
 Service Health is your personalized dashboard in the Azure Portal for receiving notifications when Azure service issues, update or planned maintenance that could affect your resources
 
-
-
 ### Alerts
 
 Alert allows you to get notified and take action against a specific event.
@@ -64,7 +62,9 @@ In other word, no need to use Azure Alert Classic
 
 ### Get smarter alerts with Logic App
 
-[DEMO HERE]
+You should receive two emails alert when a metric reach it's configured limit. One when it's get activated and another one when the metric is back under normal value. Receiving too many emails for alerts can be annoying and also the basic email alert template doesnt tell you much information on the current situation.
+
+
 
 ### Routing your logs
 If you want to route for depeer analytics of your log, you can select your preferred way by customizing the diagnostics settings.  You can stream monitoring data to other locations.
