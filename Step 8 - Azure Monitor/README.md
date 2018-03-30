@@ -27,14 +27,18 @@ You can retrieve events from your Activity Log using the Azure portal, CLI, Powe
 
 ### LAB 1 - Who scale your app service plan?
 
-##Scenario##: You are reviewing your Azure subscription bill like you do every month but this time you're saw a sudden increase of your  subscription total. Someone scaled up your service plan from a Free tier to a D1 Shared but you just don't recall that you've made that change.
+**Prerequisite:** Change you app service plan from Free tier to D1 Shared
 
-##Goal##: Identify who made that change
+###Scenario###: You are reviewing your Azure subscription bill like you do every month but this time you're saw a sudden increase of your  subscription total. Someone scaled up your service plan from a Free tier to a D1 Shared but you just don't recall that you've made that change.
+
+**Goal:** Identify who made that change
 
 * Step 1 : Go on Azure portal and choose the Azure Monitor landing page
 * Step 2: Select Activity log the navigation pan
 * Step 3: Use the filter to search changes that occured during the last month.
 * Step 4: Observe :  You're getting old! You're the one who made that change.
+
+*Don't forget to put your service plan to fee tier*
 
 ### Metrics
 
