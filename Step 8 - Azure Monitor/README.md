@@ -35,10 +35,8 @@ You can retrieve events from your Activity Log using the Azure portal, CLI, Powe
 
 * Step 1 : Go on Azure portal and choose the Azure Monitor landing page
 * Step 2: Select Activity log the navigation pan
-* Step 3: Use the filter to search changes that occured during the last month.
+* Step 3: Use the filter to search changes that occured during the last month for you service plan.
 * Step 4: Observe :  You're getting old! You're the one who made that change.
-
-*Don't forget to put your service plan to fee tier*
 
 ### Metrics
 
