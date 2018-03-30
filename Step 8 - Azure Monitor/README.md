@@ -2,7 +2,7 @@
 
 # Explore monitoring and troubleshooting with Azure Monitor
 
-Azure Monitor is a landing page that helps users to have a better visibility into the performance, health and states of your Azure resources. 
+Azure Monitor is a landing page that helps users to have a better visibility into the performance, health and states of Azure resources. 
 
 During this session, you will learn how to use Azure Monitor to perform troubleshooting. You will understand how Azure Monitor can help you to have a better visibility into anything that can impact your app availability and performance. 
 
@@ -18,6 +18,24 @@ Azure Monitor has 3 categories of monitoring data:
 * Diagnostic logs
 * Metrics
 
+## Activity Logs
+The Azure Activity Log is a subscription log that provides insight into subscription-level events that have occurred in Azure.  Using the Activity Log, you can determine the ‘what, who, and when’ for any write operations (PUT, POST, DELETE) taken on the resources in your subscription.
+
+The Azure Activity Log is primarily for activities that occur in Azure Resource Manager. It does not track resources using the Classic model. 
+
+You can retrieve events from your Activity Log using the Azure portal, CLI, PowerShell cmdlets, and Azure Monitor REST API.
+
+### LAB 1 - Who scale your app service plan?
+
+##Scenario##: You are reviewing your Azure subscription bill like you do every month but this time you're saw a sudden increase of your  subscription total. Someone scaled up your service plan from a Free tier to a D1 Shared but you just don't recall that you've made that change.
+
+##Goal##: Identify who made that change
+
+* Step 1 : Go on Azure portal and choose the Azure Monitor landing page
+* Step 2: Select Activity log the navigation pan
+* Step 3: Use the filter to search changes that occured during the last month.
+* Step 4: Observe :  You're getting old! You're the one who made that change.
+
 ### Metrics
 
 Right of the bat, metrics (telemetry data \ performance counters) are already configured. Just wait a few minutes after creating your virtual machines and you should see available metrics that you wish to display. That is it. No cost. No configuration, but a limited range of metrics by default.  
@@ -28,23 +46,18 @@ Metrics are:
 * Available immediately
 * Retained for 30 days
 
-### Metrics (Preview)
+## Metrics (Preview)
 
-### Activity Logs
-The Azure Activity Log is a subscription log that provides insight into subscription-level events that have occurred in Azure.  Using the Activity Log, you can determine the ‘what, who, and when’ for any write operations (PUT, POST, DELETE) taken on the resources in your subscription.
 
-The Azure Activity Log is primarily for activities that occur in Azure Resource Manager. It does not track resources using the Classic/RDFE model. 
 
-You can retrieve events from your Activity Log using the Azure portal, CLI, PowerShell cmdlets, and Azure Monitor REST API.
-
-### Diagnostics Logs
+## Diagnostics Logs
 What can we do if we need additional performance data? E.g. memory. 
 
-### Service Health
+## Service Health
 
 Service Health is your personalized dashboard in the Azure Portal for receiving notifications when Azure service issues, update or planned maintenance that could affect your resources
 
-### Alerts
+## Alerts
 
 Alert allows you to get notified and take action against a specific event.
 
