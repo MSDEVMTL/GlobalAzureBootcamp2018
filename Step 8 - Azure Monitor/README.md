@@ -78,6 +78,16 @@ Metrics are:
 
 
 
+### LAB 3 - *********
+
+**Scenario**: ....
+
+**Goal:** ....
+
+* Step 1: ...
+* Step 2: ...
+* Step 3: ...
+
 ## Diagnostics Logs
 What can we do if we need additional performance data? E.g. memory. 
 
