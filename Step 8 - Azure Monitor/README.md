@@ -29,7 +29,7 @@ You can retrieve events from your Activity Log using the Azure portal, CLI, Powe
 
 **Prerequisite:** Change you app service plan from Free tier to D1 Shared
 
-###Scenario###: You are reviewing your Azure subscription bill like you do every month but this time you're saw a sudden increase of your  subscription total. Someone scaled up your service plan from a Free tier to a D1 Shared but you just don't recall that you've made that change.
+**Scenario**: You are reviewing your Azure subscription bill like you do every month but this time you're saw a sudden increase of your  subscription total. Someone scaled up your service plan from a Free tier to a D1 Shared but you just don't recall that you've made that change.
 
 **Goal:** Identify who made that change
 
