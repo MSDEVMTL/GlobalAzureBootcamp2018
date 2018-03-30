@@ -38,6 +38,32 @@ You can retrieve events from your Activity Log using the Azure portal, CLI, Powe
 * Step 3: Use the filter to search changes that occured during the last month for you service plan.
 * Step 4: Observe :  You're getting old! You're the one who made that change.
 
+## Alerts
+
+Alert allows you to get notified and take action against a specific event.
+
+You can set alerts on your metrics to keep check on the health and performance of your resources.
+
+![New Alert experience](Media/NewAlertMenu.PNG)
+
+Alerts experience in Azure has a fresh look and updated functionality. This new experience is available from the Alerts tab under Azure Monitor. The following are some of the advantages of using the new Alerts experience compared to Alerts (Classic) experience:
+
+* Separation of Fired alerts and Alert Rules - In the new Alerts experience, Alert Rules (the definition of condition that triggers an alert), and Fired Alerts (an instance of the alert rule firing) are differentiated, so the operational and configuration views are separated.
+* A unified authoring experience for metric, activity log and log alerts - The new Alerts authoring experience guides the user along the process of configuring an alert rule, which makes it simpler to discover the right things to get alerted on.
+* View fired Log Analytics alerts in Azure portal - In the Alerts experience, you can now also see fired Log Analytics alerts in your subscription.
+
+In other word, no need to use Azure Alert Classic
+
+### LAB 2 - Generate an alert when you app service plan is updated?
+
+**Scenario**: In the previous lab we saw how it easy using the activity log to monitor changes in our Azure resources. 
+
+**Goal:** Generate a new alert when your service plan is updated.
+
+*Step 1: ...
+*Step 2: ...
+*Step 3: ...
+
 ### Metrics
 
 Right of the bat, metrics (telemetry data \ performance counters) are already configured. Just wait a few minutes after creating your virtual machines and you should see available metrics that you wish to display. That is it. No cost. No configuration, but a limited range of metrics by default.  
@@ -59,21 +85,6 @@ What can we do if we need additional performance data? E.g. memory.
 
 Service Health is your personalized dashboard in the Azure Portal for receiving notifications when Azure service issues, update or planned maintenance that could affect your resources
 
-## Alerts
-
-Alert allows you to get notified and take action against a specific event.
-
-You can set alerts on your metrics to keep check on the health and performance of your resources.
-
-![New Alert experience](Media/NewAlertMenu.PNG)
-
-Alerts experience in Azure has a fresh look and updated functionality. This new experience is available from the Alerts tab under Azure Monitor. The following are some of the advantages of using the new Alerts experience compared to Alerts (Classic) experience:
-
-* Separation of Fired alerts and Alert Rules - In the new Alerts experience, Alert Rules (the definition of condition that triggers an alert), and Fired Alerts (an instance of the alert rule firing) are differentiated, so the operational and configuration views are separated.
-* A unified authoring experience for metric, activity log and log alerts - The new Alerts authoring experience guides the user along the process of configuring an alert rule, which makes it simpler to discover the right things to get alerted on.
-* View fired Log Analytics alerts in Azure portal - In the Alerts experience, you can now also see fired Log Analytics alerts in your subscription.
-
-In other word, no need to use Azure Alert Classic
 
 ### Get smarter alerts with Logic App
 
