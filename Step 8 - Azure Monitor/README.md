@@ -72,7 +72,11 @@ Azure Monitor now supports a new metric alert type. The newer alerts differ from
 * Step 3: Select your app Service Plan as the target of your alert
 * Step 4: Use ***Create or Update App Service Plan*** as criteria.
 * Step 5: Type a name, a description and a severity for your alert. ex: ***GAB 2018 App service plan updates*** and ***A change has been made to your service plan***, ***Severity 3***
-* Step 6: Let's now change your App Service Plan back to Free tier
+* Step 6: Create an Action Group
+* Step 7: Review your alert definition
+* Step 7: Let's now change your App Service Plan back to Free tier
+
+This last step should generate an alert to your action group.
 
 ### Metrics
 
