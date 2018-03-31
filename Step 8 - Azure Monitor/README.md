@@ -36,33 +36,42 @@ You can retrieve events from your Activity Log using the Azure portal, CLI, Powe
 * Step 1 : Go on Azure portal and choose the Azure Monitor landing page
 * Step 2: Select Activity log the navigation pan
 * Step 3: Use the filter to search changes that occured during the last month for you service plan.
-* Step 4: Observe :  You're getting old! You're the one who made that change.
+* Step 4: Observe : A scale was done on [date] by [user].
 
 ## Alerts
 
-Alert allows you to get notified and take action against a specific event.
+You can receive an alert based on monitoring metrics for, or events on, your Azure services.
 
-You can set alerts on your metrics to keep check on the health and performance of your resources.
+* Metric values - The alert triggers when the value of a specified metric crosses a threshold you assign in either direction. That is, it triggers both when the condition is first met and then afterwards when that condition is no longer being met.
+* Activity log events - An alert can trigger on every event, or, only when certain event occurs.
 
-![New Alert experience](Media/NewAlertMenu.PNG)
+You can configure a classic metric alert to do the following when it triggers:
 
-Alerts experience in Azure has a fresh look and updated functionality. This new experience is available from the Alerts tab under Azure Monitor. The following are some of the advantages of using the new Alerts experience compared to Alerts (Classic) experience:
+* send email notifications to the service administrator and co-administrators
+* send email to additional emails that you specify.
+* call a webhook
+* start execution of an Azure runbook (only from the Azure portal)
 
-* Separation of Fired alerts and Alert Rules - In the new Alerts experience, Alert Rules (the definition of condition that triggers an alert), and Fired Alerts (an instance of the alert rule firing) are differentiated, so the operational and configuration views are separated.
-* A unified authoring experience for metric, activity log and log alerts - The new Alerts authoring experience guides the user along the process of configuring an alert rule, which makes it simpler to discover the right things to get alerted on.
-* View fired Log Analytics alerts in Azure portal - In the Alerts experience, you can now also see fired Log Analytics alerts in your subscription.
+Azure Monitor now supports a new metric alert type. The newer alerts differ from classic metric alerts in a few ways:
 
-In other word, no need to use Azure Alert Classic
+* **Improved latency**: Newer metric alerts can run as frequently as every one minute. Older metric alerts always run at a frequency of 5 minutes. Log alerts still have a longer than 1 minute delay due to the time is takes to ingest the logs.
+* **Support for multi-dimensional metrics**: You can alert on dimensional metrics allowing you to monitor an only an interesting segment of the metric.
+* **More control over metric conditions**: You can define richer alert rules. The newer alerts support monitoring the maximum, minimum, average, and total values of metrics.
+* **Combined monitoring of multiple metrics**: You can monitor multiple metrics (currently, up to two metrics) with a single rule. An alert is triggered if both metrics breach their respective thresholds for the specified time-period.
+* **Better notification system**: All newer alerts use action groups, which are named groups of notifications and actions that can be reused in multiple alerts. Classic metric alerts and older Log Analytics alerts do not use action groups.
+* **Metrics from Logs (limited public preview)**: Log data going into Log Analytics can now be extracted and converted into Azure Monitor metrics and then alerted on just like other metrics.
 
 ### LAB 2 - Generate an alert when you app service plan is updated?
 
-**Scenario**: In the previous lab we saw how it easy using the activity log to monitor changes in our Azure resources. 
+**Scenario**: In the previous lab we saw how it easy using the activity log to monitor changes in our Azure resources. :et's now generate when an update is done to app service plan. 
 
 **Goal:** Generate a new alert when your service plan is updated.
 
-* Step 1: ...
-* Step 2: ...
-* Step 3: ...
+* Step 1: From the navigation pane in Azure Monitor, select ***Alert***
+* Step 2: Using the top menu, click ***+ New Alert Rule***
+* Step 3: Select your app Service Plan as the target of your alert
+* Step 4: Use ***Create or Update App Service Plan*** as criteria.
+* Step 5: Type a name and a description for your alert. ex: ***GAB 2018 App service plan updates*** and ***A change has been made to your service plan***
 
 ### Metrics
 
