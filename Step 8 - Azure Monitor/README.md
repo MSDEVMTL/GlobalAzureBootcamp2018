@@ -19,6 +19,7 @@ Azure Monitor has 3 categories of monitoring data:
 * Metrics
 
 ## Activity Logs
+
 The Azure Activity Log is a subscription log that provides insight into subscription-level events that have occurred in Azure.  Using the Activity Log, you can determine the ‘what, who, and when’ for any write operations (PUT, POST, DELETE) taken on the resources in your subscription.
 
 The Azure Activity Log is primarily for activities that occur in Azure Resource Manager. It does not track resources using the Classic model. 
@@ -78,7 +79,7 @@ Azure Monitor now supports a new metric alert type. The newer alerts differ from
 
 This last step should generate an alert to your action group.
 
-### Metrics
+## Metrics
 
 Right of the bat, metrics (telemetry data \ performance counters) are already configured. Just wait a few minutes after creating your virtual machines and you should see available metrics that you wish to display. That is it. No cost. No configuration, but a limited range of metrics by default.  
 
@@ -117,6 +118,7 @@ You should receive two emails alert when a metric reach it's configured limit. O
 
 
 ### Routing your logs
+
 If you want to route for depeer analytics of your log, you can select your preferred way by customizing the diagnostics settings.  You can stream monitoring data to other locations.
 
 Examples include:
@@ -124,14 +126,16 @@ Examples include:
 * Send to Application Insights so you can use its richer visualization and analysis tools.
 * Send to Event Hubs so you can route to third-party tools.
 
-### Store and Archive
+## Store and Archive
+
 Some monitoring data is already stored and available in Azure Monitor for a set amount of time.
 
 * Metrics are stored for 30 days.
 * Activity log entries are stored for 90 days.
 * Diagnostics logs are not stored at all.
 
-### Visualize
+## Visualize
+
 Visualizing your monitoring data in graphics and charts helps you find trends quicker than looking through the data itself.
 
 A few visualization methods include:
@@ -141,10 +145,11 @@ A few visualization methods include:
 * Route data to Microsoft PowerBI
 * Route the data to a third-party visualization tool using either live streaming or by having the tool read from an archive in Azure storage
 
-### Pin to your Dashboard
+## Pin to your Dashboard
+
 You can create multiple dashboards and share them with others who have access to your Azure subscriptions. 
 
-### Reference
+## Reference
 * [Overview of Azure Monitor](https://docs.microsoft.com/en-us/azure/monitoring-and-diagnostics/monitoring-overview-azure-monitor)
 * [View activity logs to audit actions on resources](https://docs.microsoft.com/en-us/azure/azure-resource-manager/resource-group-audit)
 
