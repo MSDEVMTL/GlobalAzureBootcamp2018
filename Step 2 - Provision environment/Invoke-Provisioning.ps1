@@ -80,7 +80,7 @@ Process {
     )
 
     Write-Host "Provisioning started for keyvault in resource group '$($rg.ResourceGroupName)'" -ForegroundColor Cyan
-    $keyVaultName = 'gab2018-{0}-kv-all' -f $EnvironmentCode
+    $keyVaultName = 'gab2018-{0}-{1}-kv-all' -f [guid]::NewGuid().ToString().SubString(0,3), $EnvironmentCode
     $deploymentName = 'gab2018-{0}-keyvault-all' -f $EnvironmentCode
     $kvDeployment = New-AzureRmResourceGroupDeployment -ResourceGroupName $rg.ResourceGroupName `
         -Name $deploymentName `
