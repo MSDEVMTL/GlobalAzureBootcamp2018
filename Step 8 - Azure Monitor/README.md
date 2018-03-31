@@ -63,7 +63,7 @@ Azure Monitor now supports a new metric alert type. The newer alerts differ from
 
 ### LAB 2 - Generate an alert when you app service plan is updated?
 
-**Scenario**: In the previous lab we saw how it easy using the activity log to monitor changes in our Azure resources. :et's now generate when an update is done to app service plan. 
+**Scenario**: In the previous lab we saw how it easy using the activity log to monitor changes in our Azure resources.  Let's now generate when an update is done to your app service plan. 
 
 **Goal:** Generate a new alert when your service plan is updated.
 
@@ -71,7 +71,8 @@ Azure Monitor now supports a new metric alert type. The newer alerts differ from
 * Step 2: Using the top menu, click ***+ New Alert Rule***
 * Step 3: Select your app Service Plan as the target of your alert
 * Step 4: Use ***Create or Update App Service Plan*** as criteria.
-* Step 5: Type a name and a description for your alert. ex: ***GAB 2018 App service plan updates*** and ***A change has been made to your service plan***
+* Step 5: Type a name, a description and a severity for your alert. ex: ***GAB 2018 App service plan updates*** and ***A change has been made to your service plan***, ***Severity 3***
+* Step 6: Let's now change your App Service Plan back to Free tier
 
 ### Metrics
 
