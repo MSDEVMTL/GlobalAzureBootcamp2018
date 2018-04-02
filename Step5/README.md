@@ -20,7 +20,7 @@ Azure Security Center monitors the status of antimalware protection and reports 
 Security Center reports the following endpoint protection issues:
 •	Endpoint protection not installed on Azure VMs – A supported antimalware solution is not installed on these Azure VMs.
 
-![alt text](./media/ASC Lab 1_1.png)
+![alt text](media/ASC Lab 1_1.png)
 
 
 ## Step 2 - Implement the recommendation
