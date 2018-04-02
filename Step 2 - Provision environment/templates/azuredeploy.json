@@ -12,7 +12,7 @@
             "maxLength": 4,
             "type": "string",
             "metadata": {
-                "description": "The base name of the solution. Up to 7 characters."
+                "description": "The base name of the solution. Up to 4 characters."
             }
         },        
         "AppName": {
@@ -28,14 +28,18 @@
         },
         "VirtualMachineAdminPassword": {
             "type": "securestring"
+        },
+        "uniqueString": {
+            "type": "string",
+            "minLength": 13,
+            "maxLength": 13,
+            "defaultValue": "[uniqueString(resourceGroup().id, resourceGroup().location)]"
         }
     },
     "variables": {
-        "uniqueString": "[uniqueString(subscription().id, resourceGroup().id, resourceGroup().location)]",
-
         "defaultResourceLocation": "[resourceGroup().location]",
 
-        "baseNamePattern": "[toLower( concat(parameters('appName'), '-', parameters('EnvironmentCode'), '-{role}-', variables('uniqueString')) )]",
+        "baseNamePattern": "[toLower( concat(parameters('appName'), '-', parameters('EnvironmentCode'), '-{role}-', parameters('uniqueString')) )]",
         "baseStorageNamePattern": "[replace( variables('baseNamePattern'), '-', '0' )]",
 
         "storage": {

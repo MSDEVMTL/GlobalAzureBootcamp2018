@@ -2,20 +2,40 @@
     "$schema": "http://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
     "contentVersion": "1.0.0.0",
     "parameters": {
-        "keyVaultName": {
+        "EnvironmentCode": {
+            "AllowedValues": [
+                "dev",
+                "qa",
+                "stg",
+                "prod"
+            ],
+            "maxLength": 4,
             "type": "string",
-            "minLength": 1,
             "metadata": {
-                "description": "KeyVault name"
+                "description": "The base name of the solution. Up to 4 characters."
             }
         },
-        "accessPolicies": {
+        "AppName": {
+            "maxLength": 7,
+            "type": "string",
+            "metadata": {
+                "description": "The base name of the solution. Up to 7 characters."
+            }
+        },
+        "RoleName": {
+            "maxLength": 7,
+            "type": "string",
+            "metadata": {
+                "description": "The keyvault name role in the solution. Up to 7 characters."
+            }
+        },
+        "AccessPolicies": {
             "type": "array",
             "metadata": {
                 "description": "Access policies object {\"tenantId\":\"\",\"objectId\":\"\",\"permissions\":{\"keys\":[\"\"],\"secrets\":[\"\"]}}"
             }
         },
-        "logsRetentionInDays": {
+        "LogsRetentionInDays": {
             "type": "int",
             "defaultValue": 0,
             "minValue": 0,
@@ -24,7 +44,7 @@
                 "description": "Specifies the number of days that logs are gonna be kept. If you do not want to apply any retention policy and retain data forever, set value to 0."
             }
         },
-        "enableVaultForDeployment": {
+        "EnableVaultForDeployment": {
             "type": "bool",
             "defaultValue": false,
             "allowedValues": [
@@ -35,7 +55,7 @@
                 "description": "Specifies if the vault is enabled for deployment by script or compute (VM, Service Fabric, ...)"
             }
         },
-        "enableVaultForTemplateDeployment": {
+        "EnableVaultForTemplateDeployment": {
             "type": "bool",
             "defaultValue": false,
             "allowedValues": [
@@ -46,7 +66,7 @@
                 "description": "Specifies if the vault is enabled for a template deployment"
             }
         },
-        "enableVaultForDiskEncryption": {
+        "EnableVaultForDiskEncryption": {
             "type": "bool",
             "defaultValue": false,
             "allowedValues": [
@@ -57,7 +77,7 @@
                 "description": "Specifies if the azure platform has access to the vault for enabling disk encryption scenarios."
             }
         },
-        "vaultSku": {
+        "VaultSku": {
             "type": "string",
             "defaultValue": "Standard",
             "allowedValues": [
@@ -68,19 +88,28 @@
                 "description": "Specifies the SKU for the vault"
             }
         },
-        "protectWithLocks": {
+        "ProtectWithLocks": {
             "type": "bool",
             "defaultValue": true
+        },
+        "UniqueString": {
+            "type": "string",
+            "minLength": 13,
+            "maxLength": 13,
+            "defaultValue": "[uniqueString(resourceGroup().id, resourceGroup().location)]"
         }
     },
     "variables": {
-        "uniqueString": "[uniqueString(subscription().id, resourceGroup().id, resourceGroup().location)]",
-        "diagnosticStorageAccountName": "[toLower( substring( replace( concat( parameters('keyVaultName'), '-', variables('uniqueString'), variables('uniqueString') ), '-', '0'), 0, 23) )]"
+        "baseNamePattern": "[toLower( concat(parameters('AppName'), '-', parameters('EnvironmentCode'), '-{role}-', parameters('UniqueString')) )]",
+        "baseStorageNamePattern": "[replace( variables('baseNamePattern'), '-', '0' )]",
+        
+        "keyVaultName": "[substring(replace(variables('baseNamePattern'),'{role}', tolower(parameters('RoleName')) ), 0, 23)]",
+        "diagnosticStorageAccountName": "[substring(replace(variables('baseStorageNamePattern'),'{role}', tolower(replace( parameters('RoleName'), '-', '0' ))), 0, 23)]"
     },
     "resources": [
         {
             "type": "Microsoft.KeyVault/vaults",
-            "name": "[parameters('keyVaultName')]",
+            "name": "[variables('keyVaultName')]",
             "apiVersion": "2016-10-01",
             "Location": "[resourceGroup().location]",
             "tags": {
@@ -100,11 +129,11 @@
             "resources": [
                 {
                     "type": "Microsoft.KeyVault/vaults/providers/diagnosticsettings",
-                    "name": "[concat(parameters('keyVaultName'), '/Microsoft.Insights/service')]",
+                    "name": "[concat(variables('keyVaultName'), '/Microsoft.Insights/service')]",
                     "apiVersion": "2016-09-01",
                     "Location": "[resourceGroup().location]",
                     "dependsOn": [
-                        "[concat('Microsoft.KeyVault/vaults/', parameters('keyVaultName'))]",
+                        "[concat('Microsoft.KeyVault/vaults/', variables('keyVaultName'))]",
                         "[concat('Microsoft.Storage/storageAccounts/', variables('diagnosticStorageAccountName'))]"
                     ],
                     "properties": {
@@ -133,7 +162,7 @@
             },
             "kind": "Storage",
             "tags": {
-                "displayName": "concat('Key Vault ', parameters('keyVaultName'), ' diagnostics storage account')"
+                "displayName": "concat('Key Vault ', variables('keyVaultName'), ' diagnostics storage account')"
             },
             "properties": {
                 "encryption": {
@@ -150,13 +179,13 @@
             "condition": "[parameters('protectWithLocks')]",
             "comments": "Resource lock on Key Vault",
             "type": "Microsoft.KeyVault/vaults/providers/locks",
-            "name": "[concat(parameters('keyVaultName'), '/Microsoft.Authorization/DoNotDelete-', parameters('keyVaultName') )]",
+            "name": "[concat(variables('keyVaultName'), '/Microsoft.Authorization/DoNotDelete-', variables('keyVaultName') )]",
             "apiVersion": "2016-09-01",
             "properties": {
                 "level": "CannotDelete"
             },
             "dependsOn": [
-                "[concat('Microsoft.KeyVault/vaults/', parameters('keyVaultName'))]"
+                "[concat('Microsoft.KeyVault/vaults/', variables('keyVaultName'))]"
             ]
         },
         {
@@ -172,5 +201,11 @@
                 "[concat('Microsoft.Storage/storageAccounts/', variables('diagnosticStorageAccountName'))]"
             ]
         }
-    ]
+    ],
+    "outputs": {
+        "KeyVaultName": {
+            "type": "string",
+            "value": "[variables('keyVaultName')]"
+        }
+    }
 }
