@@ -20,7 +20,7 @@ Azure Security Center monitors the status of antimalware protection and reports 
 Security Center reports the following endpoint protection issues:
 •	Endpoint protection not installed on Azure VMs – A supported antimalware solution is not installed on these Azure VMs.
 
-![alt text](media/ASC Lab 1_1.png)
+![alt text](media/ASC%20Lab%201_1.png)
 
 
 ## Step 2 - Implement the recommendation
@@ -32,36 +32,36 @@ this recommendation will be displayed under Prevention and under Compute.
 Under Compute, select Endpoint protection issues. The Endpoint protection issues dashboard opens.sdf
 
  
-![alt text](./media/ASC Lab 1_2.png)
+![alt text](media/ASC%20Lab%201_2.png)
  
 
 Click on Endpoint Protection not installed on Azure VMs.
  
-![alt text](./media/ASC Lab 1_3.png)
+![alt text](media/ASC%20Lab%201_3.png)
 
 Check the box for the VM and click on the Install on 1 VMs icon.
 
-![alt text](./media/ASC Lab 1_4.png)
+![alt text](media/ASC%20Lab%201_4.png)
 
 Click on the Microsoft Antimalware blade.
  
-![alt text](./media/ASC Lab 1_5.png)
+![alt text](media/ASC%20Lab%201_5.png)
 
 Click on create
  
-![alt text](./media/ASC Lab 1_6.png)
+![alt text](media/ASC%20Lab%201_6.png)
 
 Accept Defaults and click ok
  
-![alt text](./media/ASC Lab 1_7.png)
+![alt text](media/ASC%20Lab%201_7.png)
 
 Installation will begin
 
-![alt text](./media/ASC Lab 1_8.png)
+![alt text](media/ASC%20Lab%201_8.png)
 
 When omplete return to the azure security center under compute and the recommendation is no longer present.
 
-![alt text](./media/ASC Lab 1_9.png)
+![alt text](media/ASC%20Lab%201_9.png)
 
 This article showed you how to implement the Security Center recommendation "Install Endpoint Protection." To learn more about enabling Microsoft Antimalware in Azure, see the following document:
 •	Microsoft Antimalware for Cloud Services and Virtual Machines -- Learn how to deploy Microsoft Antimalware.
