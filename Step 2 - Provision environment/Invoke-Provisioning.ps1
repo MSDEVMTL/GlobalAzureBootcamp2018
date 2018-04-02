@@ -58,6 +58,9 @@ Process {
         Login-AzureRmAccount
     }
 
+    # Define the application name
+    $ApplicationName = 'gab2018'
+
     # Create resource group
     $rg = & $PSScriptRoot\..\utilities\New-WorkingResourceGroup.ps1 `
         -EnvironmentCode $EnvironmentCode `
@@ -80,18 +83,24 @@ Process {
     )
 
     Write-Host "Provisioning started for keyvault in resource group '$($rg.ResourceGroupName)'" -ForegroundColor Cyan
-    $keyVaultName = 'gab2018-{0}-{1}-kv-all' -f [guid]::NewGuid().ToString().SubString(0,3), $EnvironmentCode
     $deploymentName = 'gab2018-{0}-keyvault-all' -f $EnvironmentCode
     $kvDeployment = New-AzureRmResourceGroupDeployment -ResourceGroupName $rg.ResourceGroupName `
         -Name $deploymentName `
         -TemplateFile $PSScriptRoot\templates\keyvault.json `
-        -KeyVaultName $keyVaultName `
+        -EnvironmentCode $EnvironmentCode `
+        -AppName $ApplicationName `
+        -RoleName 'kv-all' `
         -AccessPolicies $accessPolicies `
         -EnableVaultForDeployment $true `
         -EnableVaultForTemplateDeployment $true `
         -ProtectWithLocks $false `
         -Verbose
     
+    if($kvDeployment.ProvisioningState -ne 'Succeeded') {
+        throw 'Unable to continue, KeyVault deployment failed.'
+    }
+    $keyVaultName = $kvDeployment.Outputs.keyVaultName.value
+
     Write-Host 'Setting VM admin credentials' -ForegroundColor Cyan
     & $PSScriptRoot\..\utilities\Set-VmAdminSecrets.ps1 -KeyVault $keyVaultName `
         -AdminUsernameSecretName 'vmpdf-admin-name' `
@@ -113,7 +122,7 @@ Process {
         -TemplateFile $PSScriptRoot\templates\azuredeploy.json `
         -TemplateParameterFile $PSScriptRoot\templates\azuredeploy.parameters.tmp.json `
         -EnvironmentCode $EnvironmentCode `
-        -AppName 'gab2018' `
+        -AppName $ApplicationName `
         -Verbose
 
     Write-Host 'Provisioning completed!' -ForegroundColor Green
