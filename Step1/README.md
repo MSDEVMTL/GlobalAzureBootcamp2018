@@ -44,5 +44,5 @@ A new pane will open, click the **Connect** button
 
 [gablogo]: ../media/logo-2018-500x444.png "Global Azure Bootcamp logo"
 [search-oms-in-portal]: media/search-oms-in-portal.png "Search for OMS in Azure portal"
-[browse-to-subscription-to-connect]: media\browse-to-subscription-to-connect.png "Navigate to subscription to connect to Log Analytics"
+[browse-to-subscription-to-connect]: media/browse-to-subscription-to-connect.png "Navigate to subscription to connect to Log Analytics"
 [connect-subscription-to-log-analytics]: media/connect-subscription-to-log-analytics.png "Connect subscription to Log Analytics"
