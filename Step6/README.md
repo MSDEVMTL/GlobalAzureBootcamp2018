@@ -116,7 +116,7 @@ From there, you can edit the files directly.  **It is VERY IMPORTANT that you st
 
 ![alt text][Monaco2]
 
-More important, point out that edits are automatically saved, there's no Save button.  This can lead to disastreous results if the file is saved in the middle of your edit.   **It is VERY IMPORTANT that you state that this!**
+More important, point out that edits are automatically saved, there's no Save button.  This can lead to disastreous results if the file is saved in the middle of your edit.   **It is VERY IMPORTANT that you state that this!**  One way to easily demonstrate this side effect is by editing the Web.config file.  If you add a new App Setting key, partial changes will be saved causing an error.
 
 # End
 
