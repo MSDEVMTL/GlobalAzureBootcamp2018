@@ -70,6 +70,12 @@ alt="IMAGE ALT TEXT HERE" width="240" height="180" border="10" /></a>
 
 
 ## The Kudu tools
+Take the time to watch this video that shows both tools:
+
+<a href="http://www.youtube.com/watch?feature=player_embedded&v=BbtPyvEdg3s&" target="_blank"><img src="http://img.youtube.com/vi/BbtPyvEdg3s&/0.jpg" 
+alt="IMAGE ALT TEXT HERE" width="240" height="180" border="10" /></a>
+
+
 ### Step 1 - Launch the Kudu tools
 There's a little known cool feature called Kudu that provides a ton of helpful information.  In the Development Tools section of our App Service, click on Advanced Tools and then click Go.
 
@@ -109,6 +115,8 @@ The App Service Editor provides scaled down version Of Visual Studio Code but in
 From there, you can edit the files directly.  **It is VERY IMPORTANT that you state that this is against best practices since the changes made outside of the normal source control and deployment process.**  When continous deployment is configured, the editor will display a warning in the in the toolbar.  Clicking on the warning provides detailed info on this. 
 
 ![alt text][Monaco2]
+
+More important, point out that edits are automatically saved, there's no Save button.  This can lead to disatreous results if the file is saved in the middle of your edit.   **It is VERY IMPORTANT that you state that this**
 
 # End
 
