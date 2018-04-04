@@ -72,7 +72,7 @@ alt="IMAGE ALT TEXT HERE" width="240" height="180" border="10" /></a>
 ## The Kudu tools
 Take the time to watch this video that shows both tools:
 
-<a href="http://www.youtube.com/watch?feature=player_embedded&v=BbtPyvEdg3s&" target="_blank"><img src="http://img.youtube.com/vi/BbtPyvEdg3s&/0.jpg" 
+<a href="http://www.youtube.com/watch?feature=player_embedded&v=BbtPyvEdg3s" target="_blank"><img src="http://img.youtube.com/vi/BbtPyvEdg3s/0.jpg" 
 alt="IMAGE ALT TEXT HERE" width="240" height="180" border="10" /></a>
 
 
@@ -116,7 +116,7 @@ From there, you can edit the files directly.  **It is VERY IMPORTANT that you st
 
 ![alt text][Monaco2]
 
-More important, point out that edits are automatically saved, there's no Save button.  This can lead to disatreous results if the file is saved in the middle of your edit.   **It is VERY IMPORTANT that you state that this**
+More important, point out that edits are automatically saved, there's no Save button.  This can lead to disastreous results if the file is saved in the middle of your edit.   **It is VERY IMPORTANT that you state that this!**
 
 # End
 
