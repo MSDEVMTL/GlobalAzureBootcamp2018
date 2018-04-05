@@ -54,6 +54,7 @@ The Activity Log contains several categories of data:
 * Step 3: Use the filter to search changes that occured during the last month for you service plan.
 * Step 4: Observe : A scale was done on [date] by [user].
 
+![Lab 1 Result](Media/UpdateHostingPlan.PNG)
 
 ## Alerts
 
@@ -94,6 +95,8 @@ Azure Monitor now supports a new metric alert type. The newer alerts differ from
 * Step 7: Let's now change your App Service Plan back to Free tier 
 
 This last step should generate an alert to your action group.
+
+![Lab 2 Result](Media/EmailAlert.PNG)
 
 ## Metrics
 All Azure services track key metrics that allow you to monitor the health, performance, availability and usage of your services.
