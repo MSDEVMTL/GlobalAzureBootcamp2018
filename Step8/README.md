@@ -102,39 +102,37 @@ This last step should generate an alert to your action group.
 All Azure services track key metrics that allow you to monitor the health, performance, availability and usage of your services.
 Right of the bat, metrics (telemetry data \ performance counters) are already configured, but for some services, you may need to turn on diagnostics in order to see any metrics. 
 
-Metrics are:
+Metrics have the following characteristics:
 
-* Collected at one minute frequency
-* Available immediately
-* Retained for 30 days
+* All metrics have one-minute frequency (unless specified otherwise in a metric's definition). You receive a metric value every minute from your resource, giving you near real-time visibility into the state and health of your resource.
+* Metrics are available immediately. You don't need to opt in or set up additional diagnostics.
+* You can access 93 days of history for each metric. You can quickly look at the recent and monthly trends in the performance or health of your resource.
+* Some metrics can have name-value pair attributes called dimensions. These enable you to further segment and explore a metric in a more meaningful way.
 
-## Metrics (Preview)
+## Diagnostics Settings
+Resource diagnostic logs for non-Compute resources are configured using resource diagnostic settings. 
 
-
-
-### LAB 3 - *********
-
-**Scenario**: ....
-
-**Goal:** ....
-
-* Step 1: ...
-* Step 2: ...
-* Step 3: ...
-
-## Diagnostics Logs
-What can we do if we need additional performance data? E.g. memory. 
+* Where resource diagnostic logs and metrics are sent (Storage Account, Event Hubs, and/or OMS Log Analytics).
+* Which log categories are sent and whether metric data is also sent.
+* How long each log category should be retained in a storage account
+** A retention of zero days means logs are kept forever. Otherwise, the value can be any number of days between 1 and 2147483647.
+** If retention policies are set but storing logs in a Storage Account is disabled (for example, if only Event Hubs or OMS options are selected), the retention policies have no effect.
+** Retention policies are applied per-day, so at the end of a day (UTC), logs from the day that is now beyond the retention policy are deleted. For example, if you had a retention policy of one day, at the beginning of the day today the logs from the day before yesterday would be deleted.
 
 ## Service Health
 
 Service Health is your personalized dashboard in the Azure Portal for receiving notifications when Azure service issues, update or planned maintenance that could affect your resources
 
+### LAB 2 - Get smarter alerts with Logic App
 
-### Get smarter alerts with Logic App
+**Scenario**:You should receive two emails alert when a metric reach it's configured limit. One when it's get activated and another one when the metric is back under normal value. Receiving too many emails for alerts can be annoying and also the basic email alert template doesnt tell you much information on the current situation.
 
-You should receive two emails alert when a metric reach it's configured limit. One when it's get activated and another one when the metric is back under normal value. Receiving too many emails for alerts can be annoying and also the basic email alert template doesnt tell you much information on the current situation.
+**Goal:** Generate a smarter alert email with Logic App
 
-
+* Step 1 : ...
+* Step 2: ...
+* Step 3: ...
+* Step 4: ...
 
 ### Routing your logs
 
@@ -145,24 +143,9 @@ Examples include:
 * Send to Application Insights so you can use its richer visualization and analysis tools.
 * Send to Event Hubs so you can route to third-party tools.
 
-## Store and Archive
+## Archive
 
-Some monitoring data is already stored and available in Azure Monitor for a set amount of time.
-
-* Metrics are stored for 30 days.
-* Activity log entries are stored for 90 days.
-* Diagnostics logs are not stored at all.
-
-## Visualize
-
-Visualizing your monitoring data in graphics and charts helps you find trends quicker than looking through the data itself.
-
-A few visualization methods include:
-
-* Use the Azure portal
-* Route data to Azure Application Insights
-* Route data to Microsoft PowerBI
-* Route the data to a third-party visualization tool using either live streaming or by having the tool read from an archive in Azure storage
+You can archive metrics to storage for longer retention or use them for offline reporting. You can route your metrics to Azure Blob storage when you configure diagnostic settings for your resource.
 
 ## Pin to your Dashboard
 
