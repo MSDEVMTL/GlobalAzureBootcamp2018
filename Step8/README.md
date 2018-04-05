@@ -1,5 +1,6 @@
 ![gablogo][gablogo]
 
+
 # Explore monitoring and troubleshooting with Azure Monitor
 
 Azure Monitor is a landing page that helps users to have a better visibility into the performance, health and states of Azure resources. 
@@ -9,6 +10,8 @@ During this session, you will learn how to use Azure Monitor to perform troubles
 We will show you how you can use Azure monitor to stay on top of things by generating notifications when a degradation happens. Because no matter what you do, it always happens.
 
 ## Inside Azure Monitor
+![Monitoring in Azure](https://docs.microsoft.com/en-us/azure/monitoring-and-diagnostics/media/monitoring-overview/monitoring-products-overview.png)
+
 
 At the heart of Azure Monitor is a telemetry pipeline that connects to your Azure services.  And there are over 30 services that you can pull data from now. And the list keeps growing.
 
@@ -152,6 +155,7 @@ You can archive metrics to storage for longer retention or use them for offline 
 You can create multiple dashboards and share them with others who have access to your Azure subscriptions. 
 
 ## Reference
+* [Monitoring Overview](https://docs.microsoft.com/en-us/azure/monitoring-and-diagnostics/monitoring-overview)
 * [Overview of Azure Monitor](https://docs.microsoft.com/en-us/azure/monitoring-and-diagnostics/monitoring-overview-azure-monitor)
 * [View activity logs to audit actions on resources](https://docs.microsoft.com/en-us/azure/azure-resource-manager/resource-group-audit)
 
