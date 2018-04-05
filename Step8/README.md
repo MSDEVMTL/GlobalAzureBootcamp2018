@@ -115,9 +115,9 @@ Resource diagnostic logs for non-Compute resources are configured using resource
 * Where resource diagnostic logs and metrics are sent (Storage Account, Event Hubs, and/or OMS Log Analytics).
 * Which log categories are sent and whether metric data is also sent.
 * How long each log category should be retained in a storage account
-** A retention of zero days means logs are kept forever. Otherwise, the value can be any number of days between 1 and 2147483647.
-** If retention policies are set but storing logs in a Storage Account is disabled (for example, if only Event Hubs or OMS options are selected), the retention policies have no effect.
-** Retention policies are applied per-day, so at the end of a day (UTC), logs from the day that is now beyond the retention policy are deleted. For example, if you had a retention policy of one day, at the beginning of the day today the logs from the day before yesterday would be deleted.
+    * A retention of zero days means logs are kept forever. Otherwise, the value can be any number of days between 1 and 2147483647.
+    * If retention policies are set but storing logs in a Storage Account is disabled (for example, if only Event Hubs or OMS options are selected), the retention policies have no effect.
+    * Retention policies are applied per-day, so at the end of a day (UTC), logs from the day that is now beyond the retention policy are deleted. For example, if you had a retention policy of one day, at the beginning of the day today the logs from the day before yesterday would be deleted.
 
 ## Service Health
 
