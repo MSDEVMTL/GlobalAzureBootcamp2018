@@ -28,17 +28,17 @@ The team has been assigned a couple of days to find tools & put new processes in
 
 ## Overview of the day
 
-Step | Tittle | Description
------|--------|------------
-Step 1 | Provision OMS | Deploy OMS artifacts using an ARM template that we'll use throughout the day using the Azure Portal.
-Step 2 | Provision environment | Deploy base artifacts using an ARM template that we'll use throughout the day using the Azure Portal.
+Step   | Title                  | Description
+------ |----------------------- |------------
+Step 1 | Provision OMS          | Deploy OMS artifacts using an ARM template that we'll use throughout the day using the Azure Portal.
+Step 2 | Provision environment  | Deploy base artifacts using an ARM template that we'll use throughout the day using the Azure Portal.
 Step 3 | Application Insights 1 | Learn how to use Application Insight to find problem in a running solution.
-Step 4 | Log Analytics |
-Step 5 | Azure Security Center |
-Step 6 | App Service | How to configure remote debugging for Web Apps & Visual Studio 2017
+Step 4 | Log Analytics          |
+Step 5 | Azure Security Center  |
+Step 6 | App Service            | How to configure remote debugging for Web Apps & Visual Studio 2017
 Step 7 | Application Insights 2 |
-Step 8 | Azure Monitor | Explore monitoring and troubleshooting with Azure Monitor
-Step 9 | ARM Governance |
+Step 8 | Azure Monitor          | Explore monitoring and troubleshooting with Azure Monitor
+Step 9 | ARM Governance         |
 
 ## Technology Stack for the Global Azure Bootcamp 2018
 
