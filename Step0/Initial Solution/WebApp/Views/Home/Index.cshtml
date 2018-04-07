@@ -1,8 +1,21 @@
 @{
-    ViewBag.Title = "Home Page";
+ViewBag.Title = "Home Page";
 }
 
 <div class="jumbotron">
     <h1>Global Azure Bootcamp</h1>
     <p class="lead">2018</p>
 </div>
+
+<div>
+    @Html.ActionLink(" Test!", "Test", "Home", new { @class = "btn btn-info glyphicon glyphicon glyphicon-sunglasses", @role = "button" })
+    <br /><br />
+
+@if (!string.IsNullOrEmpty(ViewBag.Msg))
+{
+    <div class="alert alert-info mx-auto" role="alert" style="width: 500px;">
+        <span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>
+        @ViewBag.Msg
+    </div>
+}
+    </div>
