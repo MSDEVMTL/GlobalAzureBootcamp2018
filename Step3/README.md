@@ -12,7 +12,7 @@ Once the function is in place we will also create some traffic to the site by cl
 
 ## Create an Azure Function
 
-First, let's go in the Function App. Navigate to the Azure Portal ((portal.azure.com)[https://portal.azure.com]) and select the `ResourceGroup` gab2018-dev. Then select the Function App starting by `gab2018-dev-func-app-  `.
+First, let's go in the Function App. Navigate to the Azure Portal ((portal.azure.com)[https://portal.azure.com]) and select the `ResourceGroup` **gab2018-dev**. Then select the Function App starting by `gab2018-dev-func-app-  `.
 
 ![CreateAzureFunction][CreateAzureFunction]
 
@@ -59,13 +59,26 @@ We are now ready to go investigate our data.
 
 ## Let's Look at our collected data
 
+For this second part of the Lab we will by exploring the Application Insights blade in the portal. In the Azure portal, insode the the `ResourceGroup` **gab2018-dev** select the resource with the name that starts by `gab2018-dev-ai-all`. It's the one with the purple bulb icon.
 
+![AppInsights][AppInsights]
+
+By opening that blade you should land in the Overview, and right away be able to see a few important things.
+
+![overview][overview]
+
+On the top you got six square that provide information about the number of Alerts, Livestream, users, and more. We will come back to it in a few.
+
+Then you and see multiple charts showing the Health of your application. Things like The server response time (our is cleary wrong with an average of nine second), number of request and number of error.  Those charts are refresh every thirty minutes. So you should read that as a life line... 
+
+Below you got other charts that show you by groups the *Total of Server Requests by Request Performance*.  Again we could see that in our case the majority of the request are in bettween 7sec-15sec.
 
 # Reference
 
 * [Application Insights](https://azure.microsoft.com/en-us/services/application-insights/)
 * [Application Insights Documentation](https://docs.microsoft.com/en-us/azure/application-insights/)
 * [Interactive data analytics demo](https://analytics.applicationinsights.io/demo)
+
 
 # End
 
@@ -74,3 +87,6 @@ We are now ready to go investigate our data.
 [CreateAzureFunction]: media/CreateAzureFunction.png "Create Azure Function"
 [timer]: media/timer.png "Schedule Setting"
 [functionDone]: media/functionDone.png "Function Done"
+[overview]: media/overview.png "Overview  Application Insights blade"
+[AppInsights]: media/AppInsights.png "Application Insight Resource"
+
