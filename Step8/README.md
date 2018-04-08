@@ -1,21 +1,26 @@
 ![gablogo][gablogo]
 
-
 # Explore monitoring and troubleshooting with Azure Monitor
 
-Azure Monitor is a landing page that helps users to have a better visibility into the performance, health and states of Azure resources. 
+Azure Monitor is a landing page that helps users to have a better visibility into the performance, health and states of Azure resources.
 
-During this session, you will learn how to use Azure Monitor to perform troubleshooting. You will understand how Azure Monitor can help you to have a better visibility into anything that can impact your app availability and performance. 
+During this session, you will learn how to use Azure Monitor to perform troubleshooting. You will understand how Azure Monitor can help you to have a better visibility into anything that can impact your app availability and performance.
 
 We will show you how you can use Azure monitor to stay on top of things by generating notifications when a degradation happens. Because no matter what you do, it always happens.
 
 ## Inside Azure Monitor
-![Monitoring in Azure](https://docs.microsoft.com/en-us/azure/monitoring-and-diagnostics/media/monitoring-overview/monitoring-products-overview.png)
 
+Azure monitor has been around for a while now, before this existed every services implemented (or failed to implement) their own method of capturing and displaying metrics. Some services where better at this than others and there was a very inconsistent approach. Azure Monitor was created as a means to provide a consistent way for resources (both IaaS and PaaS) to collect metrics and provide access to them.
+
+Azure monitor on it’s own provides a great solution if you are looking for either point in time, or short time scale metrics for a single resource. If your having an issue with a web app and you want to go and look at its performance metrics you can do this through Azure Monitor using the portal and see some great charts about what is happening now.
+
+Where this falls down is where you want to be able to monitor multiple resources. If you want to look across your estate of 100 web apps and determine which is using the most memory then this is going to be a very arduous task working with each site individually. This where Log Analytics come handy as we saw in previous step.
+
+![Monitoring in Azure](https://docs.microsoft.com/en-us/azure/monitoring-and-diagnostics/media/monitoring-overview/monitoring-products-overview.png)
 
 At the heart of Azure Monitor is a telemetry pipeline that connects to your Azure services.  And there are over 30 services that you can pull data from now. And the list keeps growing.
 
-Azure Monitor has 3 categories of monitoring data: 
+Azure Monitor has 3 categories of monitoring data:
 
 * Activity logs
 * Diagnostic logs
@@ -25,26 +30,25 @@ Azure Monitor has 3 categories of monitoring data:
 
 The Azure Activity Log is a subscription log that provides insight into subscription-level events that have occurred in Azure.  Using the Activity Log, you can determine the ‘what, who, and when’ for any write operations taken on the resources in your subscription.
 
-The Azure Activity Log is primarily for activities that occur in Azure Resource Manager. It does not track resources using the Classic model. 
+The Azure Activity Log is primarily for activities that occur in Azure Resource Manager. It does not track resources using the Classic model.
 
 You can retrieve events from your Activity Log using the Azure portal, CLI, PowerShell cmdlets, and Azure Monitor REST API.
 
 The Activity Log contains several categories of data:
 
-* **Administrative** - This category contains the record of all create, update, delete, and action operations performed through Resource Manager. Examples of the types of events you would see in this category include "create virtual machine" and "delete network security group". 
+* **Administrative** - This category contains the record of all create, update, delete, and action operations performed through Resource Manager. Examples of the types of events you would see in this category include "create virtual machine" and "delete network security group".
 
 * **Service Health** - This category contains the record of any service health incidents that have occurred in Azure. An example of the type of event you would see in this category is "SQL Azure in East US is experiencing downtime." Service health events come in five varieties: Action Required, Assisted Recovery, Incident, Maintenance, Information, or Security, and only appear if you have a resource in the subscription that would be impacted by the event.
 
 * **Alert** - This category contains the record of all activations of Azure alerts. An example of the type of event you would see in this category is "CPU % on myVM has been over 80 for the past 5 minutes." 
 
-* **Autoscale** - This category contains the record of any events related to the operation of the autoscale engine based on any autoscale settings you have defined in your subscription. An example of the type of event you would see in this category is "Autoscale scale up action failed." 
+* **Autoscale** - This category contains the record of any events related to the operation of the autoscale engine based on any autoscale settings you have defined in your subscription. An example of the type of event you would see in this category is "Autoscale scale up action failed."
 
 * **Recommendation** - This category contains recommendation events from certain resource types, such as web sites and SQL servers. These events offer recommendations for how to better utilize your resources. You only receive events of this type if you have resources that emit recommendations.
 
 * **Security** - This category contains the record of any alerts generated by Azure Security Center. An example of the type of event you would see in this category is "Failed login for the user".
 
-
-### LAB 1 - Who scale your app service plan?
+### LAB 1 - Who scale your app service plan
 
 **Prerequisite:** Change you app service plan from Free tier to D1 Shared
 
@@ -82,26 +86,27 @@ Azure Monitor now supports a new metric alert type. The newer alerts differ from
 * **Better notification system**: All newer alerts use action groups, which are named groups of notifications and actions that can be reused in multiple alerts. Classic metric alerts and older Log Analytics alerts do not use action groups.
 * **Metrics from Logs (limited public preview)**: Log data going into Log Analytics can now be extracted and converted into Azure Monitor metrics and then alerted on just like other metrics.
 
-### LAB 2 - Generate an alert when you app service plan is updated?
+### LAB 2 - Generate an alert when you app service plan is updated
 
-**Scenario**: In the previous lab we saw how easy it is to use the activity log to monitor changes in our Azure resources.  Let's now generate an Alert when an update is done to your app service plan. 
+**Scenario**: In the previous lab we saw how easy it is to use the activity log to monitor changes in our Azure resources.  Let's now generate an Alert when an update is done to your app service plan.
 
 **Goal:** Generate a new alert when your service plan is updated.
 
 * Step 1: From the navigation pane in Azure Monitor, select ***Alert***
 * Step 2: Using the top menu, click ***+ New Alert Rule***
-* Step 3: Select your app Service Plan as the target of your alert
+* Step 3: Select your app Service Plan as the target of your alert.
 * Step 4: Use ***Create or Update App Service Plan*** as criteria.
 * Step 5: Type a name, a description and a severity for your alert. ex: ***GAB 2018 App service plan updates*** and ***A change has been made to your service plan***, ***Severity 3***
 * Step 6: Create an Action Group
-* Step 7: Review your alert definition and save your new alert.  
-* Step 7: Let's now change your App Service Plan back to Free tier 
+* Step 7: Review your alert definition and save your new alert.
+* Step 7: Let's now change your App Service Plan back to Free tier.
 
 This last step should generate an alert to your action group.
 
 ![Lab 2 Result](Media/EmailAlert.PNG)
 
 ## Metrics
+
 All Azure services track key metrics that allow you to monitor the health, performance, availability and usage of your services.
 Right of the bat, metrics (telemetry data \ performance counters) are already configured, but for some services, you may need to turn on diagnostics in order to see any metrics. 
 
@@ -113,6 +118,7 @@ Metrics have the following characteristics:
 * Some metrics can have name-value pair attributes called dimensions. These enable you to further segment and explore a metric in a more meaningful way.
 
 ## Diagnostics Settings
+
 Resource diagnostic logs for non-Compute resources are configured using resource diagnostic settings. 
 
 * Where resource diagnostic logs and metrics are sent (Storage Account, Event Hubs, and/or OMS Log Analytics).
