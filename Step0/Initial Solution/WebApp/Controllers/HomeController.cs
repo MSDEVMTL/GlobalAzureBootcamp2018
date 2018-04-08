@@ -17,7 +17,7 @@ namespace WebApp.Controllers
         public string DoSomethingLong()
         {
             var rnd = new Random();
-            var waitFor = rnd.Next(1000, 5000);
+            var waitFor = rnd.Next(10000, 16000);
 
             System.Threading.Thread.Sleep(waitFor);
             var msg = String.Format("You have wait {0}. Sorry about that.", waitFor);
@@ -35,8 +35,20 @@ namespace WebApp.Controllers
 
             ViewBag.Msg = msg;
 
-            return View("Index");
-            
+            return View("Index");   
+        }
+
+        public ActionResult Error()
+        {
+
+            try {
+                throw new Exception("As expected it craches!");
+            }
+            catch (Exception ex) {
+                ViewBag.Msg = ex.Message;
+            }
+
+            return View();
         }
     }
 }

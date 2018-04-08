@@ -250,6 +250,7 @@
     <Content Include="Views\Sentiment\ViewSentimentAnalysis.cshtml" />
     <Content Include="Service References\Application Insights\ConnectedService.json" />
     <Content Include="Views\Service\Index.cshtml" />
+    <Content Include="Views\Home\Error.cshtml" />
     <None Include="Web.Deployment.config" />
   </ItemGroup>
   <ItemGroup>
