@@ -57,7 +57,9 @@ Navigate to the web application and navigate through all pages. Try a few time t
 
 We are now ready to go investigate our data.
 
-## Let's Look at our collected data
+# Let's Look at our collected data
+
+## The Overview 
 
 For this second part of the Lab we will by exploring the Application Insights blade in the portal. In the Azure portal, insode the the `ResourceGroup` **gab2018-dev** select the resource with the name that starts by `gab2018-dev-ai-all`. It's the one with the purple bulb icon.
 
@@ -73,7 +75,27 @@ Then you and see multiple charts showing the Health of your application. Things 
 
 Below you got other charts that show you by groups the *Total of Server Requests by Request Performance*.  Again we could see that in our case the majority of the request are in bettween 7sec-15sec.
 
-# Reference
+## Application map blade
+
+![ApplicationMap][ApplicationMap]
+
+## Live Metrics Stream blade
+
+![LiveStream][LiveStream]
+
+## Failures blade
+
+![Failures][Failures]
+
+## Performance blade
+
+![Performance][Performance]
+
+## User Flow blade
+
+![UserFlow][UserFlow]
+
+### Reference
 
 * [Application Insights](https://azure.microsoft.com/en-us/services/application-insights/)
 * [Application Insights Documentation](https://docs.microsoft.com/en-us/azure/application-insights/)
@@ -89,4 +111,8 @@ Below you got other charts that show you by groups the *Total of Server Requests
 [functionDone]: media/functionDone.png "Function Done"
 [overview]: media/overview.png "Overview  Application Insights blade"
 [AppInsights]: media/AppInsights.png "Application Insight Resource"
-
+[ApplicationMap]: media/ApplicationMap.png "Application Map blade"
+[LiveStream]: media/LiveStream.png "Live Stream blade"
+[Failures]: media/Failures.png "Failures blade"
+[Performance]: media/Performance.png "Performance blade"
+[UserFlow]: media/UserFlow.png "User Flow blade"
