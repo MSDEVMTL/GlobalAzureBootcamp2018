@@ -10,7 +10,7 @@ We will show you how you can use Azure monitor to stay on top of things by gener
 
 ## Inside Azure Monitor
 
-Azure monitor has been around for a while now, before this existed every services implemented (or failed to implement) their own method of capturing and displaying metrics. Some services where better at this than others and there was a very inconsistent approach. Azure Monitor was created as a means to provide a consistent way for resources (both IaaS and PaaS) to collect metrics and provide access to them.
+Azure monitor has been around for a while now. Before this, existing services were implementing their own method of capturing and displaying metrics. Some services where better than others and there was a very inconsistent approach. Azure Monitor was created as a means to provide a consistent way for resources (both IaaS and PaaS) to collect metrics and provide access to them.
 
 Azure monitor on it’s own provides a great solution if you are looking for either point in time, or short time scale metrics for a single resource. If your having an issue with a web app and you want to go and look at its performance metrics you can do this through Azure Monitor using the portal and see some great charts about what is happening now.
 
@@ -131,7 +131,7 @@ Metrics have the following characteristics:
 
 ## Diagnostics Settings
 
-Resource diagnostic logs for non-Compute resources are configured using resource diagnostic settings. 
+Resource diagnostic logs for non-Compute resources are configured using resource diagnostic settings.
 
 * Where resource diagnostic logs and metrics are sent (Storage Account, Event Hubs, and/or OMS Log Analytics).
 * Which log categories are sent and whether metric data is also sent.
@@ -150,8 +150,17 @@ Service Health is your personalized dashboard in the Azure Portal for receiving 
 
 **Goal:** Generate a smarter alert email with Logic App
 
-* Step 1 : ...
-* Step 2: ...
+* Step 1 : Create a Logic App
+
+    * Click the Create a resource button found on the upper left-hand corner of the Azure portal.
+    * Search for and select Logic App. Click the Create button.
+    * Enter the name myLogicApp and select your existing Resource Group. Use your subscription. Use the default location. Check the Pin to Dashboard option. When complete, click Create. ![Create a Logic App](https://docs.microsoft.com/en-us/azure/monitoring-and-diagnostics/media/monitor-quick-resource-metric-alert-portal/create-logic-app-portal.png)
+
+    * The logic app should be pinned to your dashboard. Navigate to the logic app by clicking on it.
+
+* Step 2: Design your Logic App
+
+    * In the Logic App panel, select the Logic App Designer. ![Design your Logic App](https://docs.microsoft.com/en-us/azure/monitoring-and-diagnostics/media/monitor-quick-resource-metric-alert-portal/logic-app-designer.png)
 * Step 3: ...
 * Step 4: ...
 
