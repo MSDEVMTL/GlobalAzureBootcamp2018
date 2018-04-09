@@ -40,7 +40,7 @@ The Activity Log contains several categories of data:
 
 * **Service Health** - This category contains the record of any service health incidents that have occurred in Azure. An example of the type of event you would see in this category is "SQL Azure in East US is experiencing downtime." Service health events come in five varieties: Action Required, Assisted Recovery, Incident, Maintenance, Information, or Security, and only appear if you have a resource in the subscription that would be impacted by the event.
 
-* **Alert** - This category contains the record of all activations of Azure alerts. An example of the type of event you would see in this category is "CPU % on myVM has been over 80 for the past 5 minutes." 
+* **Alert** - This category contains the record of all activations of Azure alerts. An example of the type of event you would see in this category is "CPU % on myVM has been over 80 for the past 5 minutes."
 
 * **Autoscale** - This category contains the record of any events related to the operation of the autoscale engine based on any autoscale settings you have defined in your subscription. An example of the type of event you would see in this category is "Autoscale scale up action failed."
 
@@ -65,14 +65,25 @@ The Activity Log contains several categories of data:
 
 **Scenario**: You are reviewing your Azure subscription bill like you do every month but this time you're seeing a sudden increase of your subscription total. Someone scaled up your service plan from a Free tier to a D1 Shared but you just don't recall that you've made that change.
 
-**Goal:** Query the Activity Log in the Azure portal
+**Goal:** Query the Activity Log using the Azure portal
 
 * Step 1 : Go on Azure portal and choose the Azure Monitor landing page
 * Step 2: Select Activity log the navigation pan
-* Step 3: Use the filter to search changes that occurred during the last month for your service plan.
+* Step 3: Set your filter to identify your service plan then apply
 * Step 4: Observe : A scale was done on [date] by [user].
 
-![Lab 1 Result](Media/UpdateHostingPlan.PNG)
+![Lab 1 Search Result](Media/UpdateHostingPlan.PNG)
+
+Take two minutes to understand what are the available fitlers an options.
+
+* Save queries
+* Export result as CSV
+* Export your activity logs to a storage or Event hub
+* Export to Log Analytics for a more inteligent search capabilities ( see [Getting Started with Queries](https://docs.loganalytics.io/docs/Learn/Cheat-sheets/Legacy-to-new-to-Azure-Log-Analytics-Language))
+* Add an activity log alert directly from a result set
+* Pin your saved query to the a dashboard
+
+![Lab 1 Search](Media/AzureActivitySearch.PNG)
 
 ## Alerts
 
