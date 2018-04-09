@@ -73,19 +73,52 @@ This recommendation is generated for any non-web port that has "any" as source.
 
 ## Step 1 - Oversee the recommendation
 
-# Lab 3 -Enable JIT for remote desktop 
 
-## Step 1 - Oversee the recommendation
+
+# Lab 3 -Enable JIT (Just in Time) for remote desktop 
+
+## Step 1 - Manage virtual machine access using just in time
+
+
+
+1. Open the Security Center dashboard.
+
+2. In the left pane, select Just in time VM access.
 
 ![alt text](media/ASC%20Lab%202_1.png)
 
 ![alt text](media/ASC%20Lab%202_2.png)
 
+The Just in time VM access window opens.
+
 ![alt text](media/ASC%20Lab%202_3.png)
+
+To select the VMs that you want to enable:
+
+1. Under Just in time VM access, select the Recommended tab.
+2. Under VIRTUAL MACHINE, select the VMs that you want to enable. This puts a checkmark next to a VM.
+
+3. Select Enable JIT on VMs.
+4. Select Save.
 
 ![alt text](media/ASC%20Lab%202_4.png)
 
+You can see the default ports that Security Center recommends enabling just in time.
+
+1. Under Just in time VM access, select the Recommended tab.
+2. Under VMs, select a VM. This puts a checkmark next to the VM and opens JIT VM access configuration. This blade displays the default ports.
+
 ![alt text](media/ASC%20Lab%202_5.png)
+
+Requesting access to a VM
+To request access to a VM:
+
+1.Under Just in time VM access, select the Configured tab.
+2.Under VMs, select the VMs that you want to enable access. This puts a checkmark next to a VM.
+3.Select Request access. This opens Request access.
+4.Under Request access, you configure for each VM the ports to open along with the source IP that the port is opened to and the time window for which the port is opened. You can request access only to the ports that are configured in the just in time policy. Each port has a maximum allowed time derived from the just in time policy.
+
+5.Select Open ports.
 
 ![alt text](media/ASC%20Lab%202_6.png)
 
