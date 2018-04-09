@@ -26,6 +26,7 @@ Azure Monitor has 3 categories of monitoring data:
 * Diagnostic logs
 * Metrics
 
+
 ## Activity Logs
 
 The Azure Activity Log is a subscription log that provides insight into subscription-level events that have occurred in Azure.  Using the Activity Log, you can determine the ‘what, who, and when’ for any write operations taken on the resources in your subscription.
