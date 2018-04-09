@@ -77,6 +77,29 @@ This recommendation is generated for any non-web port that has "any" as source.
 
 ## Step 1 - Oversee the recommendation
 
+![alt text](media/ASC%20Lab%202_1.png)
+
+![alt text](media/ASC%20Lab%202_2.png)
+
+![alt text](media/ASC%20Lab%202_3.png)
+
+![alt text](media/ASC%20Lab%202_4.png)
+
+![alt text](media/ASC%20Lab%202_5.png)
+
+![alt text](media/ASC%20Lab%202_6.png)
+
+![alt text](media/ASC%20Lab%201_7.png)
+
+![alt text](media/ASC%20Lab%202_8.png)
+
+![alt text](media/ASC%20Lab%202_9.png)
+
+![alt text](media/ASC%20Lab%202_10.png)
+
+![alt text](media/ASC%20Lab%202_11.png)
+
+![alt text](media/ASC%20Lab%202_12.png)
 # End
 
 
