@@ -130,6 +130,10 @@ Once again, take your time test the impact of your action in the website to this
 
 ## User Flow blade
 
+This blade won't show you any performance problem, but will definitly help you to identify where is your traffic.  Knowing the journey of your user will help you the first make it optimal, and see were your effort will have the biggest impact, but also will help you to know the context. Seeing the flow will help to understand what the user come from and his context.
+
+Take some time to read sme flow. Do you recognize the things you did previously? You can also click on some Step to get more details.
+
 ![UserFlow][UserFlow]
 
 ### Reference
