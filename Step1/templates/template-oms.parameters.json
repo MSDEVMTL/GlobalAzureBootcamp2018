@@ -4,9 +4,6 @@
     "parameters": {
         "sku": {
             "value": "free"
-        },
-        "searchVersion": {
-            "value": 1
         }
     }
 }

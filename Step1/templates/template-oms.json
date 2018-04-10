@@ -14,7 +14,7 @@
             "metadata": {
                 "description": "The base name of the solution. Up to 7 characters."
             }
-        }, 
+        },
         "AppName": {
             "maxLength": 7,
             "type": "string",
@@ -29,16 +29,18 @@
         "sku": {
             "type": "string"
         },
-        "searchVersion": {
-            "type": "int"
+        "uniqueString": {
+            "type": "string",
+            "minLength": 13,
+            "maxLength": 13,
+            "defaultValue": "[uniqueString(resourceGroup().id, resourceGroup().location)]"
         }
     },
     "variables": {
-        "uniqueString": "[uniqueString(subscription().id, resourceGroup().id, resourceGroup().location)]",
-        "baseNamePattern": "[toLower( concat(parameters('appName'), '-', parameters('EnvironmentCode'), '-{role}-', variables('uniqueString')) )]",
+        "baseNamePattern": "[toLower( concat(parameters('appName'), '-', parameters('EnvironmentCode'), '-{role}-', parameters('uniqueString')) )]",
         "baseStorageNamePattern": "[replace( variables('baseNamePattern'), '-', '0' )]",
-        "workspaceName": "[replace(variables('baseNamePattern'),'{role}', 'oms-all')]"
-
+        "workspaceName": "[replace(variables('baseNamePattern'),'{role}', 'oms-all')]",
+        "logAnalyticsName": "[concat('AzureActivity', '(', variables('workspaceName'), ')' )]"
     },
     "resources": [
         {
@@ -51,9 +53,48 @@
                     "name": "[parameters('sku')]"
                 },
                 "features": {
-                    "searchVersion": "[parameters('searchVersion')]"
+                    "searchVersion": 1,
+                    "legacy": 0
                 }
-            }
+            },
+            "resources": [
+                {
+                    "type": "savedSearches",
+                    "name": "NSG Queries",
+                    "apiVersion": "2017-03-15-preview",
+                    "dependsOn": [
+                        "[resourceId('Microsoft.OperationalInsights/workspaces', variables('workspaceName'))]"
+                    ],
+                    "properties": {
+                        "Category": "MyQueries",
+                        "ETag": "*",
+                        "DisplayName": "NSG Modifications",
+                        "Query": "AzureActivity | where ResourceId matches regex \"Microsoft.Network/networkSecurityGroups\"",
+                        "Version": 1
+                    }
+                }
+            ]
+        },
+        {
+            "type": "Microsoft.OperationsManagement/solutions",
+            "name": "[variables('logAnalyticsName')]",
+            "apiVersion": "2015-11-01-preview",
+            "location": "[parameters('location')]",
+            "plan": {
+                "name": "[variables('logAnalyticsName')]",
+                "promotionCode": "",
+                "publisher": "Microsoft",
+                "product": "OMSGallery/AzureActivity"
+            },
+            "properties": {
+                "workspaceResourceId": "[resourceId('Microsoft.OperationalInsights/workspaces', variables('workspaceName'))]",
+                "containedResources": [
+                    "[resourceId('Microsoft.OperationalInsights/workspaces/views', variables('workspaceName'), variables('logAnalyticsName'))]"
+                  ]
+            },
+            "dependsOn": [
+                "[resourceId('Microsoft.OperationalInsights/workspaces', variables('workspaceName'))]"
+            ]
         }
     ]
 }
