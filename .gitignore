@@ -287,5 +287,7 @@ __pycache__/
 *.odx.cs
 *.xsd.cs
 
+.vscode/
+
 # temporary provisioning files
 azuredeploy.parameters.tmp.json
