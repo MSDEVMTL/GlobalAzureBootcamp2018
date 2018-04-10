@@ -77,15 +77,46 @@ Below you got other charts that show you by groups the *Total of Server Requests
 
 ## Application map blade
 
+The more your solution contains resources the more this blade will be interesting. It shows all the relation between the different parts.   Here we can see that our application is also connected to the Application Insights, and two other parts, including one that seems to be in error... but that will be discussed a next lab.  For every component,  have some metrics, and you can dig dipper from each of them. 
+
+When you have multiple application reporting to the same  Application Insight, you can filter down what's displayed in the options (the right panel). Here we don't see any filter because we only have one webApp that is monitored. 
+
+This blade will be very useful to identify the bottle neck component.
+
 ![ApplicationMap][ApplicationMap]
 
 ## Live Metrics Stream blade
+
+The blade is like looking inside the motor of your car while it's turning full speed.  It's incredible the amount of information that you can see, and it's in reel time!  Try to have to windows/ tabs open side by side; one this page and the other with the web App. Looks at the impact of each action in the report...
+
+One thing here that we can notice is that we can see the exception throw by the CreateMEssage (in the top right corner), but we don't see the exception from the  "Let's carsh". Why? 
+
+```csharp
+
+    public ActionResult Error()
+    {
+        try {
+            throw new Exception("As expected it craches!");
+        }
+        catch (Exception ex) {
+            ViewBag.Msg = ex.Message;
+        }
+        return View();
+    }
+
+```
+You can see that the code catches the exception, so it doesn't bubble-up.  This window will only show unmanaged exception.  
 
 ![LiveStream][LiveStream]
 
 ## Failures blade
 
+Another blade to get details on exception and different failures. Very useful. Once again, only unmanaged exception will show here. How to see details about managed exception will be present in a next lab.
+
 ![Failures][Failures]
+
+> **Note:**
+> To know more about how you can bonify you managed eception by using the Application Insights SDK please refer to the [Global Azure BBootcamp 2017 - Step 6 - Analytics using Application Insights](https://github.com/MSDEVMTL/2017-04-22-GlobalAzureBootcamp2017/tree/master/Step%206%20-%20Analytics%20using%20Application%20Insights).
 
 ## Performance blade
 
