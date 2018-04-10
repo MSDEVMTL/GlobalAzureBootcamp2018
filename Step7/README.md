@@ -1,6 +1,6 @@
 ![gablogo][gablogo]
 # Goal
-Step goals
+Debugging in production app with exception snapshot
 
 # Reference
 
