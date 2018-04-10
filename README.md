@@ -26,39 +26,23 @@ At the end of their meeting they agreed on the following:
 
 The team has been assigned a couple of days to find tools & put new processes in place to check all the action items of the list above. Excited, the team will actively start documenting themselves and working on this tomorrow.
 
-<<<<<<< HEAD
 ## Overview of the day
 
-Step   | Title                  | Description
------- |----------------------- |------------
-Step 1 | Provision OMS          | Deploy OMS artifacts using an ARM template that we'll use throughout the day using the Azure Portal.
-Step 2 | Provision environment  | Deploy base artifacts using an ARM template that we'll use throughout the day using the Azure Portal.
-Step 3 | Application Insights 1 | Learn how to use Application Insight to find problem in a running solution.
-Step 4 | Log Analytics          |
-Step 5 | Azure Security Center  |
-Step 6 | App Service            | How to configure remote debugging for Web Apps & Visual Studio 2017
-Step 7 | Application Insights 2 |
-Step 8 | Azure Monitor          | Explore monitoring and troubleshooting with Azure Monitor
-Step 9 | ARM Governance         |
-=======
-## Steps
-
-* Step 0 - [Introduction & Kickoff](./step0/readme.md)
-* Step 1 - [Provision OMS](./step1/readme.md)
-* Step 2 - [Provision environment](./step2/readme.md)
-* Step 3 - [Application Insights 1](./step3/readme.md)
-* Step 4 - [Log Analytics](./step4/readme.md)
-* Step 5 - [Azure Security Center](./step5/readme.md)
-* Step 6 - [App Service](./step6/readme.md)
-* Step 7 - [Application Insights 2](./step7/readme.md)
-* Step 8 - [Azure Monitor](./step8/readme.md)
-* Step 9 - [Azure Resource Manager (ARM) Governance](./step9/readme.md)
->>>>>>> Added steps information in readme
+Step | Tittle | Description
+-----|--------|------------
+[Step 1](./step1/readme.md) | Provision Log Analytics | Deploy Log Analytics artifacts using an ARM template that we'll use throughout the day using the Azure Portal.
+[Step 2](./step2/readme.md) | Provision environment | Deploy base artifacts using an ARM template that we'll use throughout the day using the Azure Portal.
+[Step 3](./step3/readme.md) | Application Insights 1 | Learn how to use Application Insight to find problem in a running solution.
+[Step 4](./step4/readme.md) | Log Analytics |
+[Step 5](./step5/readme.md) | Azure Security Center |
+[Step 6](./step6/readme.md) | App Service | How to configure remote debugging for Web Apps & Visual Studio 2017
+[Step 7](./step7/readme.md) | Application Insights 2 |
+[Step 8](./step8/readme.md) | Azure Monitor | Explore monitoring and troubleshooting with Azure Monitor
+[Step 9](./step9/readme.md) | ARM Governance |
 
 ## Technology Stack for the Global Azure Bootcamp 2018
 
 * Visual Studio IDE (Get VIsual Studio)[https://www.visualstudio.com/vs/]
-* 
 
 ## What you will need before the bootcamp?
 Before the bootcamp, we encourage you to make sure you have all the requirement software so you can concentrate on learning and not running installations.  Make sure you get all the source code and install all the required software.

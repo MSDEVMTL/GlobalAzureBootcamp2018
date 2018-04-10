@@ -1,6 +1,6 @@
 ![gablogo][gablogo]
 # Goal
-Deploy OMS artifacts using an ARM template that we'll use throughout the day using the Azure Portal.
+Deploy Log Analytics (OMS) artifacts using an ARM template that we'll use throughout the day using the Azure Portal.
 
 # Requirements
 Azure PowerShell Module version 5.xx
@@ -39,6 +39,8 @@ A new pane will open, click the **Connect** button
 
 ![connect-subscription-to-log-analytics][connect-subscription-to-log-analytics]
 
+# Reference
+[Log Analytics Documentation](https://docs.microsoft.com/en-us/azure/log-analytics/)
 
 # End
 
