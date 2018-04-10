@@ -136,6 +136,22 @@ Take some time to read sme flow. Do you recognize the things you did previously?
 
 ![UserFlow][UserFlow]
 
+# How much data do you need?
+
+The application used in this demo is pretty simle and small. However, in a reel situation collect "all" the data like that will become a problem. First you will probably hit your quota very quickly and even though your user won't suffer from it, you may miss for information because Application Insights had stop collecting data. Of course, you could decide to go for a bigger plan, and it's certainly worth it. 
+
+I smart way to get the maximum of your plan is by sampling your data. By selecting a fraction of data received from your app to Application Insights service is called Data sampling.
+
+![sampling][sampling]
+
+Let's change the current data sampling to select the amount of sampling at 12.5%. From the Application Insights blade, select the **Usage and estimation cost** option (1). Then on the click  **Data sampling**. Now change it to 12.5%. 
+
+This option can be changed at anytime. So you can bring it back to 100% and trying to understand a bug in production.
+
+## Keep the data
+
+
+
 ### Reference
 
 * [Application Insights](https://azure.microsoft.com/en-us/services/application-insights/)
@@ -157,3 +173,4 @@ Take some time to read sme flow. Do you recognize the things you did previously?
 [Failures]: media/Failures.png "Failures blade"
 [Performance]: media/Performance.png "Performance blade"
 [UserFlow]: media/UserFlow.png "User Flow blade"
+[sampling]: media/sampling.png "Data sampling"
