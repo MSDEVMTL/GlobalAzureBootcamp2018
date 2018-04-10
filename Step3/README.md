@@ -120,6 +120,12 @@ Another blade to get details on exception and different failures. Very useful. O
 
 ## Performance blade
 
+The performance blave is one of the latest additions in the portal (still in Preview in April 2018). Now this is really a good place to look if you wish to get better performance. 
+
+We can see that our current "performance" is pretty stable. We can also see that the slowest requests overall are the `POST Queue/CreateMessage` but that it's called less often then the second one `GET home/DoSOmethingLong`. This last one takes an average of 12.3 second and is called 1,300 times! If you are looking to get the biggest impact, its is definitely that thing you should be working on!
+
+Once again, take your time test the impact of your action in the website to this report. Try to change the Operation time zoom to 95th... 
+
 ![Performance][Performance]
 
 ## User Flow blade
