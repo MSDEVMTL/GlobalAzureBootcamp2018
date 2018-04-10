@@ -144,13 +144,13 @@ I smart way to get the maximum of your plan is by sampling your data. By selecti
 
 ![sampling][sampling]
 
-Let's change the current data sampling to select the amount of sampling at 12.5%. From the Application Insights blade, select the **Usage and estimation cost** option (1). Then on the click  **Data sampling**. Now change it to 12.5%. 
+Let's change the current data sampling to To select the amount of sampling 12.5%. From Application Insights blade, select the **Usage and estimation cost** option (1). Then on the click  **Data sampling**. Now change it to 12.5%. 
 
-This option can be changed at anytime. So you can bring it back to 100% and trying to understand a bug in production.
+This option can be change at anytime. So you can bring it back to 100% and trying to undestand a bug in production.
 
 ## Keep the data
 
-
+Let mention in the introduction slide, all information collected by Application Insghts will by saved in Azure for 90 days. After that that data will be deleted.  A good way to keep all the collected data is to configure a continuous export.  The nice thing about it is tha tit's very easy to do. Click on the **Continuous Export** option (4). 
 
 ### Reference
 
