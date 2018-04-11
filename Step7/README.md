@@ -1,14 +1,4 @@
-![gablogo][gablogo]
-# Goal
-Step goals
+# Things about this Solution
 
-# Reference
-
-# Let's code!
-## Addendum
-
-# End
-
-
-[gablogo]: ../media/logo-2018-500x444.png "Global Azure Bootcamp logo"
+- You should put it in a short path something like `C:\dev\step 0` otherwise VisualStudio will complains the PATH is too long.
 
