@@ -217,6 +217,7 @@
     <Content Include="ApplicationInsights.config">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+    <None Include="Properties\PublishProfiles\gab2018-dev-web-app-eg3vrsaa74hn4 - Web Deploy.pubxml" />
     <None Include="Properties\PublishProfiles\gab2018-dev-web-app-rolawncs63psm - Web Deploy.pubxml" />
     <None Include="Properties\PublishProfiles\Gab2018frank - Web Deploy.pubxml" />
     <None Include="Scripts\jquery-3.1.1.intellisense.js" />
