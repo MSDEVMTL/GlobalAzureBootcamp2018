@@ -30,7 +30,7 @@ namespace WebApp.Controllers
             var waitFor = rnd.Next(500, 5000);
 
             System.Threading.Thread.Sleep(waitFor);
-            var msg = String.Format("You have waited {0} secondes. Sorry about that.", Math.Round(double.Parse(waitFor.ToString()) / 1000, 1));
+            var msg = String.Format("You have waited {0} seconds. Sorry about that.", Math.Round(double.Parse(waitFor.ToString()) / 1000, 1));
 
             ViewBag.Msg = msg;
 
