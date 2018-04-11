@@ -151,6 +151,31 @@ This option can be change at anytime. So you can bring it back to 100% and tryin
 
 Liked mentioned in the introduction slide, all information collected by Application Insghts will by saved in Azure for 90 days. After that that data will be deleted. A good way to keep all the collected data is to configure a continuous export. The nice thing about it is that it's very easy to do. Click on the **Continuous Export** option (4). 
 
+## Bonus
+
+Application Insight can also track the client side. For this to happen, open the solution code and modify the file `Views\Shared\_Layout.cshtml`. Locate the following code:
+
+```javascript
+    <script type = 'text/javascript' >
+        var appInsights=window.appInsights||function(config)
+        {
+            function r(config){ t[config] = function(){ var i = arguments; t.queue.push(function(){ t[config].apply(t, i)})} }
+            var t = { config:config},u=document,e=window,o='script',s=u.createElement(o),i,f;for(s.src=config.url||'//az416426.vo.msecnd.net/scripts/a/ai.0.js',u.getElementsByTagName(o)[0].parentNode.appendChild(s),t.cookie=u.cookie,t.queue=[],i=['Event','Exception','Metric','PageView','Trace','Ajax'];i.length;)r('track'+i.pop());return r('setAuthenticatedUserContext'),r('clearAuthenticatedUserContext'),config.disableExceptionTracking||(i='onerror',r('_'+i),f=e[i],e[i]=function(config, r, u, e, o) { var s = f && f(config, r, u, e, o); return s !== !0 && t['_' + i](config, r, u, e, o),s}),t
+        }({
+            instrumentationKey: 'YOUR_INSTRUMENTATION_KEY_HERE'
+        });
+        
+        window.appInsights=appInsights;
+        appInsights.trackPageView();
+    </script>
+```
+Replace the string `YOUR_INSTRUMENTATION_KEY_HERE` with `@Microsoft.ApplicationInsights.Extensibility.TelemetryConfiguration.Active.InstrumentationKey`
+
+Deploy your application and once it's deployed, navigate the website.
+Wait a little bit and you should see in the Browser blade some statistics about the client side of your application. This can be a gem when it comes to getting performance about lengthy Ajax request calls and client side (browser) exceptions.
+
+![browser][browser]
+
 ### Reference
 
 * [Application Insights](https://azure.microsoft.com/en-us/services/application-insights/)
@@ -173,3 +198,4 @@ Liked mentioned in the introduction slide, all information collected by Applicat
 [Performance]: media/Performance.png "Performance blade"
 [UserFlow]: media/UserFlow.png "User Flow blade"
 [sampling]: media/sampling.png "Data sampling"
+[browser]: media/browser.png "Browser blade"
