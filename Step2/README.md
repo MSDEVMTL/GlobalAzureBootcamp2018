@@ -10,7 +10,7 @@ In an Administrator PowerShell console window, type:
 `Install-Module -Name AzureRM -RequiredVersion 5.6.0 -Force`
 
 # Let's code!
-## Provision OMS
+## Provision environment
 Open a PowerShell console and type the following:
 
 `Login-AzureRmAccount`
