@@ -5,6 +5,28 @@ Customers adopting Microsoft Azure need to take into consideration the opportuni
 
 Understanding key challenges and considerations over those resources can help you stay compliant with your internal standards and service level agreements.
 
+## Role Based Access Control (RBAC)
+ARM provides role-based access control, integrating with the Azure Active Directory directory associated with your subscription.  This allows you to limit access to resource groups or resources to specific users or groups.
+
+You can create a custom role in Azure Role-Based Access Control (RBAC) if none of the built-in roles meet your specific access needs. Custom roles can be created using Azure PowerShell, Azure Command-Line Interface (CLI), and the REST API. Just like built-in roles, you can assign custom roles to users, groups, and applications at subscription, resource group, and resource scopes. Custom roles are stored in an Azure AD tenant and can be shared across subscriptions.
+
+![RBAC][RBAC]
+
+## Resource Tags
+Resource tags to your Azure resources to logically organize them by categories.Each tag consists of a name and a value. For example, you can apply the name "Environment" and the value "Production" to all the resources in production.
+
+**Tags and billing**
+You can use tags to group your billing data. For example, if you are running multiple VMs for different teams, use the tags to group usage by cost center. You can also use tags to categorize costs by runtime environment, such as the billing usage for VMs running in the production environment.
+
+The following limitations apply to tags:
+- Subscription-wide
+- Each resource can have up to 15 tags
+- Name <=512 | Value <=256
+- No inheritance
+
+
+## Azure Policies
+
 Policy definitions used by Azure Policy enables you to enforce a desirable state of newly created services or to audit the current infrastructure. Policy definition is expressed in JSON format and divided into five elements: mode, parameters, display name, description and policy rule.
 
 **Mode**
@@ -86,6 +108,7 @@ New-AzureRmPolicyAssignment -Name "Apply default tag and value" -PolicyDefinitio
 * [Create a policy assignment to identify non-compliant resources in your Azure environment](https://docs.microsoft.com/en-us/azure/azure-policy/assign-policy-definition)
 * [Governance in Azure](https://docs.microsoft.com/en-us/azure/security/governance-in-azure)
 
+[RBAC]: ./media/azureRBAC.png "Azure RBAC"
 [policyRule]: ./media/policyRule.png "Azure Policy Rule"
 [policyRuleEffect]: ./media/policyRuleEffect.png "Azure Policy Rule Effect"
 [policyAssignment]: ./media/policyAssignment.png "Azure Policy Assignment"
