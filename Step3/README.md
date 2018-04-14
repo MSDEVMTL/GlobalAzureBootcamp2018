@@ -23,7 +23,7 @@ In the new window that appears, copy and paste the following code.
 ```csharp
 using System;
 
-public static async void Run(TimerInfo myTimer, TraceWriter log)
+public async static Task Run(TimerInfo myTimer, TraceWriter log)
 {
     log.Info($"C# Timer trigger function executed at: {DateTime.Now}");
 
