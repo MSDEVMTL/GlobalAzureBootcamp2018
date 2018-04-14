@@ -70,6 +70,12 @@ alt="IMAGE ALT TEXT HERE" width="240" height="180" border="10" /></a>
 
 
 ## The Kudu tools
+Take the time to watch this video that shows both tools:
+
+<a href="http://www.youtube.com/watch?feature=player_embedded&v=BbtPyvEdg3s" target="_blank"><img src="http://img.youtube.com/vi/BbtPyvEdg3s/0.jpg" 
+alt="IMAGE ALT TEXT HERE" width="240" height="180" border="10" /></a>
+
+
 ### Step 1 - Launch the Kudu tools
 There's a little known cool feature called Kudu that provides a ton of helpful information.  In the Development Tools section of our App Service, click on Advanced Tools and then click Go.
 
@@ -110,28 +116,30 @@ From there, you can edit the files directly.  **It is VERY IMPORTANT that you st
 
 ![alt text][Monaco2]
 
+More important, point out that edits are automatically saved, there's no Save button.  This can lead to disastreous results if the file is saved in the middle of your edit.   **It is VERY IMPORTANT that you state that this!**  One way to easily demonstrate this side effect is by editing the Web.config file.  If you add a new App Setting key, partial changes will be saved causing an error.
+
 # End
 
 
 [gablogo]: ../media/logo-2018-500x444.png "Global Azure Bootcamp logo"
 
-[Debug00]: https://raw.githubusercontent.com/MSDEVMTL/2018-04-21-GlobalAzureBootcamp2018/master/Step%206%20-%20App%20Service/media/debug00.png "Debug"
-[Debug0]: https://raw.githubusercontent.com/MSDEVMTL/2018-04-21-GlobalAzureBootcamp2018/master/Step%206%20-%20App%20Service/media/debug0.png "Debug"
-[Debug1]: https://raw.githubusercontent.com/MSDEVMTL/2018-04-21-GlobalAzureBootcamp2018/master/Step%206%20-%20App%20Service/media/debug1.png "Debug"
-[Debug10]: https://raw.githubusercontent.com/MSDEVMTL/2018-04-21-GlobalAzureBootcamp2018/master/Step%206%20-%20App%20Service/media/debug10.png "Debug"
-[Debug11]: https://raw.githubusercontent.com/MSDEVMTL/2018-04-21-GlobalAzureBootcamp2018/master/Step%206%20-%20App%20Service/media/debug11.png "Debug"
-[Debug2]: https://raw.githubusercontent.com/MSDEVMTL/2018-04-21-GlobalAzureBootcamp2018/master/Step%206%20-%20App%20Service/media/debug2.png "Debug"
-[Debug3]: https://raw.githubusercontent.com/MSDEVMTL/2018-04-21-GlobalAzureBootcamp2018/master/Step%206%20-%20App%20Service/media/debug3.png "Debug"
-[Debug4]: https://raw.githubusercontent.com/MSDEVMTL/2018-04-21-GlobalAzureBootcamp2018/master/Step%206%20-%20App%20Service/media/debug4.png "Debug"
-[Debug5]: https://raw.githubusercontent.com/MSDEVMTL/2018-04-21-GlobalAzureBootcamp2018/master/Step%206%20-%20App%20Service/media/debug5.png "Debug"
+[Debug00]: https://raw.githubusercontent.com/MSDEVMTL/2018-04-21-GlobalAzureBootcamp2018/master/Step6/media/debug00.png "Debug"
+[Debug0]: https://raw.githubusercontent.com/MSDEVMTL/2018-04-21-GlobalAzureBootcamp2018/master/Step6/media/debug0.png "Debug"
+[Debug1]: https://raw.githubusercontent.com/MSDEVMTL/2018-04-21-GlobalAzureBootcamp2018/master/Step6/media/debug1.png "Debug"
+[Debug10]: https://raw.githubusercontent.com/MSDEVMTL/2018-04-21-GlobalAzureBootcamp2018/master/Step6/media/debug10.png "Debug"
+[Debug11]: https://raw.githubusercontent.com/MSDEVMTL/2018-04-21-GlobalAzureBootcamp2018/master/Step6/media/debug11.png "Debug"
+[Debug2]: https://raw.githubusercontent.com/MSDEVMTL/2018-04-21-GlobalAzureBootcamp2018/master/Step6/media/debug2.png "Debug"
+[Debug3]: https://raw.githubusercontent.com/MSDEVMTL/2018-04-21-GlobalAzureBootcamp2018/master/Step6/media/debug3.png "Debug"
+[Debug4]: https://raw.githubusercontent.com/MSDEVMTL/2018-04-21-GlobalAzureBootcamp2018/master/Step6/media/debug4.png "Debug"
+[Debug5]: https://raw.githubusercontent.com/MSDEVMTL/2018-04-21-GlobalAzureBootcamp2018/master/Step6/media/debug5.png "Debug"
 
-[Monaco1]: https://raw.githubusercontent.com/MSDEVMTL/2018-04-21-GlobalAzureBootcamp2018/master/Step%206%20-%20App%20Service/media/Monaco1.png "Monaco"
-[Monaco2]: https://raw.githubusercontent.com/MSDEVMTL/2018-04-21-GlobalAzureBootcamp2018/master/Step%206%20-%20App%20Service/media/Monaco2.png "Monaco"
+[Monaco1]: https://raw.githubusercontent.com/MSDEVMTL/2018-04-21-GlobalAzureBootcamp2018/master/Step6/media/Monaco1.png "Monaco"
+[Monaco2]: https://raw.githubusercontent.com/MSDEVMTL/2018-04-21-GlobalAzureBootcamp2018/master/Step6/media/Monaco2.png "Monaco"
 
-[Kudu0]: https://raw.githubusercontent.com/MSDEVMTL/2018-04-21-GlobalAzureBootcamp2018/master/Step%206%20-%20App%20Service/media/Kudu0.png "Kudu"
-[Kudu1]: https://raw.githubusercontent.com/MSDEVMTL/2018-04-21-GlobalAzureBootcamp2018/master/Step%206%20-%20App%20Service/media/Kudu1.png "Kudu"
-[Kudu2]: https://raw.githubusercontent.com/MSDEVMTL/2018-04-21-GlobalAzureBootcamp2018/master/Step%206%20-%20App%20Service/media/Kudu2.png "Kudu"
-[Kudu3]: https://raw.githubusercontent.com/MSDEVMTL/2018-04-21-GlobalAzureBootcamp2018/master/Step%206%20-%20App%20Service/media/Kudu3.png "Kudu"
-[Kudu4]: https://raw.githubusercontent.com/MSDEVMTL/2018-04-21-GlobalAzureBootcamp2018/master/Step%206%20-%20App%20Service/media/Kudu4.png "Kudu"
-[Kudu5]: https://raw.githubusercontent.com/MSDEVMTL/2018-04-21-GlobalAzureBootcamp2018/master/Step%206%20-%20App%20Service/media/Kudu4-2.png "Kudu"
-[Kudu6]: https://raw.githubusercontent.com/MSDEVMTL/2018-04-21-GlobalAzureBootcamp2018/master/Step%206%20-%20App%20Service/media/Kudu5.png "Kudu"
+[Kudu0]: https://raw.githubusercontent.com/MSDEVMTL/2018-04-21-GlobalAzureBootcamp2018/master/Step6/media/Kudu0.png "Kudu"
+[Kudu1]: https://raw.githubusercontent.com/MSDEVMTL/2018-04-21-GlobalAzureBootcamp2018/master/Step6/media/Kudu1.png "Kudu"
+[Kudu2]: https://raw.githubusercontent.com/MSDEVMTL/2018-04-21-GlobalAzureBootcamp2018/master/Step6/media/Kudu2.png "Kudu"
+[Kudu3]: https://raw.githubusercontent.com/MSDEVMTL/2018-04-21-GlobalAzureBootcamp2018/master/Step6/media/Kudu3.png "Kudu"
+[Kudu4]: https://raw.githubusercontent.com/MSDEVMTL/2018-04-21-GlobalAzureBootcamp2018/master/Step6/media/Kudu4.png "Kudu"
+[Kudu5]: https://raw.githubusercontent.com/MSDEVMTL/2018-04-21-GlobalAzureBootcamp2018/master/Step6/media/Kudu4-2.png "Kudu"
+[Kudu6]: https://raw.githubusercontent.com/MSDEVMTL/2018-04-21-GlobalAzureBootcamp2018/master/Step6/media/Kudu5.png "Kudu"
