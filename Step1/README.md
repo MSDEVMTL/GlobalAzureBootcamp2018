@@ -3,15 +3,28 @@
 Deploy Log Analytics (OMS) artifacts using an ARM template that we'll use throughout the day using the Azure Portal.
 
 # Requirements
-Azure PowerShell Module version 5.xx
+* [Azure PowerShell Module version 5.xx](https://docs.microsoft.com/en-us/powershell/azure/install-azurerm-ps?view=azurermps-5.7.0)
+* [Git for Windows](https://git-scm.com/download/win)
 
 In an Administrator PowerShell console window, type:
 
 `Install-Module -Name AzureRM -RequiredVersion 5.6.0 -Force`
 
 # Let's code!
-## Provision OMS
+## Clone repository
+Ensure you have Git for Windows installed.
+
 Open a PowerShell console and type the following:
+
+``` powershell
+git clone https://github.com/MSDEVMTL/GlobalAzureBootcamp2018.git c:\gab2018\
+
+Set-Location c:\gab2018\step1\
+```
+![git-clone-repository][git-clone-repository]
+
+## Provision OMS
+Still in the PowerShell console, type the following:
 
 `Login-AzureRmAccount`
 
@@ -24,6 +37,14 @@ Select the desired subscription using:
 Invoke the provisioning by typing:
 
 `& .\Invoke-Provisioning.ps1`
+
+> ### NOTE: Log Analytics changed his pricing model in April 2018. If you encounter an error in the step above saying:
+> 
+> *Pricing tier doesn't match the subscription billing model*
+>
+> Browse to the file `template-oms.parameters.json` and change the value of the `Sku` parameter from **Free** to **PerGB2018** (or the opposite) and run the provisioning again.
+![log-analyics-new-pricing-model-error][log-analyics-new-pricing-model-error]
+
 
 After provisioning is finished, navigate to the [Azure portal](https://portal.azure.com)
 
@@ -48,3 +69,5 @@ A new pane will open, click the **Connect** button
 [search-oms-in-portal]: media/search-oms-in-portal.png "Search for OMS in Azure portal"
 [browse-to-subscription-to-connect]: media/browse-to-subscription-to-connect.png "Navigate to subscription to connect to Log Analytics"
 [connect-subscription-to-log-analytics]: media/connect-subscription-to-log-analytics.png "Connect subscription to Log Analytics"
+[log-analyics-new-pricing-model-error]: media/log-analyics-new-pricing-model-error.png "Error when provisioning Free sku under April 2018 new pricing model"
+[git-clone-repository]: media/git-clone-repository.png "Git clone MSDEVMTL GAB 2018 repository"

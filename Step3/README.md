@@ -10,9 +10,31 @@ Sometimes, it helps when we get started to know what we are looking for. In this
 
 Once the function is in place we will also create some traffic to the site by navigating around. One method has a `wait` in it and is intented to simulate work. Let's see if Application Insight will help us pinpoint it. 
 
+## Setup the client side tracking
+
+First, open the solution code and modify the file `Views\Shared\_Layout.cshtml`. Locate the following code:
+
+```javascript
+    <script type = 'text/javascript' >
+        var appInsights=window.appInsights||function(config)
+        {
+            function r(config){ t[config] = function(){ var i = arguments; t.queue.push(function(){ t[config].apply(t, i)})} }
+            var t = { config:config},u=document,e=window,o='script',s=u.createElement(o),i,f;for(s.src=config.url||'//az416426.vo.msecnd.net/scripts/a/ai.0.js',u.getElementsByTagName(o)[0].parentNode.appendChild(s),t.cookie=u.cookie,t.queue=[],i=['Event','Exception','Metric','PageView','Trace','Ajax'];i.length;)r('track'+i.pop());return r('setAuthenticatedUserContext'),r('clearAuthenticatedUserContext'),config.disableExceptionTracking||(i='onerror',r('_'+i),f=e[i],e[i]=function(config, r, u, e, o) { var s = f && f(config, r, u, e, o); return s !== !0 && t['_' + i](config, r, u, e, o),s}),t
+        }({
+            instrumentationKey: 'YOUR_INSTRUMENTATION_KEY_HERE'
+        });
+        
+        window.appInsights=appInsights;
+        appInsights.trackPageView();
+    </script>
+```
+Replace the string `YOUR_INSTRUMENTATION_KEY_HERE` with `@Microsoft.ApplicationInsights.Extensibility.TelemetryConfiguration.Active.InstrumentationKey`
+
+Deploy your application to the App Service **gab2018-dev-UNIQUE_STRING**
+
 ## Create an Azure Function
 
-First, let's go in the Function App. Navigate to the Azure Portal ((portal.azure.com)[https://portal.azure.com]) and select the `ResourceGroup` **gab2018-dev**. Then select the Function App starting by `gab2018-dev-func-app-  `.
+Second, let's go in the Function App. Navigate to the Azure Portal ((portal.azure.com)[https://portal.azure.com]) and select the `ResourceGroup` **gab2018-dev**. Then select the Function App starting by `gab2018-dev-func-app-  `.
 
 ![CreateAzureFunction][CreateAzureFunction]
 
@@ -129,11 +151,17 @@ Once again, take your time to test the impact of your action(s) in the website a
 
 ## User Flow blade
 
-This blade won't show you any performance problems, but will definitly help you to identify where is your traffic. Knowing the journey of your users will help you concentrate your effort to make your application run as optimal as it should. It will also make you realize were your efforts will have the biggest impact, but also will help you to know the overall context. Seeing the flow will help to understand what the user intent is and his context.
+This blade won't show you any performance problems, but will definitely help you to identify where is your traffic. Knowing the journey of your users will help you concentrate your effort to make your application run as optimal as it should. It will also make you realize were your efforts will have the biggest impact, but also will help you to know the overall context. Seeing the flow will help to understand what the user intent is and his context.
 
 Take some time to visualize some flow. Do you recognize the things you did previously? You can also click on some Step to get more details.
 
 ![UserFlow][UserFlow]
+
+## Browser blade
+
+Application Insight can also track the client side. The Browser blade contains statistics about the client side of your application. This can be a gem when it comes to getting information about the performance and behavior of your application as a user sees it, such as lengthy Ajax request calls and client side (browser) exceptions.
+
+![browser][browser]
 
 # How much data do you need?
 
@@ -150,31 +178,6 @@ This option can be change at anytime. So you can bring it back to 100% and tryin
 ## Keep the data
 
 Liked mentioned in the introduction slide, all information collected by Application Insghts will by saved in Azure for 90 days. After that that data will be deleted. A good way to keep all the collected data is to configure a continuous export. The nice thing about it is that it's very easy to do. Click on the **Continuous Export** option (4). 
-
-## Bonus
-
-Application Insight can also track the client side. For this to happen, open the solution code and modify the file `Views\Shared\_Layout.cshtml`. Locate the following code:
-
-```javascript
-    <script type = 'text/javascript' >
-        var appInsights=window.appInsights||function(config)
-        {
-            function r(config){ t[config] = function(){ var i = arguments; t.queue.push(function(){ t[config].apply(t, i)})} }
-            var t = { config:config},u=document,e=window,o='script',s=u.createElement(o),i,f;for(s.src=config.url||'//az416426.vo.msecnd.net/scripts/a/ai.0.js',u.getElementsByTagName(o)[0].parentNode.appendChild(s),t.cookie=u.cookie,t.queue=[],i=['Event','Exception','Metric','PageView','Trace','Ajax'];i.length;)r('track'+i.pop());return r('setAuthenticatedUserContext'),r('clearAuthenticatedUserContext'),config.disableExceptionTracking||(i='onerror',r('_'+i),f=e[i],e[i]=function(config, r, u, e, o) { var s = f && f(config, r, u, e, o); return s !== !0 && t['_' + i](config, r, u, e, o),s}),t
-        }({
-            instrumentationKey: 'YOUR_INSTRUMENTATION_KEY_HERE'
-        });
-        
-        window.appInsights=appInsights;
-        appInsights.trackPageView();
-    </script>
-```
-Replace the string `YOUR_INSTRUMENTATION_KEY_HERE` with `@Microsoft.ApplicationInsights.Extensibility.TelemetryConfiguration.Active.InstrumentationKey`
-
-Deploy your application and once it's deployed, navigate the website.
-Wait a little bit and you should see in the Browser blade some statistics about the client side of your application. This can be a gem when it comes to getting performance about lengthy Ajax request calls and client side (browser) exceptions.
-
-![browser][browser]
 
 ### Reference
 
