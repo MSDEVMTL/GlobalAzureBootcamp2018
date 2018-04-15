@@ -27,7 +27,16 @@
             "defaultValue": "East US"
         },
         "sku": {
-            "type": "string"
+            "type": "String",
+            "allowedValues": [
+                "Free",
+                "Standalone",
+                "PerNode",
+                "PerGB2018"
+            ],
+            "metadata": {
+                "description": "Service Tier: Free, Standalone, PerNode, or PerGB2018"
+            }
         },
         "uniqueString": {
             "type": "string",
@@ -90,7 +99,7 @@
                 "workspaceResourceId": "[resourceId('Microsoft.OperationalInsights/workspaces', variables('workspaceName'))]",
                 "containedResources": [
                     "[resourceId('Microsoft.OperationalInsights/workspaces/views', variables('workspaceName'), variables('logAnalyticsName'))]"
-                  ]
+                ]
             },
             "dependsOn": [
                 "[resourceId('Microsoft.OperationalInsights/workspaces', variables('workspaceName'))]"

@@ -35,7 +35,7 @@ Step | Tittle | Description
 [Step 3](./step3/readme.md) | Application Insights 1 | Learn how to use Application Insight to find problem in a running solution.
 [Step 4](./step4/readme.md) | Log Analytics | Configuring Key Vault Analytics solution and creating alerts.
 [Step 5](./step5/readme.md) | Azure Security Center |
-[Step 6](./step6/readme.md) | App Service | How to configure remote debugging for Web Apps & Visual Studio 2017.
+[Step 6](./step6/readme.md) | App Service | How to configure remote debugging for Web Apps & Visual Studio 2017 and how to edit in production.
 [Step 7](./step7/readme.md) | Application Insights 2 |
 [Step 8](./step8/readme.md) | Azure Monitor | Explore monitoring and troubleshooting with Azure Monitor.
 [Step 9](./step9/readme.md) | ARM Governance |

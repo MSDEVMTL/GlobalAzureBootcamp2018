@@ -266,7 +266,7 @@
                     "name": "appsettings",
                     "apiVersion": "2015-08-01",
                     "properties": {
-                        "appInsightInstrumentationKey": "[reference(resourceId('Microsoft.Insights/components', variables('config').appInsights.name), '2014-04-01').InstrumentationKey]"
+                        "APPINSIGHTS_INSTRUMENTATIONKEY": "[reference(resourceId('Microsoft.Insights/components', variables('config').appInsights.name), '2015-05-01').InstrumentationKey]"
                     },
                     "dependsOn": [
                         "[resourceId('Microsoft.Web/sites', variables('config').webApp.name)]"
@@ -294,7 +294,9 @@
             "apiVersion": "2014-04-01",
             "location": "[variables('config').appInsights.location]",
             "kind": "[variables('config').appInsights.kind]",
-            "tags": {},
+            "tags": {
+                "[concat('hidden-link:', variables('config').appInsights.linkedApplicationId)]": "Resource"
+            },
             "properties": {
                 "ApplicationId": "[variables('config').appInsights.linkedApplicationId]"
             },
