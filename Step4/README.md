@@ -128,7 +128,7 @@ Go to the `ResourceGroup` **gab2018-dev**, select the Log Analytics resource **g
 
 Select **Alerts** and ensure the alert was properly created.
 
-![step4_020][step4_20]
+![step4_020][step4_020]
 
 ## Test and receive an alert
 
