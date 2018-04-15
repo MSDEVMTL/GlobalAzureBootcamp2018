@@ -14,6 +14,11 @@ namespace WebApp.Controllers
         [HttpPost]
         public ActionResult Index(YugeModel model)
         {
+            if (string.IsNullOrEmpty(model.Value1) || string.IsNullOrEmpty(model.Value2))
+            {
+                return this.View();
+            }
+
             throw new NotImplementedException();
         }
     }
