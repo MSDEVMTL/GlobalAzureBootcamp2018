@@ -3,7 +3,7 @@
 Deploy base artifacts using an ARM template that we'll use throughout the day using the Azure Portal.
 
 # Requirements
-* Azure PowerShell Module version 5.xx
+* [Azure PowerShell Module version 5.xx](https://docs.microsoft.com/en-us/powershell/azure/install-azurerm-ps?view=azurermps-5.7.0)
 * Visual Studio 2017
 
 In an Administrator PowerShell console window, type:
