@@ -31,8 +31,24 @@ Debugging in production app with exception snapshot
     </Add>
   </TelemetryProcessors>
 ```
+4. Add code to generate an exception from you app
+5. Publish the new version of your app
+6. Generate an exception by going to your app
+7. After a few exceptions go to the Azure portal in the Application insights blade
+8. From the exception blade you will eventually see your generated exceptions with a snapshot logo ![alt text][snapshotdebugging]
 
+**Snapshots can potentially contain personal and other sensitive information in variable and parameter values.**
+
+9. VS2017 Entreprise: You could download the diagnostic session to view in the context of VisualStudio and you application code
 # Reference
+Exception Snapshot:  https://docs.microsoft.com/en-us/azure/application-insights/app-insights-snapshot-debugger
+
+Snapshot Debugger:
+https://docs.microsoft.com/en-ca/visualstudio/debugger/debug-live-azure-applications
+
+# Optional Lab
+Snapshot debugger in live apps
+
 
 # Let's code!
 ## Addendum
@@ -41,4 +57,5 @@ Debugging in production app with exception snapshot
 
 
 [gablogo]: ../media/logo-2018-500x444.png "Global Azure Bootcamp logo"
+[snapshotdebugging]: https://docs.microsoft.com/en-us/azure/application-insights/media/app-insights-snapshot-debugger/snapshot-on-exception.png
 
