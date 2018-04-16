@@ -66,7 +66,7 @@ When complete, return to the Azure Security Center under Compute and the Recomme
 
 ![alt text](media/ASC%20Lab%201_9.png)
 
-This article showed you how to implement the Security Center recommendation "Install Endpoint Protection." To learn more about enabling Microsoft Antimalware in Azure, see the following document:
+This lab showed you how to implement the Security Center recommendation "Install Endpoint Protection." To learn more about enabling Microsoft Antimalware in Azure, see the following links:
 
 * [Manage endpoint protection issues with Azure Security Center](https://docs.microsoft.com/en-us/azure/security-center/security-center-install-endpoint-protection)  
 * [Microsoft Antimalware for Azure Cloud Services and Virtual Machines](https://docs.microsoft.com/en-us/azure/security/azure-security-antimalware)  
