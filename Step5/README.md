@@ -81,19 +81,21 @@ This recommendation is generated for any non-web port that has "any" as source.
 ## Step 1 - Oversee the recommendation
 
 
+
 # Lab 3 -Enable JIT (Just in Time) for remote desktop 
+
+Just in time virtual machine (VM) access can be used to lock down inbound traffic to your Azure VMs, reducing exposure to attacks while providing easy access to connect to VMs when needed.
 
 ## Step 1 - Manage virtual machine access using just in time
 
 
+ Open the **Security Center** dashboard.
 
-Open the Security Center dashboard.
-
-In the left pane, select Just in time VM access.
+In the left pane, select **Just in time VM access.**
 
 ![alt text](media/ASC%20Lab%202_1.png)
 
-The Just in time VM access blade will open.
+The **Just in time VM access** blade will open.
 
 ![alt text](media/ASC%20Lab%202_2.png)
 
@@ -113,11 +115,11 @@ Once complete.
 
 To select the VMs that you want to enable:
 
-1. Under Just in time VM access, select the Recommended tab.
-2. Under VIRTUAL MACHINE, select the VMs that you want to enable. This puts a checkmark next to a VM.
+1. Under **Just in time VM access** , select the **Recommended** tab.
+2. Under **VIRTUAL MACHINE**, select the VMs that you want to enable. This puts a checkmark next to a VM.
 
-3. Select Enable JIT on VMs.
-4. Select Save.
+3. Select **Enable JIT on VMs.**
+4. Select**Save.**
 
 
 
@@ -153,6 +155,19 @@ To request access to a VM:
 ![alt text](media/ASC%20Lab%202_11.png)
 
 ![alt text](media/ASC%20Lab%202_12.png)
+
+# Resources
+
+To learn more about Security Center, see the following:
+
+Setting security policies — Learn how to configure security policies for your Azure subscriptions and resource groups.
+Managing security recommendations — Learn how recommendations help you protect your Azure resources.
+Security health monitoring — Learn how to monitor the health of your Azure resources.
+Managing and responding to security alerts — Learn how to manage and respond to security alerts.
+Monitoring partner solutions — Learn how to monitor the health status of your partner solutions.
+Security Center FAQ — Find frequently asked questions about using the service.
+Azure Security blog — Find blog posts about Azure security and compliance.
+
 # End
 
 
