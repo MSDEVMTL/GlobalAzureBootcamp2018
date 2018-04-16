@@ -101,11 +101,9 @@ Take two minutes to understand what are the available filters and options.
 * Add an activity log alert directly from a result set
 * Pin your saved query to the a dashboard
 
-**Don't forget to start back your Web App**
-
 ## Part 2 - Alerts
 
-You can receive an alert based on monitoring metrics for, or events on, your Azure services.
+You can receive an alert based on metrics or events of your Azure services.
 
 * **Metric values** - The alert triggers when the value of a specified metric crosses a threshold you assign in either direction. That is, it triggers both when the condition is first met and then afterwards when that condition is no longer being met.
 * **Activity log events** - An alert can be triggered on every event, or, only when certain event occurs.
@@ -128,18 +126,30 @@ Azure Monitor now supports a new metric alert type. The newer alerts differ from
 
 ### Part 2 Lab - Generate an alert when you app service plan is updated ( 5 minutes )
 
-**Scenario**: In the previous lab we saw how easy it is to use the activity log to monitor changes in our Azure resources. Let's now generate an Alert when an update is done to your app service plan.
+**Scenario**: In the previous lab we saw how easy it is to use the activity log to monitor changes in our Azure resources. Let's now generate an Alert when an update is done to your Web App.
 
 **Goal:** Generate a new alert when your service plan is updated.
 
 * Step 1: From the navigation pane in Azure Monitor, select **Alert**
 * Step 2: Using the top menu, click **+ New Alert Rule**
 * Step 3: Select your app Service Plan as the target of your alert.
-* Step 4: Use **Create or Update App Service Plan** as criteria.
-* Step 5: Type a name, a description and a severity for your alert. ex: **GAB 2018 App service plan updates** and **A change has been made to your service plan**, **Severity 3**
+
+![AzureMonitorAlertTarget](Media/AzureMonitorAlertTarget.PNG)
+
+* Step 4: Use **Create or Update Web App (Site)** as criteria.
+
+![AzureMonitorAlertCriteria](Media/AzureMonitorAlertCriteria.PNG)
+
+* Step 5: Type a name, a description and a severity for your alert. ex: **GAB 2018 Web App updates** and **A change has been made to your Web App**
+
+![AzureMonitorAlertDetails](Media/AzureMonitorAlertDetails)
+
 * Step 6: Use the Action Group generated in the previous step ( or create a new one)
+
+![AzureMonitorAlertActionGroup](Media/AzureMonitorAlertActionGroup.PNG)
+
 * Step 7: Review your alert definition and save. Note: Alert could take around 5 minutes to be activated.
-* Step 8: Let's now change your App Service Plan back to Free tier.
+* Step 8: Let's now start back your Web App.
 
 This last step should generate an alert to your action group.
 
