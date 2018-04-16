@@ -148,7 +148,8 @@
             "name": "[replace(variables('baseNamePattern'),'{role}', 'vnet-all')]",
             "machineName": "[concat('gab2018-', parameters('environmentCode'))]", 
             "location": "[variables('defaultResourceLocation')]",
-            "subnetName": "lan"
+            "subnetName": "lan",
+            "nsgLanName": "[replace(variables('baseNamePattern'),'{role}', 'nsg-lan')]"
         },
 
         "config": {
@@ -316,6 +317,16 @@
                     "domainNameLabel": "[variables('config').vmPdf.name]"
                 }
             }
+        },
+        {
+            "apiVersion": "2015-06-15",
+            "type": "Microsoft.Network/networkSecurityGroups",
+            "name": "[variables('config').vnet.nsgLanName]",
+            "location": "[variables('config').vnet.location]",
+            "tags": {},
+            "properties": {
+                "securityRules" : []
+             }
         },
         {
             "apiVersion": "2015-06-15",
