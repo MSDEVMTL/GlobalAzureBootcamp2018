@@ -20,15 +20,27 @@ Where this falls down is where you want to be able to monitor multiple resources
 
 At the heart of Azure Monitor is a telemetry pipeline that connects to your Azure services. And there are over 30 services that you can pull data from now. And the list keeps growing.
 
-Azure Monitor has 3 categories of monitoring data:
+# Walkthrough
+
+In the portal, navigate to All services and find the Monitor option. Click the star icon to add this option to your favorites list so that it is always easily accessible from the left-hand navigation bar.
+
+![Azure Monitor](https://docs.microsoft.com/en-us/azure/monitoring-and-diagnostics/media/monitoring-get-started/monitor-more-services.png)
+
+Click the Monitor option to open up the Monitor page. This page brings together all your monitoring settings and data into one consolidated view. First open the **Subscription Summary** section. The summary shows you a rollup of all monitoring alerts, errors, and service health advisories that relate to resources in your subscription.
+
+![Azure Monitor](Media/AzureMonitorSubscriptionSummary.PNG)
+
+## Azure Monitor has 3 categories of monitoring data
 
 * Activity logs
 * Diagnostic logs
 * Metrics
 
-## Activity Logs
+## Part 1 - Activity Logs
 
-The Azure Activity Log is a subscription log that provides insight into subscription-level events that have occurred in Azure. Using the Activity Log, you can determine the ‘what, who, and when’ for any write operations taken on the resources in your subscription.
+![Azure Monitor](Media/AzureMonitorActivityLog.PNG)
+
+The activity log describes all operations performed on resources in your subscription. Using the Activity Log, you can determine the ‘what, who, and when’ for any create, update, or delete operations on resources in your subscription. For example, the Activity Log tells you when a web app was stopped and who stopped it. Activity Log events are stored in the platform and available to query for 90 days.
 
 The Azure Activity Log is primarily for activities that occur in Azure Resource Manager. It does not track resources using the Classic model.
 
@@ -52,29 +64,35 @@ The Activity Log contains several categories of data:
 
 ![What can you do with Activity log?](https://docs.microsoft.com/en-us/azure/monitoring-and-diagnostics/media/monitoring-overview-activity-logs/activity_log_overview_v3.png )
 
-* Query and view it in the ***Azure portal***.
+* Query and view it in the **Azure portal**.
 * Create an alert on an Activity Log event.
-* Stream it to an ***Event Hub*** for ingestion by a third-party service or custom analytics solution such as PowerBI.
-* Analyze it in PowerBI using the ***PowerBI content pack***.
-* Save it to a ***Storage Account*** for archival or manual inspection. You can specify the retention time (in days) using the Log Profile.
+* Stream it to an **Event Hub** for ingestion by a third-party service or custom analytics solution such as PowerBI.
+* Analyze it in PowerBI using the **PowerBI content pack**.
+* Save it to a **Storage Account** for archival or manual inspection. You can specify the retention time (in days) using the Log Profile.
 * Query it via PowerShell Cmdlet, CLI, or REST API.
 
-### LAB 1 - Who scale your app service plan ( 5 minutes)
+### Part 1 Lab - Who stop your Web App ( 5-10 minutes)
 
-**Prerequisite:** Change your app service plan from Free tier to D1 Shared
+**Prerequisite:** Stop your website
 
-**Scenario**: You are reviewing your Azure subscription bill like you do every month but this time you're seeing a sudden increase of your subscription total. Someone scaled up your service plan from a Free tier to a D1 Shared but you just don't recall that you've made that change.
+* Step 1 : In the portal, navigate to **App Service Plan**
+* Step 2: Select your Web App and click **STOP** on the top of the screen
+
+![App Service Plan](Media/AppServicePlan.PNG)
+
+**Scenario**: Your Web App doesn't serve requests anymore. You realize that your Web App was stopped. You suspect that during the last deployment, one of your onsite technicians has stopped the Web App.
 
 **Goal:** Query the Activity Log using the Azure portal
 
 * Step 1 : Go on Azure portal and choose the Azure Monitor landing page
-* Step 2: Select Activity log the navigation pan
-* Step 3: Set your filter to identify your service plan then apply
-* Step 4: Observe : A scale was done on [date] by [user].
+* Step 2: Select Activity log from the navigation pan
+* Step 3: Set your filter to Resource type: **Web Apps** and Operation: **Stop Web App Slot**, then apply
 
-![Lab 1 Search Result](Media/UpdateHostingPlan.PNG)
+![Lab 1 Search Result](Media/AzureMonitorSearchStopWebApp.PNG)
 
-Take two minutes to understand what are the available fitlers an options.
+* Step 4: Observe : Your WebSite was stopped on [date] by [user].
+
+Take two minutes to understand what are the available filters and options.
 
 * Save queries
 * Export result as CSV
@@ -83,14 +101,14 @@ Take two minutes to understand what are the available fitlers an options.
 * Add an activity log alert directly from a result set
 * Pin your saved query to the a dashboard
 
-![Lab 1 Search](Media/AzureActivitySearch.PNG)
+**Don't forget to start back your Web App**
 
-## Alerts
+## Part 2 - Alerts
 
 You can receive an alert based on monitoring metrics for, or events on, your Azure services.
 
 * **Metric values** - The alert triggers when the value of a specified metric crosses a threshold you assign in either direction. That is, it triggers both when the condition is first met and then afterwards when that condition is no longer being met.
-* **Activity log events** - An alert can be trigger on every event, or, only when certain event occurs.
+* **Activity log events** - An alert can be triggered on every event, or, only when certain event occurs.
 
 You can configure a classic metric alert to do the following when it triggers:
 
@@ -108,17 +126,17 @@ Azure Monitor now supports a new metric alert type. The newer alerts differ from
 * **Better notification system**: All newer alerts use action groups, which are named groups of notifications and actions that can be reused in multiple alerts. Classic metric alerts and older Log Analytics alerts do not use action groups.
 * **Metrics from Logs (limited public preview)**: Log data going into Log Analytics can now be extracted and converted into Azure Monitor metrics and then alerted on just like other metrics.
 
-### LAB 2 - Generate an alert when you app service plan is updated.
+### Part 2 Lab - Generate an alert when you app service plan is updated ( 5 minutes )
 
 **Scenario**: In the previous lab we saw how easy it is to use the activity log to monitor changes in our Azure resources. Let's now generate an Alert when an update is done to your app service plan.
 
 **Goal:** Generate a new alert when your service plan is updated.
 
-* Step 1: From the navigation pane in Azure Monitor, select ***Alert***
-* Step 2: Using the top menu, click ***+ New Alert Rule***
+* Step 1: From the navigation pane in Azure Monitor, select **Alert**
+* Step 2: Using the top menu, click **+ New Alert Rule**
 * Step 3: Select your app Service Plan as the target of your alert.
-* Step 4: Use ***Create or Update App Service Plan*** as criteria.
-* Step 5: Type a name, a description and a severity for your alert. ex: ***GAB 2018 App service plan updates*** and ***A change has been made to your service plan***, ***Severity 3***
+* Step 4: Use **Create or Update App Service Plan** as criteria.
+* Step 5: Type a name, a description and a severity for your alert. ex: **GAB 2018 App service plan updates** and **A change has been made to your service plan**, **Severity 3**
 * Step 6: Use the Action Group generated in the previous step ( or create a new one)
 * Step 7: Review your alert definition and save. Note: Alert could take around 5 minutes to be activated.
 * Step 8: Let's now change your App Service Plan back to Free tier.
@@ -127,19 +145,28 @@ This last step should generate an alert to your action group.
 
 ![Lab 2 Result](Media/EmailAlert.PNG)
 
-## Metrics
+## Part 3 - Metrics and Dashboard
 
-All Azure services track key metrics that allow you to monitor the health, performance, availability and usage of your services.
-Right of the bat, metrics (telemetry data \ performance counters) are already configured, but for some services, you may need to turn on diagnostics in order to see any metrics. 
+Azure Monitor enables you to consume telemetry to gain visibility into the performance and health of your workloads on Azure. The most important type of Azure telemetry data is the metrics (also called performance counters) emitted by most Azure resources. Azure Monitor provides several ways to configure and consume these metrics for monitoring and troubleshooting.
 
 Metrics have the following characteristics:
 
 * All metrics have one-minute frequency (unless specified otherwise in a metric's definition). You receive a metric value every minute from your resource, giving you near real-time visibility into the state and health of your resource.
 * Metrics are available immediately. You don't need to opt in or set up additional diagnostics.
 * You can access 93 days of history for each metric. You can quickly look at the recent and monthly trends in the performance or health of your resource.
-* Some metrics can have name-value pair attributes called dimensions. These enable you to further segment and explore a metric in a more meaningful way.
+* Some metrics can have name-value pair attributes called dimensions. These enable you to further segments and explore a metric in a more meaningful way.
 
-## Diagnostics Settings
+### LAB 3 - View the performance of your Web App in a single glance.
+
+**Scenario**: You want to make sure that your website is up and deliver the best performance at all time. You want to be able to quickly understand what is the current status of your Web App.  You want to measure the number of requests and the average response time.
+
+**Goal:** Create a dashboard using metrics.
+
+
+* Step 1: 
+
+
+## Part 4 - Diagnostics Settings
 
 Resource diagnostic logs for non-Compute resources are configured using resource diagnostic settings.
 
@@ -150,13 +177,16 @@ Resource diagnostic logs for non-Compute resources are configured using resource
 * If retention policies are set but storing logs in a Storage Account is disabled (for example, if only Event Hubs or OMS options are selected), the retention policies have no effect.
 * Retention policies are applied per-day, so at the end of a day (UTC), logs from the day that is now beyond the retention policy are deleted. For example, if you had a retention policy of one day, at the beginning of the day today the logs from the day before yesterday would be deleted.
 
-## Service Health
+## Part 5 - Service Health
 
 Service Health is your personalized dashboard in the Azure Portal for receiving notifications when Azure service issues, update or planned maintenance that could affect your resources.
 
-### LAB 2 - Get smarter alerts with Logic App
+
+### Final Lab - Get smarter alerts with Logic App
+
 
 **Scenario**:You should receive two emails alert when a metric reach it's configured limits. One when it gets activated and another one when the metric is back under normal value. Receiving too many emails for alerts can be annoying and also the basic email alert template doesn't tell you much information on the current situation.
+
 
 **Goal:** Generate a smarter alert email with Logic App
 
@@ -174,27 +204,12 @@ Service Health is your personalized dashboard in the Azure Portal for receiving 
 * Step 3: ...
 * Step 4: ...
 
-### Routing your logs
-
-If you want to route your log for deeper analytics, you can select your preferred way by customizing the diagnostics settings. You can stream monitoring data to other locations.
-
-Examples include:
-
-* Send to Application Insights so you can use its richer visualization and analysis tools.
-* Send to Event Hubs so you can route to third-party tools.
-
-## Archive
-
-You can archive metrics to storage for longer retention or use them for offline reporting. You can route your metrics to Azure Blob storage when you configure diagnostic settings for your resource.
-
-## Pin to your Dashboard
-
-You can create multiple dashboards and share them with others who have access to your Azure subscriptions. 
-
 ## Reference
 * [Monitoring Overview](https://docs.microsoft.com/en-us/azure/monitoring-and-diagnostics/monitoring-overview)
+* [Azure Monitor Get-Started](https://docs.microsoft.com/en-us/azure/monitoring-and-diagnostics/monitoring-get-started)
 * [Overview of Azure Monitor](https://docs.microsoft.com/en-us/azure/monitoring-and-diagnostics/monitoring-overview-azure-monitor)
 * [View activity logs to audit actions on resources](https://docs.microsoft.com/en-us/azure/azure-resource-manager/resource-group-audit)
+
 
 * [Create and share dashboards in the Azure portal](https://docs.microsoft.com/en-us/azure/azure-portal/azure-portal-dashboards)
 * [The next generation of Azure Alerts has arrived](https://azure.microsoft.com/en-us/blog/the-next-generation-of-azure-alerts-has-arrived/)
@@ -203,5 +218,6 @@ You can create multiple dashboards and share them with others who have access to
 * [Monitor Subscription Activity with the Azure Activity Log](https://docs.microsoft.com/en-us/azure/monitoring-and-diagnostics/monitoring-overview-activity-logs)
 * [Azure Monitor Pricing](https://azure.microsoft.com/en-us/pricing/details/monitor/)
 * [Azure diagnostic logs](https://docs.microsoft.com/en-us/azure/cdn/cdn-azure-diagnostic-logs)
+
 
 [gablogo]: ../media/logo-2018-500x444.png "Global Azure Bootcamp logo"
