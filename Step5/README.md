@@ -6,9 +6,10 @@
 Azure Security Center monitors the security of machines, networks, storage and data services. At present it is doing a continuous assessment of the artifacts that we have added previously. It will aid in in discovering actionable recommendations for our Virtual Machine which we have procured. Virtual Machines in the cloud can be used to develop, host, run custom software. They however need to be secured and oversight via Azure Security Center is just the thing!
 
 In order to secure the Virtual Machine, we will use Azure Security to oversee a few security related elements:
--Manage endpoint protection issues with Azure Security Center
--Secure the Virtual Machine with Network Storage Groups (NSG)
--Enable JIT for remote desktop 
+
+* Manage endpoint protection issues with Azure Security Center
+* Secure the Virtual Machine with Network Storage Groups (NSG)
+* Enable JIT for remote desktop 
 
 
 # Let's configure!
@@ -17,8 +18,10 @@ In order to secure the Virtual Machine, we will use Azure Security to oversee a 
 
 ## Step 1 - Oversee the recommendation
 Azure Security Center monitors the status of antimalware protection and reports this under the Endpoint protection issues blade. Security Center highlights issues, such as detected threats and insufficient protection, which can make your virtual machines (VMs) and computers vulnerable to antimalware threats. 
+
 Security Center reports the following endpoint protection issues:
-•	Endpoint protection not installed on Azure VMs – A supported antimalware solution is not installed on these Azure VMs.
+
+* Endpoint protection not installed on Azure VMs – A supported antimalware solution is not installed on these Azure VMs.
 
 ![alt text](media/ASC%20Lab%201_1.png)
 
@@ -59,12 +62,15 @@ Installation will begin
 
 ![alt text](media/ASC%20Lab%201_8.png)
 
-When omplete return to the azure security center under compute and the recommendation is no longer present.
+When complete, return to the Azure Security Center under Compute and the Recommendation is no longer present.
 
 ![alt text](media/ASC%20Lab%201_9.png)
 
 This article showed you how to implement the Security Center recommendation "Install Endpoint Protection." To learn more about enabling Microsoft Antimalware in Azure, see the following document:
-•	Microsoft Antimalware for Cloud Services and Virtual Machines -- Learn how to deploy Microsoft Antimalware.
+
+* [Manage endpoint protection issues with Azure Security Center](https://docs.microsoft.com/en-us/azure/security-center/security-center-install-endpoint-protection)  
+* [Microsoft Antimalware for Azure Cloud Services and Virtual Machines](https://docs.microsoft.com/en-us/azure/security/azure-security-antimalware)  
+
 
 # Lab 2 - Protect the VM
 
