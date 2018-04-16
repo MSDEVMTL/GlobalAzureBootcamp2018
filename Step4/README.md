@@ -2,9 +2,7 @@
 # Goal
 Configuring Key Vault Analytics solution and creating KeyVault alerts.
 
-# Let's code!
-
-## Installing the solution
+# Installing the solution
 1. Go to the `ResourceGroup` **gab2018-dev**, select the KeyVault **gab2018-dev-kv**.
 
 2. In the menu, select **Log analytics (OMS)**.
@@ -12,6 +10,7 @@ Configuring Key Vault Analytics solution and creating KeyVault alerts.
 ![step4_001][step4_001]
 
 3. Select **+ Add** and type **Key Vault Analytics** in the search box.
+
 4. In the results select **Key Vault Analytics**.
 
 ![step4_002][step4_002]
@@ -32,7 +31,7 @@ Configuring Key Vault Analytics solution and creating KeyVault alerts.
 
 ![step4_006][step4_006]
 
-## Enabling Key Vault diagnostics to be sent to Log Analytics
+# Enabling Key Vault diagnostics to be sent to Log Analytics
 1. Go to the `ResourceGroup` **gab2018-dev**, select the KeyVault **gab2018-dev-kv**.
 
 2. In the menu, select **Diagnostics logs**.
@@ -68,10 +67,7 @@ Configuring Key Vault Analytics solution and creating KeyVault alerts.
 
 The goal here is to create access logs to the KeyVault, so we will be able to use it later. It should take up to **15-20 minutes** to be able to use those logs.
 
-
-# Leverage Log Analytics to create alerts
-
-## Creating an alert for when KeyVault secrets are accessed
+# Creating an alert with Log Analytics for when KeyVault secrets are accessed
 1. Go to the `ResourceGroup` **gab2018-dev**, select the Key Vault Analytics resource **KeyVaultAnalytics(gab2018-dev-oms-all)**.
 
 2. In the overview summary, select the Key Vault Analytics.
@@ -120,6 +116,7 @@ Enter the following values:
 ![step4_018][step4_018]
 
 12. Wait for the action group to be created, and select **Select action group**.
+
 13. Choose the created action group in the list and select **Add**.
 
 14. Now select **Create alert rule** to finalize the creation of the alert and wait for it to be created.
@@ -132,7 +129,7 @@ Enter the following values:
 
 ![step4_020][step4_020]
 
-## Test and receive an alert
+# Test and receive an alert
 1. Go to the `ResourceGroup` **gab2018-dev**, select the KeyVault **gab2018-dev-kv**.
 
 2. Then in the menu, select **Secrets**.
@@ -152,7 +149,6 @@ Enter the following values:
 
 * [Log Analytics](https://docs.microsoft.com/en-us/azure/log-analytics/)
 * [Key Vault Analytics Solution](https://azuremarketplace.microsoft.com/en-us/marketplace/apps/Microsoft.KeyVaultAnalyticsOMS?tab=Overview)
-
 
 # End
 
