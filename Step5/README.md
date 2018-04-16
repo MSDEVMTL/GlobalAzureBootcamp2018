@@ -75,10 +75,10 @@ This lab showed you how to implement the Security Center recommendation "Install
 # Lab 2 - Protect the VM
 
 Azure Security Center will recommend that you restrict access through Internet-facing endpoints if any of your Network Security Groups (NSGs) has one or more inbound rules that allow access from “any” source IP address. Opening access to “any” may enable attackers to access your resources. Security Center will recommend that you edit these inbound rules to restrict access to source IP addresses that actually need access.
+
 This recommendation is generated for any non-web port that has "any" as source.
 
 ## Step 1 - Oversee the recommendation
-
 
 
 # Lab 3 -Enable JIT (Just in Time) for remote desktop 
@@ -87,17 +87,29 @@ This recommendation is generated for any non-web port that has "any" as source.
 
 
 
-1. Open the Security Center dashboard.
+Open the Security Center dashboard.
 
-2. In the left pane, select Just in time VM access.
+In the left pane, select Just in time VM access.
 
 ![alt text](media/ASC%20Lab%202_1.png)
 
+The Just in time VM access blade will open.
+
 ![alt text](media/ASC%20Lab%202_2.png)
 
-The Just in time VM access window opens.
+Click the Try Just in time VM Access.
 
 ![alt text](media/ASC%20Lab%202_3.png)
+
+This step may have already previously been completed of you have the Standard plan already. However if you do not we will Applu Standard plan which is free for 60 days. Select the appropriate Name of the Subscription where your VM is located.
+
+![alt text](media/ASC%20Lab%202_4.png)
+
+Azure will commence the procurement. The progress can be monitored in the Notifications area Top-Right in Azure Portal.
+
+Once complete.
+
+![alt text](media/ASC%20Lab%202_5.png)
 
 To select the VMs that you want to enable:
 
@@ -107,14 +119,14 @@ To select the VMs that you want to enable:
 3. Select Enable JIT on VMs.
 4. Select Save.
 
-![alt text](media/ASC%20Lab%202_4.png)
+
 
 You can see the default ports that Security Center recommends enabling just in time.
 
 1. Under Just in time VM access, select the Recommended tab.
 2. Under VMs, select a VM. This puts a checkmark next to the VM and opens JIT VM access configuration. This blade displays the default ports.
 
-![alt text](media/ASC%20Lab%202_5.png)
+
 
 Requesting access to a VM
 To request access to a VM:
