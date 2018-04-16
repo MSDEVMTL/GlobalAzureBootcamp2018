@@ -5,63 +5,64 @@ Configuring Key Vault Analytics solution and creating KeyVault alerts.
 # Let's code!
 
 ## Installing the solution
-Go to the `ResourceGroup` **gab2018-dev**, select the KeyVault **gab2018-dev-kv**.
+1. Go to the `ResourceGroup` **gab2018-dev**, select the KeyVault **gab2018-dev-kv**.
 
-Then in the menu, select **Log analytics (OMS)**.
+2. In the menu, select **Log analytics (OMS)**.
 
 ![step4_001][step4_001]
 
-Select **+ Add** and type **Key Vault Analytics** in the search box. In the results select **Key Vault Analytics**.
+3. Select **+ Add** and type **Key Vault Analytics** in the search box.
+4. In the results select **Key Vault Analytics**.
 
 ![step4_002][step4_002]
 
-Select **Create**
+5. Select **Create**
 
 ![step4_003][step4_003]
 
-Select the OMS workspace named **gab2018-dev-oms-all**
+6. Select the OMS workspace named **gab2018-dev-oms-all**
 
 ![step4_004][step4_004]
 
-To deploy the solution, select **Create**
+7. To deploy the solution, select **Create**
 
 ![step4_005][step4_005]
 
-The Key Vault Analytics solution should now be available in the `ResourceGroup` **gab2018-dev**.
+8. The Key Vault Analytics solution should now be available in the `ResourceGroup` **gab2018-dev**.
 
 ![step4_006][step4_006]
 
 ## Enabling Key Vault diagnostics to be sent to Log Analytics
-Go to the `ResourceGroup` **gab2018-dev**, select the KeyVault **gab2018-dev-kv**.
+1. Go to the `ResourceGroup` **gab2018-dev**, select the KeyVault **gab2018-dev-kv**.
 
-Then in the menu, select **Diagnostics logs**.
+2. In the menu, select **Diagnostics logs**.
 
 ![step4_007][step4_007]
 
-Select **+ Add diagnostic setting**.
+3. Select **+ Add diagnostic setting**.
 
 ![step4_008][step4_008]
 
-In the `Name` textbox type **Log Analytics**.
+4. In the `Name` textbox type **Log Analytics**.
 
-Select `Send to Log Analytics`.
+5. Select `Send to Log Analytics`.
 
-Select `Configure` and choose the OMS workspace named **gab2018-dev-oms-all**
+6. Select `Configure` and choose the OMS workspace named **gab2018-dev-oms-all**
 
-In `Log`, check the checkbox **AuditEvent**
+7. In `Log`, check the checkbox **AuditEvent**
 
-Then select **Save**
+8. Select **Save**
 
 ![step4_009][step4_009]
 
 # Access the KeyVault Secrets
-Go to the `ResourceGroup` **gab2018-dev**, select the KeyVault **gab2018-dev-kv**.
+1. Go to the `ResourceGroup` **gab2018-dev**, select the KeyVault **gab2018-dev-kv**.
 
-Then in the menu, select **Secrets**.
+2. In the menu, select **Secrets**.
 
 ![step4_010][step4_010]
 
-Select a secret in the list, select the current version and select the **Show secret value**.
+3. Select a secret in the list, select the current version and select the **Show secret value**.
 
 ![step4_011][step4_011]
 
@@ -71,29 +72,29 @@ The goal here is to create access logs to the KeyVault, so we will be able to us
 # Leverage Log Analytics to create alerts
 
 ## Creating an alert for when KeyVault secrets are accessed
-Go to the `ResourceGroup` **gab2018-dev**, select the Key Vault Analytics resource **KeyVaultAnalytics(gab2018-dev-oms-all)**.
+1. Go to the `ResourceGroup` **gab2018-dev**, select the Key Vault Analytics resource **KeyVaultAnalytics(gab2018-dev-oms-all)**.
 
-In the overview summary, select the Key Vault Analytics.
+2. In the overview summary, select the Key Vault Analytics.
 
 ![step4_012][step4_012]
 
-In **ALL OPERATIONS**, select the `SecretGet` operation.
+3. In **ALL OPERATIONS**, select the `SecretGet` operation.
 
 ![step4_013][step4_013]
 
-Select **+ New Alert Rule**
+4. Select **+ New Alert Rule**
 
 ![step4_014][step4_014]
 
-In **1.Define alert condition** Select **Alert Criteria**
+5. In **1.Define alert condition** select **Alert Criteria**
 
 ![step4_015][step4_015]
 
-In the **Alert Logic**, set the **Threshold** value to `2` and select **Done**
+6. In the **Alert Logic**, set the **Threshold** value to `1` and select **Done**
 
 ![step4_016][step4_016]
 
-In **2.Define alert details**, enter the following values:
+7. In **2.Define alert details**, enter the following values:
 
 * **Alert rule name**: KeyVault Secret Accessed
 * **Description**: Triggered when Key Vault secrets are accessed more than two times in 5 minutes.
@@ -101,38 +102,50 @@ In **2.Define alert details**, enter the following values:
 
 ![step4_017][step4_017]
 
-In **3.Define action group**, select **+ New action group**.
+8. In **3.Define action group**, select **+ New action group**.
 
 Enter the following values:
 
 * **Action group name**: Email Alert group
 * **Short name**: EmailGroup.
 
-In the actions, create an action with the following values:
+9. In the actions, create an action with the following values:
 * **Action name**: SendEmail
 * **Action Type**: Email/SMS/Push/Voice
 
-Select **Edit details**, enter your Email and select **OK**.
+10. Select **Edit details**, enter your Email and select **OK**.
 
-Finalize the creation of the by selecting **OK**
+11. Finalize the creation of the by selecting **OK**
 
 ![step4_018][step4_018]
 
-Wait for the action group to be created, and select **Select action group**. Choose the created action group in the list and select **Add**.
+12. Wait for the action group to be created, and select **Select action group**.
+13. Choose the created action group in the list and select **Add**.
 
-Now select **Create alert rule** to finalize the creation of the alert and wait for it to be created.
+14. Now select **Create alert rule** to finalize the creation of the alert and wait for it to be created.
 
 ![step4_019][step4_019]
 
-Go to the `ResourceGroup` **gab2018-dev**, select the Log Analytics resource **gab2018-dev-oms-all**.
+15. Go to the `ResourceGroup` **gab2018-dev**, select the Log Analytics resource **gab2018-dev-oms-all**.
 
-Select **Alerts** and ensure the alert was properly created.
+16. Select **Alerts** and ensure the alert was properly created.
 
 ![step4_020][step4_020]
 
 ## Test and receive an alert
+1. Go to the `ResourceGroup` **gab2018-dev**, select the KeyVault **gab2018-dev-kv**.
 
-...
+2. Then in the menu, select **Secrets**.
+
+![step4_010][step4_010]
+
+3. Select the first secret in the list and select the current version. 
+
+4. Go back to the list, select the second secret and select the current version.
+
+![step4_021][step4_021]
+
+**It should take up a few minutes to receive the KeyVault secrets accessed alert.**
 
 
 ### Reference
@@ -164,3 +177,4 @@ Select **Alerts** and ensure the alert was properly created.
 [step4_018]: media/step4_018.jpg "18"
 [step4_019]: media/step4_019.jpg "19"
 [step4_020]: media/step4_020.jpg "20"
+[step4_021]: media/step4_021.jpg "21"
