@@ -38,7 +38,7 @@ Under Compute, select **Endpoint protection issues**. The Endpoint protection is
 ![alt text](media/ASC%20Lab%201_2.png)
  
 
-Click on Endpoint Protection not installed on Azure VMs.
+Click on **Endpoint Protection not installed on Azure VMs**.
  
 ![alt text](media/ASC%20Lab%201_3.png)
 
@@ -46,7 +46,7 @@ Check the box for the VM and click on the Install on 1 VMs icon.
 
 ![alt text](media/ASC%20Lab%201_4.png)
 
-Click on the Microsoft Antimalware blade.
+Click on the **Microsoft Antimalware** blade.
  
 ![alt text](media/ASC%20Lab%201_5.png)
 
