@@ -182,17 +182,6 @@ To request access to a VM:
 
 ![alt text](media/ASC%20Lab%202_12.png)
 
-# Resources
-
-To learn more about Security Center, see the following:
-
-Setting security policies — Learn how to configure security policies for your Azure subscriptions and resource groups.
-Managing security recommendations — Learn how recommendations help you protect your Azure resources.
-Security health monitoring — Learn how to monitor the health of your Azure resources.
-Managing and responding to security alerts — Learn how to manage and respond to security alerts.
-Monitoring partner solutions — Learn how to monitor the health status of your partner solutions.
-Security Center FAQ — Find frequently asked questions about using the service.
-Azure Security blog — Find blog posts about Azure security and compliance.
 
 # End
 
