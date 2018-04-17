@@ -80,19 +80,18 @@ The Activity Log contains several categories of data:
 
 ![App Service Plan](Media/AppServicePlan.PNG)
 
-**Scenario**: Your Web App doesn't serve requests anymore. You realize that your Web App was stopped. You suspect that during the last deployment, one of your onsite technicians has stopped the Web App.
+**Scenario**: Your Web App doesn't serve requests anymore. You realize that your Web App was stopped. You are suspecting that during the last deployment, one of your onsite technicians has stopped the Web App accidentally.
 
-**Goal:** Query the Activity Log using the Azure portal
+**Goal:** Query the Activity Log using the Azure portal to identify when and who stopped your Web App
 
 * Step 1 : Go on Azure portal and choose the Azure Monitor landing page
 * Step 2: Select Activity log from the navigation pan
-* Step 3: Set your filter to Resource type: **Web Apps** and Operation: **Stop Web App Slot**, then apply
+* Step 3: Set your filter to Resource type: *App Services** and Operation: **Stop Web App (sites)**, then apply
+* Step 4: Observe : Your WebSite was stopped on [date] by [user].
 
 ![Lab 1 Search Result](Media/AzureMonitorSearchStopWebApp.PNG)
 
-* Step 4: Observe : Your WebSite was stopped on [date] by [user].
-
-Take two minutes to understand what are the available filters and options.
+Take two minutes to understand what are the available filters and options when qeury using the Azure Portal.
 
 * Save queries
 * Export result as CSV
@@ -124,25 +123,25 @@ Azure Monitor now supports a new metric alert type. The newer alerts differ from
 * **Better notification system**: All newer alerts use action groups, which are named groups of notifications and actions that can be reused in multiple alerts. Classic metric alerts and older Log Analytics alerts do not use action groups.
 * **Metrics from Logs (limited public preview)**: Log data going into Log Analytics can now be extracted and converted into Azure Monitor metrics and then alerted on just like other metrics.
 
-### Part 2 Lab - Generate an alert when you app service plan is updated ( 5 minutes )
+### Part 2 Lab - Generate an alert when an update is done to your Web App ( 5 minutes )
 
 **Scenario**: In the previous lab we saw how easy it is to use the activity log to monitor changes in our Azure resources. Let's now generate an Alert when an update is done to your Web App.
 
-**Goal:** Generate a new alert when your service plan is updated.
+**Goal:** Generate an alert when an update is done to your Web App
 
 * Step 1: From the navigation pane in Azure Monitor, select **Alert**
 * Step 2: Using the top menu, click **+ New Alert Rule**
-* Step 3: Select your app Service Plan as the target of your alert.
+* Step 3: Select your App Service as the target of your alert.
 
 ![AzureMonitorAlertTarget](Media/AzureMonitorAlertTarget.PNG)
 
-* Step 4: Use **Create or Update Web App (Site)** as criteria.
+* Step 4: Use **All Administrative operations** as criteria.
 
 ![AzureMonitorAlertCriteria](Media/AzureMonitorAlertCriteria.PNG)
 
-* Step 5: Type a name, a description and a severity for your alert. ex: **GAB 2018 Web App updates** and **A change has been made to your Web App**
+* Step 5: Type a name and a description for your alert. ex: **GAB 2018 Web App Alert** and **A change has been made to your Web App**
 
-![AzureMonitorAlertDetails](Media/AzureMonitorAlertDetails)
+![AzureMonitorAlertDetails](Media/AzureMonitorAlertDetails.PNG)
 
 * Step 6: Use the Action Group generated in the previous step ( or create a new one)
 
@@ -153,7 +152,13 @@ Azure Monitor now supports a new metric alert type. The newer alerts differ from
 
 This last step should generate an alert to your action group.
 
-![Lab 2 Result](Media/EmailAlert.PNG)
+![EmailAlert](Media/EmailAlert.PNG)
+
+You can also review fired alerts in the Alert section of Azure Monitor.
+
+![EmailAlert](Media/AzureMonitorAlertFired.PNG)
+
+
 
 ## Part 3 - Metrics and Dashboard
 
