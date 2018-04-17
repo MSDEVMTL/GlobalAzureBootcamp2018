@@ -32,7 +32,7 @@ Endpoint protection issues is presented as a recommendation in Security Center.
 this recommendation will be displayed under Prevention and under Compute.
  
 
-Under Compute, select Endpoint protection issues. The Endpoint protection issues dashboard opens.sdf
+Under Compute, select **Endpoint protection issues**. The Endpoint protection issues dashboard opens.
 
  
 ![alt text](media/ASC%20Lab%201_2.png)
@@ -50,11 +50,11 @@ Click on the Microsoft Antimalware blade.
  
 ![alt text](media/ASC%20Lab%201_5.png)
 
-Click on create
+Click on **Create**
  
 ![alt text](media/ASC%20Lab%201_6.png)
 
-Accept Defaults and click ok
+Accept Defaults and click **Ok**
  
 ![alt text](media/ASC%20Lab%201_7.png)
 
@@ -78,7 +78,7 @@ Azure Security Center recommends that you enable a network security group (NSG) 
 
 ## Step 1 - Oversee the recommendation
 
- Open the **Security Center** dashboard.
+Open the **Security Center** dashboard.
 
 Select **Networking.** from the recommendations pane.
 
