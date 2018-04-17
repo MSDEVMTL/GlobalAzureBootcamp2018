@@ -55,7 +55,7 @@ You can now step by using the F10 key like you're debugging local code.  Where's
 ```xml
 <add key="StorageConnectionString" value="UseDevelopmentStorage=true;" />
 ```
-If times permit, create a new App Setting key in the portal named **StorageConnectionString** with the storage account connection string as the value but don't spend too much time doing this as this is not the actual goal.
+To fix the issue, you need to create a new App Setting key in the portal named **StorageConnectionString** with the storage account connection string as the value **but don't do that right now, we need this error again in Step 7**.
 
 ![alt text][Debug11]
 
