@@ -80,33 +80,31 @@ Azure Security Center recommends that you enable a network security group (NSG) 
 
  Open the **Security Center** dashboard.
 
-In the left pane, select **Just in time VM access.**
+Select **Networking.** from the recommendations pane.
 
 ![alt text](media/ASC%20Lab%203_1.png)
 
- Open the **Security Center** dashboard.
+Oversee the Networking related recommendations and notive that there is a recommendation for NSGs on both the subnet and the VM. We will be adding the NSGs to the subnet. 
 
-In the left pane, select **Just in time VM access.**
+Click on **NSGs on subnets not enabled**
 
 ![alt text](media/ASC%20Lab%203_2.png)
 
- Open the **Security Center** dashboard.
+This will open the Configure Missing Network Security groups for Subnets Pane.
 
-In the left pane, select **Just in time VM access.**
+Select Lan **Lan** Virtual Network.
 
 ![alt text](media/ASC%20Lab%203_3.png)
 
- Open the **Security Center** dashboard.
-
-In the left pane, select **Just in time VM access.**
+select **gab2018-dev-nsg-lan-YOURKEY** as the NSG to utilize
 
 ![alt text](media/ASC%20Lab%203_4.png)
 
- Open the **Security Center** dashboard.
-
-In the left pane, select **Just in time VM access.**
+Lastly the notification will shows itself and  **Creating NSG Resource.**
 
 ![alt text](media/ASC%20Lab%203_5.png)
+
+Once complete we can go back to the recommendations pane and after some time the issue will be shown as resolved.
 
 
 # Lab 3 -Enable JIT (Just in Time) for remote desktop 
