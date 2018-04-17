@@ -78,6 +78,35 @@ Azure Security Center recommends that you enable a network security group (NSG) 
 
 ## Step 1 - Oversee the recommendation
 
+ Open the **Security Center** dashboard.
+
+In the left pane, select **Just in time VM access.**
+
+![alt text](media/ASC%20Lab%203_1.png)
+
+ Open the **Security Center** dashboard.
+
+In the left pane, select **Just in time VM access.**
+
+![alt text](media/ASC%20Lab%203_2.png)
+
+ Open the **Security Center** dashboard.
+
+In the left pane, select **Just in time VM access.**
+
+![alt text](media/ASC%20Lab%203_3.png)
+
+ Open the **Security Center** dashboard.
+
+In the left pane, select **Just in time VM access.**
+
+![alt text](media/ASC%20Lab%203_4.png)
+
+ Open the **Security Center** dashboard.
+
+In the left pane, select **Just in time VM access.**
+
+![alt text](media/ASC%20Lab%203_5.png)
 
 
 # Lab 3 -Enable JIT (Just in Time) for remote desktop 
