@@ -3,12 +3,14 @@
 Deploy Log Analytics (OMS) artifacts using an ARM template that we'll use throughout the day using the Azure Portal.
 
 # Requirements
-* [Azure PowerShell Module version 5.xx](https://docs.microsoft.com/en-us/powershell/azure/install-azurerm-ps?view=azurermps-5.7.0)
+* [Azure PowerShell Module version 5.xx](https://github.com/Azure/azure-powershell/releases/tag/v5.2.0-January2018)
 * [Git for Windows](https://git-scm.com/download/win)
 
 In an Administrator PowerShell console window, type:
 
-`Install-Module -Name AzureRM -RequiredVersion 5.6.0 -Force`
+``` powershell
+Install-Module -Name AzureRM -RequiredVersion 5.2.0 -Force
+```
 
 # Let's code!
 ## Clone repository
@@ -26,17 +28,23 @@ Set-Location c:\gab2018\step1\
 ## Provision OMS
 Still in the PowerShell console, type the following:
 
-`Login-AzureRmAccount`
+``` powerhell
+Login-AzureRmAccount
+```
 
 Enter your credentials
 
 Select the desired subscription using:
 
-`Set-AzureRmContext -Subscription 'MySubscriptionName'`
+``` powershell
+Set-AzureRmContext -Subscription 'MySubscriptionName'
+```
 
 Invoke the provisioning by typing:
 
-`& .\Invoke-Provisioning.ps1`
+``` powershell
+& .\Invoke-Provisioning.ps1
+```
 
 > ### NOTE: Log Analytics changed his pricing model in April 2018. If you encounter an error in the step above saying:
 > 

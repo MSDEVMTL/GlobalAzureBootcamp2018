@@ -3,24 +3,35 @@
 Deploy base artifacts using an ARM template that we'll use throughout the day using the Azure Portal.
 
 # Requirements
-* [Azure PowerShell Module version 5.xx](https://docs.microsoft.com/en-us/powershell/azure/install-azurerm-ps?view=azurermps-5.7.0)
+* [Azure PowerShell Module version 5.xx](https://github.com/Azure/azure-powershell/releases/tag/v5.2.0-January2018)
 * Visual Studio 2017
 
 In an Administrator PowerShell console window, type:
-`Install-Module -Name AzureRM -RequiredVersion 5.6.0 -Force`
+``` powershell
+Install-Module -Name AzureRM -RequiredVersion 5.2.0 -Force
+```
 
 # Let's code!
 ## Provision environment
 Open a PowerShell console and type the following:
-`Login-AzureRmAccount`
+
+``` powershell
+Set-Location c:\gab2018\step2\
+
+Login-AzureRmAccount
+```
 
 Enter your credentials
 
 Select the desired subscription using:
-`Set-AzureRmContext -Subscription 'MySubscriptionName'`
+``` powershell
+Set-AzureRmContext -Subscription 'MySubscriptionName'
+```
 
 Invoke the provisioning by typing:
-`& .\Invoke-Provisioning.ps1`
+``` powershell
+& .\Invoke-Provisioning.ps1
+```
 
 ## Provision environment
 Open solution in Visual Studio:
