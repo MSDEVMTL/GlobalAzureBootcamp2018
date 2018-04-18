@@ -72,9 +72,11 @@ In the following labs we will perform the following:
 **Step 1: Launch Cloud Shell**
 
 Go on Azure portal and launch the Cloud Shell
+
 ![cloudshelllaunch][cloudshelllaunch]
 
 Ensure the Cloud Shell is set to PowerShell
+
 ![cloudshellpowershell][cloudshellpowershell]
 
 **Step 2: Create the Policy Definition to apply a default tag and value**
@@ -108,9 +110,11 @@ New-AzureRmPolicyAssignment -Name "Apply default tag and value" -PolicyDefinitio
 **Step 1: Launch Cloud Shell**
 
 Go on Azure portal and launch the Cloud Shell
+
 ![cloudshelllaunch][cloudshelllaunch]
 
 Ensure the Cloud Shell is set to PowerShell
+
 ![cloudshellpowershell][cloudshellpowershell]
 
 **Step 2: Create the Policy Definition for the Azure Canada Datacentre Regions**
