@@ -71,7 +71,7 @@ The Activity Log contains several categories of data:
 * Save it to a **Storage Account** for archival or manual inspection. You can specify the retention time (in days) using the Log Profile.
 * Query it via PowerShell Cmdlet, CLI, or REST API.
 
-### Part 1 Lab - Who stop your Web App ( 5-10 minutes)
+### Part 1 Lab - Who stop your Web App
 
 **Prerequisite:** Stop your website
 
@@ -123,7 +123,7 @@ Azure Monitor now supports a new metric alert type. The newer alerts differ from
 * **Better notification system**: All newer alerts use action groups, which are named groups of notifications and actions that can be reused in multiple alerts. Classic metric alerts and older Log Analytics alerts do not use action groups.
 * **Metrics from Logs (limited public preview)**: Log data going into Log Analytics can now be extracted and converted into Azure Monitor metrics and then alerted on just like other metrics.
 
-### Part 2 Lab - Generate an alert when an update is done to your Web App ( 5 minutes )
+### Part 2 Lab - Generate an alert when an update is done to your Web App
 
 **Scenario**: In the previous lab we saw how easy it is to use the activity log to monitor changes in our Azure resources. Let's now generate an Alert when an update is done to your Web App.
 
