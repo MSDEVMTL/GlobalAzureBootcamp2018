@@ -63,20 +63,71 @@ During this session will learn how to create, apply and modify Azure policies to
 # Let's code!
 
 In the following labs we will perform the following:
- 1. Apply the policy to your subscription to only allow resources to be created in a specific region.
- 2. Enable chargeback across departments / Teams by enforcing tags on resources.
+ 1. Enable chargeback across departments / Teams by applying tags on resources. 
+ 2. Apply the policy to your subscription to only allow resources to be created in a specific region.
 
-### LAB 1: Allow resources only in Canada Central / Canada East
 
-**Create the Policy Definition for the Azure Canada Datacentre Regions**
+### LAB 1: Add default tag automatically
+
+**Step 1: Launch Cloud Shell**
+
+Go on Azure portal and launch the Cloud Shell
+![cloudshelllaunch][cloudshelllaunch]
+
+Ensure the Cloud Shell is set to PowerShell
+![cloudshellpowershell][cloudshellpowershell]
+
+**Step 2: Create the Policy Definition to apply a default tag and value**
+
+In this step we will assign the policy to "Assign a default tag" to all newly created resources. The command has a parameter file so that you can customize the deployment by providing values that are tailored to your current need.
 
 ```powershell
-New-AzureRmPolicyDefinition -Name permittedLocationsCA -Description "This policy configures restrictions to only allow resource deployment in the Canadian Azure Regions." -Policy "https://raw.githubusercontent.com/erleonard/AzurePolicy/master/permittedLocationsCA.json"
+New-AzureRmPolicyDefinition -Name applyDefaultTag -Description "This policy configures the required default tag, and its value." -Policy "https://raw.githubusercontent.com/MSDEVMTL/GlobalAzureBootcamp2018/dev/Step9/policy/applyDefaultTag.rules.json" -Parameter "https://raw.githubusercontent.com/MSDEVMTL/GlobalAzureBootcamp2018/dev/Step9/policy/applyDefaultTag.parameters.json"
 ```
-**Verify**
+
+**Step 3: Apply the policy definition to an entire subscription**
+
+```powershell
+$policy = Get-AzureRmPolicyDefinition -Name applyDefaultTag
+
+$sub = Get-AzureRmSubscription -SubscriptionName "Your Subscription Name"
+
+$defaultTag = @{
+	tagName = 'costCenter'
+	tagValue = 'Unknown'
+}
+
+New-AzureRmPolicyAssignment -Name "Apply default tag and value" -PolicyDefinition $policy -Scope "/subscriptions/$sub"
+```
+
+**Step 4: Test the policy**
+
+
+### LAB 2: Allow resources only in Canada Central / Canada East
+
+**Step 1: Launch Cloud Shell**
+
+Go on Azure portal and launch the Cloud Shell
+![cloudshelllaunch][cloudshelllaunch]
+
+Ensure the Cloud Shell is set to PowerShell
+![cloudshellpowershell][cloudshellpowershell]
+
+**Step 2: Create the Policy Definition for the Azure Canada Datacentre Regions**
+
+```powershell
+New-AzureRmPolicyDefinition -Name permittedLocationsCA -Description "This policy configures restrictions to only allow resource deployment in the Canadian Azure Regions." -Policy "https://raw.githubusercontent.com/MSDEVMTL/GlobalAzureBootcamp2018/dev/Step9/policy/permittedLocationsCA.rules.json"
+```
+**Step 3: Verify**
+
+Go to the portal and chose the Policy (Preview) landing page. Under Assignments, verify that our new policy is there.
+
 ![policyAssignment][policyAssignment]
 
-**Apply the policy definition to an entire subscription**
+**Step 4: Apply the policy definition to an entire subscription**
+
+The following commands will assign the newly created policy to the entire subscription.  The SKU has been changed to the standard tier to provide compliance reports that the free tier does not provide.
+
 ```powershell
 $policy = Get-AzureRmPolicyDefinition -Name permittedLocationsCA
 
@@ -84,22 +135,12 @@ $sub = Get-AzureRmSubscription -SubscriptionName "Your Subscription Name"
 
 New-AzureRmPolicyAssignment -Name "Permitted Locations for Canada Only" -PolicyDefinition $policy -Scope "/subscriptions/$sub" –Sku @{Name='A1';Tier='Standard'}
 ```
-### LAB 2: Add default tag automatically
 
-**Create the Policy Definition to apply a default tag and value**
+**Step 5: Test Policy**
 
-```powershell
-New-AzureRmPolicyDefinition -Name applyDefaultTag -Description "This policy configures the required default tag, and its value." -Policy "https://raw.githubusercontent.com/erleonard/AzurePolicy/master/applyDefaultTag.rules.json" -Parameter "https://raw.githubusercontent.com/erleonard/AzurePolicy/master/applyDefaultTag.parameters.json"
-```
+The policy has been created and assigned to your subscription. Try to create a virtual machine in EAST US, the expected result is that you should not be able to create the VM.
 
-**Apply the policy definition to an entire subscription**
-```powershell
-$policy = Get-AzureRmPolicyDefinition -Name applyDefaultTag
 
-$sub = Get-AzureRmSubscription -SubscriptionName "Your Subscription Name"
-
-New-AzureRmPolicyAssignment -Name "Apply default tag and value" -PolicyDefinition $policy -Scope "/subscriptions/$sub"
-```
 
 ## Addendum
 
@@ -108,6 +149,8 @@ New-AzureRmPolicyAssignment -Name "Apply default tag and value" -PolicyDefinitio
 * [Create a policy assignment to identify non-compliant resources in your Azure environment](https://docs.microsoft.com/en-us/azure/azure-policy/assign-policy-definition)
 * [Governance in Azure](https://docs.microsoft.com/en-us/azure/security/governance-in-azure)
 
+[cloudShellLaunch]: ./media/cloudshelllaunch.png "Cloud Shell"
+[cloudshellpowershell]: ./media/cloudshellpowershell.png "Cloud Shell PowerShell"
 [RBAC]: ./media/azureRBAC.png "Azure RBAC"
 [policyRule]: ./media/policyRule.png "Azure Policy Rule"
 [policyRuleEffect]: ./media/policyRuleEffect.png "Azure Policy Rule Effect"
