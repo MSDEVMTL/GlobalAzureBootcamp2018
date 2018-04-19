@@ -260,10 +260,10 @@ Service Health is your personalized dashboard in the Azure Portal for receiving 
 
 
 [gablogo]: ../media/logo-2018-500x444.png "Global Azure Bootcamp logo"
-[CreateAPIKey]: ./media/CreateAPIKey.png
-[GetAPIKey]: ./media/GetAPIKey.png
-[CreateLogicApp]: ./media/CreateLogicApp.png
-[SelectHttpTrigger]: ./media/SelectHttpTrigger.png
-[AddNewStep]: ./media/AddNewStep.png
-[ViewAnalytics]: ./media/ViewAnalytics.png
-[EnterKeys]: ./media/EnterKeys.png
+[CreateAPIKey]: media/CreateAPIKey.png
+[GetAPIKey]: media/GetAPIKey.png
+[CreateLogicApp]: media/CreateLogicApp.png
+[SelectHttpTrigger]: media/SelectHttpTrigger.png
+[AddNewStep]: media/AddNewStep.png
+[ViewAnalytics]: media/ViewAnalytics.png
+[EnterKeys]: media/EnterKeys.png
