@@ -1,3 +1,4 @@
+using System;
 using System.Web.Mvc;
 using WebApp.Models;
 
@@ -22,31 +23,48 @@ namespace WebApp.Controllers
 		{
 			if (ModelState.IsValid)
 			{
-				// Retrieve storage account from connection string.
-				CloudStorageAccount storageAccount = CloudStorageAccount.Parse(
-					CloudConfigurationManager.GetSetting("StorageConnectionString"));
+			    // Retrieve connection string.
+			    var connectionString = CloudConfigurationManager.GetSetting("StorageConnectionString");
 
-				// Create the queue client.
-				CloudQueueClient queueClient = storageAccount.CreateCloudQueueClient();
+			    var queue = CreateQueue(connectionString);
 
-				// Retrieve a reference to a queue.
-				CloudQueue queue = queueClient.GetQueueReference("my-gab-queue");
+			    // Convert the message to a CloudQueueMessage object
+			    var messageAsJson = JsonConvert.SerializeObject(message);
 
-				// Create the queue if it doesn't already exist
-				queue.CreateIfNotExists();
+			    var cloudQueueMessage = new CloudQueueMessage(messageAsJson);
 
-				// Convert the message to a CloudQueueMessage object
-				var messageAsJson = JsonConvert.SerializeObject(message);
-
-				var cloudQueueMessage = new CloudQueueMessage(messageAsJson);
-
-				// Create a message and add it to the queue.
-				queue.AddMessage(cloudQueueMessage);
-
-				return RedirectToAction("Index", "Home");
+			    // Create a message and add it to the queue.
+			    queue.AddMessage(cloudQueueMessage);
+                
+                return RedirectToAction("Index", "Home");
 			}
 
 			return View(message);
 		}
+
+	    private static CloudQueue CreateQueue(string connectionString)
+	    {
+	        try
+	        {
+	            // Retrieve storage account from connection string.
+	            CloudStorageAccount storageAccount = CloudStorageAccount.Parse(connectionString);
+
+	            // Create the queue client.
+	            CloudQueueClient queueClient = storageAccount.CreateCloudQueueClient();
+
+	            // Retrieve a reference to a queue.
+	            CloudQueue queue = queueClient.GetQueueReference("my-gab-queue");
+
+	            // Create the queue if it doesn't already exist
+	            queue.CreateIfNotExists();
+
+	            return queue;
+            }
+	        catch (Exception)
+	        {
+	            throw new InvalidOperationException("Could not create queue");
+	        }
+            
+	    }
 	}
 }
