@@ -86,7 +86,7 @@ Profile a production application
 
 7. You will then be presented with some profiling examples and some performance tips. The graph also displays Hot Path if needed or applicable ![hotpath][hotpath]
 
-##end
+## end
 
 # Visual Studio 2017 Snapshot Debugger (Optional Lab)
 ## Goal
