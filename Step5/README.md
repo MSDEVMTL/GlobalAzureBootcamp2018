@@ -194,6 +194,10 @@ To request access to a VM:
 
 ![alt text](media/ASC%20Lab%202_12.png)
 
+10. Lastly to oversee the changes that Just in time has done. You can navigate to your vm and click on  the **Netwoking** blade then the **Inbound Rules**. Notice the additions.
+
+![alt text](media/ASC%20Lab%202_12b.png)
+
 # End
 
 
