@@ -84,7 +84,7 @@ Snapshot debugger in live apps
 [snapshotdebugging]: https://docs.microsoft.com/en-us/azure/application-insights/media/app-insights-snapshot-debugger/snapshot-on-exception.png
 
 [failureblade]: media/failureBlade.PNG
-[takeaction]: media/takeaction.PNG
+[takeaction]: media/takeAction.PNG
 [endtoend]: media/endtoend.PNG
 [callstack1]: media/callstack1.PNG
 [callstack2]: media/callstack2.PNG
