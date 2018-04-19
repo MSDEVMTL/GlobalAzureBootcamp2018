@@ -52,22 +52,19 @@ Debugging in production app with exception snapshot
 **Snapshots can potentially contain personal and other sensitive information in variable and parameter values.**
 
 13. (Optional)**VS2017 Entreprise Only**: You could download the diagnostic session to view in the context of VisualStudio and your application code (big file to download) ![download]
-# Reference
-Exception Snapshot:  https://docs.microsoft.com/en-us/azure/application-insights/app-insights-snapshot-debugger
-
-Snapshot Debugger:
-https://docs.microsoft.com/en-ca/visualstudio/debugger/debug-live-azure-applications
-
-Snapshot Authorization: https://docs.microsoft.com/en-us/azure/application-insights/app-insights-snapshot-debugger#grant-permissions
 
 # Application Profiling
 
 # Optional Lab
 Snapshot debugger in live apps
 
+# Reference
+Exception Snapshot:  https://docs.microsoft.com/en-us/azure/application-insights/app-insights-snapshot-debugger
 
-# Let's code!
-## Addendum
+Snapshot Authorization: https://docs.microsoft.com/en-us/azure/application-insights/app-insights-snapshot-debugger#grant-permissions
+
+Snapshot Debugger:
+https://docs.microsoft.com/en-ca/visualstudio/debugger/debug-live-azure-applications
 
 # End
 
