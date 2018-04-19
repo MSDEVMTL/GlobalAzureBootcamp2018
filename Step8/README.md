@@ -229,6 +229,14 @@ Service Health is your personalized dashboard in the Azure Portal for receiving 
   ![Selec Http Trigger][SelectHttpTrigger]
   * Click the button `+ New step`, Then Add an action. ![Add New Step][AddNewStep]
   * We want an action related to our Application Insights, so enter "Application Insights into the search box. Then select the action that contain "Visualize Analytics query". ![Select View Analytics][ViewAnalytics]
+  * Remeber those Application ID an API Key? It's now time to use them. Fill-up the authentification form. ![Enter Keys][EnterKeys]
+ * Now a query
+  ```
+    exceptions
+    | top 10 by timestamp desc nulls last
+    | project timestamp, type, method, outerMessage, customDimensions, customMeasurements
+  ```
+...
   
 * Step 4: ...
 
@@ -258,3 +266,4 @@ Service Health is your personalized dashboard in the Azure Portal for receiving 
 [SelectHttpTrigger]: ./media/SelectHttpTrigger.png
 [AddNewStep]: ./media/AddNewStep.png
 [ViewAnalytics]: ./media/ViewAnalytics.png
+[EnterKeys]: ./media/EnterKeys.png
