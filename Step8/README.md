@@ -207,16 +207,23 @@ Service Health is your personalized dashboard in the Azure Portal for receiving 
 
 * Step 1 : Create a Logic App
 
-* Click the Create a resource button found on the upper left-hand corner of the Azure portal.
-* Search for and select Logic App. Click the Create button.
-* Enter the name myLogicApp and select your existing Resource Group. Use your subscription. Use the default location. Check the Pin to Dashboard option. When complete, click Create. ![Create a Logic App](https://docs.microsoft.com/en-us/azure/monitoring-and-diagnostics/media/monitor-quick-resource-metric-alert-portal/create-logic-app-portal.png)
+  * Click the Create a resource button found on the upper left-hand corner of the Azure portal.
+  * Search for and select Logic App. Click the Create button.
+  * Enter the name myLogicApp and select your existing Resource Group. Use your subscription. Use the default location. Check the Pin to Dashboard option. When complete, click Create. ![Create a Logic App][CreateLogicApp]
 
-* The logic app should be pinned to your dashboard. Navigate to the logic app by clicking on it.
+  * The logic app should be pinned to your dashboard. Navigate to the logic app by clicking on it.
 
 * Step 2: Design Your Logic App
 
-* In the Logic App panel, select the Logic App Designer. ![Design your Logic App](https://docs.microsoft.com/en-us/azure/monitoring-and-diagnostics/media/monitor-quick-resource-metric-alert-portal/logic-app-designer.png)
+  * By clicking on the Logic App it should open directly in *Edit* mode, because it's a new one. 
+  * We need to select a trigger. Logic Apps can connect to many different services but for this demo we will use the `HTTP Trigger`. Select the trigger named: When a HTTP request is received. 
+  ![Selec Http Trigger][SelectHttpTrigger]
+  * Click the button `+ New step`, Then Add an action. ![Add New Step][AddNewStep]
+  * We want an action related to our Application Insights, so enter "Application Insights into the search box. Then select the action that contain "Run Analytics query". ![Select Run Analytics][RunAnalytics]
+  
 * Step 3: ...
+
+
 * Step 4: ...
 
 ## Reference
@@ -236,3 +243,7 @@ Service Health is your personalized dashboard in the Azure Portal for receiving 
 
 
 [gablogo]: ../media/logo-2018-500x444.png "Global Azure Bootcamp logo"
+[CreateLogicApp]: ./media/CreateLogicApp.png
+[SelectHttpTrigger]: ./media/SelectHttpTrigger.png
+[AddNewStep]: ./media/AddNewStep.png
+[RunAnalytics]: ./media/RunAnalytics.png
