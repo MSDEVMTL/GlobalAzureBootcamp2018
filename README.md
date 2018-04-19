@@ -30,19 +30,21 @@ The team has been assigned a couple of days to find tools & put new processes in
 
 Step | Tittle | Description
 -----|--------|------------
-[Step 1](./step1/readme.md) | Provision Log Analytics | Deploy Log Analytics artifacts using an ARM template that we'll use throughout the day using the Azure Portal.
-[Step 2](./step2/readme.md) | Provision environment | Deploy base artifacts using an ARM template that we'll use throughout the day using the Azure Portal.
-[Step 3](./step3/readme.md) | Application Insights 1 | Learn how to use Application Insight to find problem in a running solution.
-[Step 4](./step4/readme.md) | Log Analytics | Configuring Key Vault Analytics solution and creating alerts.
-[Step 5](./step5/readme.md) | Azure Security Center |
-[Step 6](./step6/readme.md) | App Service | How to configure remote debugging for Web Apps & Visual Studio 2017 and how to edit in production.
+[Step 1](./Step1/README.md) | Provision Log Analytics | Deploy Log Analytics artifacts using an ARM template that we'll use throughout the day using the Azure Portal.
+[Step 2](./Step2/README.md) | Provision environment | Deploy base artifacts using an ARM template that we'll use throughout the day using the Azure Portal.
+[Step 3](./Step3/README.md) | Application Insights 1 | Learn how to use Application Insight to find problem in a running solution.
+[Step 4](./Step4/README.md) | Log Analytics | Configuring Key Vault Analytics solution and creating alerts.
+[Step 5](./Step5/README.md) | Azure Security Center |
+[Step 6](./Step6/README.md) | App Service | How to configure remote debugging for Web Apps & Visual Studio 2017 and how to edit in production.
 [Step 7](./step7/readme.md) | Application Insights 2 | How to enable exception snapshot, App profiling and Snapshot debugger (optional)
-[Step 8](./step8/readme.md) | Azure Monitor | Explore monitoring and troubleshooting with Azure Monitor.
-[Step 9](./step9/readme.md) | ARM Governance |
+[Step 8](./Step8/README.md) | Azure Monitor | Explore monitoring and troubleshooting with Azure Monitor.
+[Step 9](./Step9/README.md) | ARM Governance | Learn how to use and configure Azure policies
 
-## Technology Stack for the Global Azure Bootcamp 2018
+## Technology Stack required for the Global Azure Bootcamp 2018
 
-* Visual Studio IDE (Get VIsual Studio)[https://www.visualstudio.com/vs/]
+* [Visual Studio 2017 or later](https://www.visualstudio.com/downloads/)
+* [Azure PowerShell Module version 5.xx](https://github.com/Azure/azure-powershell/releases/tag/v5.2.0-January2018)
+* [Git for Windows](https://git-scm.com/download/win)
 
 ## What you will need before the bootcamp?
 Before the bootcamp, we encourage you to make sure you have all the requirement software so you can concentrate on learning and not running installations.  Make sure you get all the source code and install all the required software.
