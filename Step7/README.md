@@ -31,21 +31,23 @@ Debugging in production app with exception snapshot
     </Add>
   </TelemetryProcessors>
 ```
-4. Add code to generate an exception from you app
-5. Publish the new version of your app
-6. Generate an exception by going to your app
-7. After a few exceptions go to the Azure portal in the Application insights blade
-8. From the exception blade you will eventually see your generated exceptions with a snapshot logo ![alt text][snapshotdebugging]
+4. Publish the new version of your app
+5. By using the already existing exception from the QueueController we will now generate an exception snapshot
+6. Go to your_app.azurewebsites.net/Queue/CreateMessage  enter some value in the textbox and create. Since the snapshot debugging is sometime a bit flacky you will want to generate about 5-6 exceptions.
+7. From the exception blade you will eventually see your generated exceptions with a snapshot logo
+8. By navigating to the snapshot you may need to depending on your role within the subscription [grant authorization](https://docs.microsoft.com/en-us/azure/application-insights/app-insights-snapshot-debugger#grant-permissions)
+9. Show that from the call stack it is possible to view values and parameters as well as navigating in the call stack
 
 **Snapshots can potentially contain personal and other sensitive information in variable and parameter values.**
 
-9. VS2017 Entreprise: You could download the diagnostic session to view in the context of VisualStudio and you application code
+9. VS2017 Entreprise: You could download the diagnostic session to view in the context of VisualStudio and your application code
 # Reference
 Exception Snapshot:  https://docs.microsoft.com/en-us/azure/application-insights/app-insights-snapshot-debugger
 
 Snapshot Debugger:
 https://docs.microsoft.com/en-ca/visualstudio/debugger/debug-live-azure-applications
 
+Snapshot Authorization: https://docs.microsoft.com/en-us/azure/application-insights/app-insights-snapshot-debugger#grant-permissions
 # Optional Lab
 Snapshot debugger in live apps
 
