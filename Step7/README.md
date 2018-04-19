@@ -145,7 +145,7 @@ https://docs.microsoft.com/en-ca/visualstudio/debugger/debug-live-azure-applicat
 [callstack3]: media/callstack3.PNG
 [callstack4]: media/callstack4.PNG
 [download]: media/download.PNG
-[enableprofiler]: media/enableprofiler.PNG
+[enableprofiler]: media/enableProfiler.PNG
 [linkapp]: media/linkapp.PNG
 [profilerextension]: media/installprofilerextension.PNG
 [profilertrace]: media/profilertrace.PNG
