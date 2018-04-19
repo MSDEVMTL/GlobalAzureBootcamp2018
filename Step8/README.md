@@ -205,7 +205,16 @@ Service Health is your personalized dashboard in the Azure Portal for receiving 
 
 **Goal:** Generate a smarter alert email with Logic App
 
-* Step 1 : Create a Logic App
+* Step 1 : Create an Application Insights API Key
+  ![Create API Key][CreateAPIKey]
+  
+  * From the Application Insights blade, select the API Access option from the left menu.
+  * Click the Create API Key, on the top of the screen. 
+  * Enter a description an check the Read Telemetry option before clicking the Generate key blue button.
+  * **Note the Application ID and the API Key **, we will need those soon.
+  ![Get API Key][GetAPIKey]
+
+* Step 2 : Create a Logic App
 
   * Click the Create a resource button found on the upper left-hand corner of the Azure portal.
   * Search for and select Logic App. Click the Create button.
@@ -213,18 +222,18 @@ Service Health is your personalized dashboard in the Azure Portal for receiving 
 
   * The logic app should be pinned to your dashboard. Navigate to the logic app by clicking on it.
 
-* Step 2: Design Your Logic App
+* Step 3: Design Your Logic App
 
   * By clicking on the Logic App it should open directly in *Edit* mode, because it's a new one. 
   * We need to select a trigger. Logic Apps can connect to many different services but for this demo we will use the `HTTP Trigger`. Select the trigger named: When a HTTP request is received. 
   ![Selec Http Trigger][SelectHttpTrigger]
   * Click the button `+ New step`, Then Add an action. ![Add New Step][AddNewStep]
-  * We want an action related to our Application Insights, so enter "Application Insights into the search box. Then select the action that contain "Run Analytics query". ![Select Run Analytics][RunAnalytics]
+  * We want an action related to our Application Insights, so enter "Application Insights into the search box. Then select the action that contain "Visualize Analytics query". ![Select View Analytics][ViewAnalytics]
   
-* Step 3: ...
-
-
 * Step 4: ...
+
+
+* Step 5: ...
 
 ## Reference
 * [Monitoring Overview](https://docs.microsoft.com/en-us/azure/monitoring-and-diagnostics/monitoring-overview)
@@ -243,7 +252,9 @@ Service Health is your personalized dashboard in the Azure Portal for receiving 
 
 
 [gablogo]: ../media/logo-2018-500x444.png "Global Azure Bootcamp logo"
+[CreateAPIKey]: ./media/CreateAPIKey.png
+[GetAPIKey]: ./media/GetAPIKey.png
 [CreateLogicApp]: ./media/CreateLogicApp.png
 [SelectHttpTrigger]: ./media/SelectHttpTrigger.png
 [AddNewStep]: ./media/AddNewStep.png
-[RunAnalytics]: ./media/RunAnalytics.png
+[ViewAnalytics]: ./media/ViewAnalytics.png
