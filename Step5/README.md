@@ -54,7 +54,7 @@ Click on **Create**
  
 ![alt text](media/ASC%20Lab%201_6.png)
 
-Accept Defaults and click **Ok**
+Accept Defaults and click **Ok** or you can select the scan option as well.
  
 ![alt text](media/ASC%20Lab%201_7.png)
 
@@ -100,7 +100,7 @@ select **gab2018-dev-nsg-lan-YOURKEY** as the NSG to utilize
 
 ![alt text](media/ASC%20Lab%203_4.png)
 
-Lastly the notification will shows itself and  **Creating NSG Resource.**
+Lastly the notification will shows itself and display **Creating NSG Resource.**
 
 ![alt text](media/ASC%20Lab%203_5.png)
 
@@ -124,64 +124,75 @@ The **Just in time VM access** blade will open.
 
 ![alt text](media/ASC%20Lab%202_2.png)
 
-Click the Try Just in time VM Access.
+Click the **Try Just in time VM Access**.
 
 ![alt text](media/ASC%20Lab%202_3.png)
 
-This step may have already previously been completed of you have the Standard plan already. However if you do not we will Applu Standard plan which is free for 60 days. Select the appropriate Name of the Subscription where your VM is located.
-
-![alt text](media/ASC%20Lab%202_4.png)
+This step may have already previously been completed if you have the Standard plan already. However ,if you do not we will **Apply Standard plan** which is free for 60 days. Select the appropriate Name of the Subscription where your VM is located.
 
 Azure will commence the procurement. The progress can be monitored in the Notifications area Top-Right in Azure Portal.
 
+![alt text](media/ASC%20Lab%202_4.png)
+
+
 Once complete.
-
-
 
 To select the VMs that you want to enable:
 
 1. Under **Just in time VM access** , select the **Recommended** tab.
+
 ![alt text](media/ASC%20Lab%202_5.png)
+
 2. Under **VIRTUAL MACHINE**, select the VMs that you want to enable. This puts a checkmark next to a VM.
 3. Select **Enable JIT on VMs.**
-4. Select**Save.**
+4. Select **Save.**
 
 
+You can see the default ports that Security Center recommends you configure.
 
-You can see the default ports that Security Center recommends enabling just in time.
-
-1. Under Just in time VM access, select the Recommended tab.
+1. Under Just in time VM access, select the **Recommended** tab.
 
 ![alt text](media/ASC%20Lab%202_6.png)
 
-![alt text](media/ASC%20Lab%202_6b.png)
 2. Under VMs, select a VM. This puts a checkmark next to the VM and opens JIT VM access configuration. This blade displays the default ports.
 
+![alt text](media/ASC%20Lab%202_6b.png)
 
 
-Requesting access to a VM
+
+
+## Step 2 - Requesting access to a VM
+
 To request access to a VM:
 
-1.Under Just in time VM access, select the Configured tab.
-2.Under VMs, select the VMs that you want to enable access. This puts a checkmark next to a VM.
-3.Select Request access. This opens Request access.
+1. Under Just in time VM access, select the **Configured** tab.
+2. Under VMs, select the VMs that you want to enable access. This puts a checkmark next to a VM.
+
 ![alt text](media/ASC%20Lab%202_7.png)
+
+3. Select **Request access**. This opens Request access.
 
 ![alt text](media/ASC%20Lab%202_8.png)
 
-4.Under Request access, you configure for each VM the ports to open along with the source IP that the port is opened to and the time window for which the port is opened. You can request access only to the ports that are configured in the just in time policy. Each port has a maximum allowed time derived from the just in time policy.
+4. Under Request access, you configure for each VM the ports to open along with the source IP that the port is opened to and the time window for which the port is opened. You can request access only to the ports that are configured in the just in time policy. Each port has a maximum allowed time derived from the just in time policy.
 
-5.Select Open ports.
+5. Select **Open ports**.
 
+6. A notification stating that the JIT network access request initiated is being run will appear.
 
 ![alt text](media/ASC%20Lab%202_9.png)
 
+7. Return to the JIT blade and select the **Configured** tab. Note the values in the Approved/LastAccess/LastUserBlade.
+
 ![alt text](media/ASC%20Lab%202_10.png)
+
+8. You can now navigate to your VM and click on **Connect**. This iwll download an .rpd file.
 
 ![alt text](media/ASC%20Lab%202_11.png)
 
-![alt text](media/ASC%20Lab%202_12.png)
+9. Connectivity can now be tested. Do note that the NSG rules will be augmented and perusing them will showcase this.
 
+![alt text](media/ASC%20Lab%202_12.png)
 
 # End
 
