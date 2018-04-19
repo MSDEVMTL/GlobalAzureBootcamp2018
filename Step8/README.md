@@ -205,19 +205,54 @@ Service Health is your personalized dashboard in the Azure Portal for receiving 
 
 **Goal:** Generate a smarter alert email with Logic App
 
-* Step 1 : Create a Logic App
+* Step 1 : Create an Application Insights API Key
+  ![Create API Key][CreateAPIKey]
+  
+  * From the Application Insights blade, select the API Access option from the left menu.
+  * Click the Create API Key, on the top of the screen. 
+  * Enter a description an check the Read Telemetry option before clicking the Generate key blue button.
+  * **Note the Application ID and the API Key**, we will need those soon.
+  ![Get API Key][GetAPIKey]
 
-* Click the Create a resource button found on the upper left-hand corner of the Azure portal.
-* Search for and select Logic App. Click the Create button.
-* Enter the name myLogicApp and select your existing Resource Group. Use your subscription. Use the default location. Check the Pin to Dashboard option. When complete, click Create. ![Create a Logic App](https://docs.microsoft.com/en-us/azure/monitoring-and-diagnostics/media/monitor-quick-resource-metric-alert-portal/create-logic-app-portal.png)
+* Step 2 : Create a Logic App
 
-* The logic app should be pinned to your dashboard. Navigate to the logic app by clicking on it.
+  * Click the Create a resource button found on the upper left-hand corner of the Azure portal.
+  * Search for and select Logic App. Click the Create button.
+  * Enter the name myLogicApp and select your existing Resource Group. Use your subscription. Use the default location. Check the Pin to Dashboard option. When complete, click Create. ![Create a Logic App][CreateLogicApp]
 
-* Step 2: Design Your Logic App
+  * The logic app should be pinned to your dashboard. Navigate to the logic app by clicking on it.
 
-* In the Logic App panel, select the Logic App Designer. ![Design your Logic App](https://docs.microsoft.com/en-us/azure/monitoring-and-diagnostics/media/monitor-quick-resource-metric-alert-portal/logic-app-designer.png)
-* Step 3: ...
-* Step 4: ...
+* Step 3: Design Your Logic App
+
+  * By clicking on the Logic App it should open directly in *Edit* mode, because it's a new one. 
+  * We need to select a trigger. Logic Apps can connect to many different services but for this demo we will use the `HTTP Trigger`. Select the trigger named: When a HTTP request is received. 
+  ![Selec Http Trigger][SelectHttpTrigger]
+  * Click the button `+ New step`, Then Add an action. ![Add New Step][AddNewStep]
+  * We want an action related to our Application Insights, so enter "Application Insights into the search box. Then select the action that contain "Visualize Analytics query". ![Select View Analytics][ViewAnalytics]
+  * Remeber those Application ID an API Key? It's now time to use them. Fill-up the authentification form. ![Enter Keys][EnterKeys]
+  * Now let's add our a query. You could copy paste the query provieded here, or in another browser go to: https://analytics.applicationinsights.io create another one.
+
+  ```
+    exceptions
+    | top 10 by timestamp desc nulls last
+    | project timestamp, type, method, outerMessage, customDimensions, customMeasurements
+  ```
+  Once the query is in select Html Table from the Chart Type list.
+
+  ![Query and HTML table][Query_and_THMLtable]
+...
+  * ~~Execute the Application Insight to get a sample of the `JSon` file.~~
+  * Add a `Send an Email` step. You can you Outlook.com or another one.
+  * Enter your email address and a Suject.
+  * For the body Enter some simple HTML and use the Dynamic content box to add elements from the query result or from the Trigger.
+    ![email body][emailbody]
+  * Click on the **Show advance options** and set Is HTML to Yes.
+  * Don't forget to Save.
+  
+* Step 4: Set the Binding
+  * ...
+
+* Step 5: Test
 
 ## Reference
 * [Monitoring Overview](https://docs.microsoft.com/en-us/azure/monitoring-and-diagnostics/monitoring-overview)
@@ -236,3 +271,12 @@ Service Health is your personalized dashboard in the Azure Portal for receiving 
 
 
 [gablogo]: ../media/logo-2018-500x444.png "Global Azure Bootcamp logo"
+[CreateAPIKey]: Media/CreateAPIKey.png
+[GetAPIKey]: Media/GetAPIKey.png
+[CreateLogicApp]: Media/CreateLogicApp.png
+[SelectHttpTrigger]: Media/SelectHttpTrigger.png
+[AddNewStep]: Media/AddNewStep.png
+[ViewAnalytics]: Media/ViewAnalytics.png
+[EnterKeys]: Media/EnterKeys.png
+[Query_and_THMLtable]: Media/Query_and_THMLtable.png
+[emailbody]: Media/emailbody.png
