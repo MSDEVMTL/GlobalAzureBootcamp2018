@@ -156,7 +156,7 @@ You can see the default ports that Security Center recommends you configure.
 
 2. Under VMs, select a VM. This puts a checkmark next to the VM and opens JIT VM access configuration. This blade displays the default ports.
 
-![alt text](media/ASC%20Lab%202_6b.png)
+
 
 
 
@@ -172,7 +172,7 @@ To request access to a VM:
 
 3. Select **Request access**. This opens Request access.
 
-![alt text](media/ASC%20Lab%202_8.png)
+![alt text](media/ASC%20Lab%202_6b.png)
 
 4. Under Request access, you configure for each VM the ports to open along with the source IP that the port is opened to and the time window for which the port is opened. You can request access only to the ports that are configured in the just in time policy. Each port has a maximum allowed time derived from the just in time policy.
 
