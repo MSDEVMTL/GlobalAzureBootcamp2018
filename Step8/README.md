@@ -211,7 +211,7 @@ Service Health is your personalized dashboard in the Azure Portal for receiving 
   * From the Application Insights blade, select the API Access option from the left menu.
   * Click the Create API Key, on the top of the screen. 
   * Enter a description an check the Read Telemetry option before clicking the Generate key blue button.
-  * **Note the Application ID and the API Key **, we will need those soon.
+  * **Note the Application ID and the API Key**, we will need those soon.
   ![Get API Key][GetAPIKey]
 
 * Step 2 : Create a Logic App
@@ -230,18 +230,29 @@ Service Health is your personalized dashboard in the Azure Portal for receiving 
   * Click the button `+ New step`, Then Add an action. ![Add New Step][AddNewStep]
   * We want an action related to our Application Insights, so enter "Application Insights into the search box. Then select the action that contain "Visualize Analytics query". ![Select View Analytics][ViewAnalytics]
   * Remeber those Application ID an API Key? It's now time to use them. Fill-up the authentification form. ![Enter Keys][EnterKeys]
- * Now a query
+  * Now let's add our a query. You could copy paste the query provieded here, or in another browser go to: https://analytics.applicationinsights.io create another one.
+
   ```
     exceptions
     | top 10 by timestamp desc nulls last
     | project timestamp, type, method, outerMessage, customDimensions, customMeasurements
   ```
+  Once the query is in select Html Table from the Chart Type list.
+
+  ![Query and HTML table][Query_and_THMLtable]
 ...
+  * ~~Execute the Application Insight to get a sample of the `JSon` file.~~
+  * Add a `Send an Email` step. You can you Outlook.com or another one.
+  * Enter your email address and a Suject.
+  * For the body Enter some simple HTML and use the Dynamic content box to add elements from the query result or from the Trigger.
+    ![email body][emailbody]
+  * Click on the **Show advance options** and set Is HTML to Yes.
+  * Don't forget to Save.
   
-* Step 4: ...
+* Step 4: Set the Binding
+  * ...
 
-
-* Step 5: ...
+* Step 5: Test
 
 ## Reference
 * [Monitoring Overview](https://docs.microsoft.com/en-us/azure/monitoring-and-diagnostics/monitoring-overview)
@@ -267,3 +278,5 @@ Service Health is your personalized dashboard in the Azure Portal for receiving 
 [AddNewStep]: Media/AddNewStep.png
 [ViewAnalytics]: Media/ViewAnalytics.png
 [EnterKeys]: Media/EnterKeys.png
+[Query_and_THMLtable]: Media/Query_and_THMLtable.png
+[emailbody]: Media/emailbody.png
