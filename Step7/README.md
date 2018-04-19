@@ -83,11 +83,11 @@ Snapshot debugger in live apps
 [gablogo]: ../media/logo-2018-500x444.png "Global Azure Bootcamp logo"
 [snapshotdebugging]: https://docs.microsoft.com/en-us/azure/application-insights/media/app-insights-snapshot-debugger/snapshot-on-exception.png
 
-[failureblade]: media/failureBlade.png
-[takeaction]: media/takeaction.png
-[endtoend]: media/endtoend.png
-[callstack1]: media/callstack1.png
-[callstack2]: media/callstack2.png
-[callstack3]: media/callstack3.png
-[callstack4]: media/callstack4.png
-[download]: media/download.png
+[failureblade]: media/failureBlade.PNG
+[takeaction]: media/takeaction.PNG
+[endtoend]: media/endtoend.PNG
+[callstack1]: media/callstack1.PNG
+[callstack2]: media/callstack2.PNG
+[callstack3]: media/callstack3.PNG
+[callstack4]: media/callstack4.PNG
+[download]: media/download.PNG
