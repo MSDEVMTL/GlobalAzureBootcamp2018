@@ -30,15 +30,15 @@ The team has been assigned a couple of days to find tools & put new processes in
 
 Step | Tittle | Description
 -----|--------|------------
-[Step 1](./step1/readme.md) | Provision Log Analytics | Deploy Log Analytics artifacts using an ARM template that we'll use throughout the day using the Azure Portal.
-[Step 2](./step2/readme.md) | Provision environment | Deploy base artifacts using an ARM template that we'll use throughout the day using the Azure Portal.
-[Step 3](./step3/readme.md) | Application Insights 1 | Learn how to use Application Insight to find problem in a running solution.
-[Step 4](./step4/readme.md) | Log Analytics | Configuring Key Vault Analytics solution and creating alerts.
-[Step 5](./step5/readme.md) | Azure Security Center |
-[Step 6](./step6/readme.md) | App Service | How to configure remote debugging for Web Apps & Visual Studio 2017 and how to edit in production.
-[Step 7](./step7/readme.md) | Application Insights 2 |
-[Step 8](./step8/readme.md) | Azure Monitor | Explore monitoring and troubleshooting with Azure Monitor.
-[Step 9](./step9/readme.md) | ARM Governance | Learn how to use and configure Azure policies
+[Step 1](./Step1/README.md) | Provision Log Analytics | Deploy Log Analytics artifacts using an ARM template that we'll use throughout the day using the Azure Portal.
+[Step 2](./Step2/README.md) | Provision environment | Deploy base artifacts using an ARM template that we'll use throughout the day using the Azure Portal.
+[Step 3](./Step3/README.md) | Application Insights 1 | Learn how to use Application Insight to find problem in a running solution.
+[Step 4](./Step4/README.md) | Log Analytics | Configuring Key Vault Analytics solution and creating alerts.
+[Step 5](./Step5/README.md) | Azure Security Center |
+[Step 6](./Step6/README.md) | App Service | How to configure remote debugging for Web Apps & Visual Studio 2017 and how to edit in production.
+[Step 7](./Step7/README.md) | Application Insights 2 |
+[Step 8](./Step8/README.md) | Azure Monitor | Explore monitoring and troubleshooting with Azure Monitor.
+[Step 9](./Step9/README.md) | ARM Governance | Learn how to use and configure Azure policies
 
 ## Technology Stack required for the Global Azure Bootcamp 2018
 
