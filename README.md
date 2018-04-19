@@ -40,9 +40,11 @@ Step | Tittle | Description
 [Step 8](./step8/readme.md) | Azure Monitor | Explore monitoring and troubleshooting with Azure Monitor.
 [Step 9](./step9/readme.md) | ARM Governance | Learn how to use and configure Azure policies
 
-## Technology Stack for the Global Azure Bootcamp 2018
+## Technology Stack required for the Global Azure Bootcamp 2018
 
-* Visual Studio IDE (Get VIsual Studio)[https://www.visualstudio.com/vs/]
+* [Visual Studio 2017 or later](https://www.visualstudio.com/downloads/)
+* [Azure PowerShell Module version 5.xx](https://github.com/Azure/azure-powershell/releases/tag/v5.2.0-January2018)
+* [Git for Windows](https://git-scm.com/download/win)
 
 ## What you will need before the bootcamp?
 Before the bootcamp, we encourage you to make sure you have all the requirement software so you can concentrate on learning and not running installations.  Make sure you get all the source code and install all the required software.
