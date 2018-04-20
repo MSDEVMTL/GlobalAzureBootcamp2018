@@ -99,10 +99,12 @@
             "name": "[replace(variables('baseNamePattern'),'{role}', 'asp-web')]",
             "location": "[variables('defaultResourceLocation')]",
             "sku": {
-                "name": "F1",
-                "tier": "Free",
+                "name": "B1",
+                "tier": "Basic",
+                "size": "B1",
+                "family": "B",
                 "capacity": 1
-            }
+              }
         },
         "webApp": {
             "name": "[replace(variables('baseNamePattern'),'{role}', 'web-app')]",
