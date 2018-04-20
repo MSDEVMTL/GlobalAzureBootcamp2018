@@ -201,7 +201,7 @@ Now that you configured your metrics, pin it to your dashboard using the menu on
 
 ![MetricMenu](Media/MetricMenu.png)
 
-You should now see pinned to you custom dashboard, the chart that you just designed.
+You should now see, pinned to you custom dashboard, the chart that you've just designed.
 
 ![MetricMenu](Media/CustomDashboard.png)
 
@@ -209,7 +209,13 @@ You should now see pinned to you custom dashboard, the chart that you just desig
 
 ## Part 4 - Diagnostics Settings
 
-Resource diagnostic logs for non-Compute resources are configured using resource diagnostic settings.
+Azure diagnostic logs are logs emitted by a resource that provide rich, frequent data about the operation of that resource. The content of these logs varies by resource type.
+
+Resource-level diagnostic logs also differ from guest OS-level diagnostic logs. Guest OS diagnostic logs are those collected by an agent running inside of a virtual machine or other supported resource type. Resource-level diagnostic logs require no agent and capture resource-specific data from the Azure platform itself, while guest OS-level diagnostic logs capture data from the operating system and applications running on a virtual machine.
+
+Not all resources support resource diagnostic logs.
+
+Resource diagnostic logs for non-Compute resources are configured using resource diagnostic settings.  
 
 * Where resource diagnostic logs and metrics are sent (Storage Account, Event Hubs, and/or OMS Log Analytics).
 * Which log categories are sent and whether metric data is also sent.
@@ -217,6 +223,10 @@ Resource diagnostic logs for non-Compute resources are configured using resource
 * A retention of zero days means logs are kept forever. Otherwise, the value can be any number of days between 1 and 2147483647.
 * If retention policies are set but storing logs in a Storage Account is disabled (for example, if only Event Hubs or OMS options are selected), the retention policies have no effect.
 * Retention policies are applied per-day, so at the end of a day (UTC), logs from the day that is now beyond the retention policy are deleted. For example, if you had a retention policy of one day, at the beginning of the day today the logs from the day before yesterday would be deleted.
+
+These settings are easily configured via the diagnostic settings for a resource in the Azure portal, via Azure PowerShell and CLI commands, or via the Azure Monitor REST API.
+
+To see the complete list of supported service, visit [Supported services, schemas, and categories for Azure Diagnostic Logs](https://docs.microsoft.com/en-us/azure/monitoring-and-diagnostics/monitoring-diagnostic-logs-schema)
 
 ## Part 5 - Service Health
 
@@ -329,12 +339,11 @@ Service Health is your personalized dashboard in the Azure Portal for receiving 
 [Next Step](../Step9/README.md)
 
 ## Reference
+
 * [Monitoring Overview](https://docs.microsoft.com/en-us/azure/monitoring-and-diagnostics/monitoring-overview)
 * [Azure Monitor Get-Started](https://docs.microsoft.com/en-us/azure/monitoring-and-diagnostics/monitoring-get-started)
 * [Overview of Azure Monitor](https://docs.microsoft.com/en-us/azure/monitoring-and-diagnostics/monitoring-overview-azure-monitor)
 * [View activity logs to audit actions on resources](https://docs.microsoft.com/en-us/azure/azure-resource-manager/resource-group-audit)
-
-
 * [Create and share dashboards in the Azure portal](https://docs.microsoft.com/en-us/azure/azure-portal/azure-portal-dashboards)
 * [The next generation of Azure Alerts has arrived](https://azure.microsoft.com/en-us/blog/the-next-generation-of-azure-alerts-has-arrived/)
 * [Azure Monitor–General availability of multi-dimensional metrics APIs](https://azure.microsoft.com/en-us/blog/azure-monitor-general-availability-of-multi-dimensional-metrics-apis/)
