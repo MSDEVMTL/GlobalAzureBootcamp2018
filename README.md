@@ -34,7 +34,7 @@ Step | Tittle | Description
 [Step 2](./Step2/README.md) | Provision environment | Deploy base artifacts using an ARM template that we'll use throughout the day using the Azure Portal.
 [Step 3](./Step3/README.md) | Application Insights 1 | Learn how to use Application Insight to find problem in a running solution.
 [Step 4](./Step4/README.md) | Log Analytics | Configuring Key Vault Analytics solution and creating alerts.
-[Step 5](./Step5/README.md) | Azure Security Center |
+[Step 5](./Step5/README.md) | Azure Security Center | Turning Recommendations to Resolutions in order to better secure VM's.
 [Step 6](./Step6/README.md) | App Service | How to configure remote debugging for Web Apps & Visual Studio 2017 and how to edit in production.
 [Step 7](./step7/readme.md) | Application Insights 2 | How to enable exception snapshot, App profiling and Snapshot debugger (optional)
 [Step 8](./Step8/README.md) | Azure Monitor | Explore monitoring and troubleshooting with Azure Monitor.
