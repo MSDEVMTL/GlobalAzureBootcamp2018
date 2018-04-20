@@ -1,0 +1,86 @@
+{
+    "type": "object",
+    "properties": {
+        "status": {
+            "type": "string"
+        },
+        "context": {
+            "type": "object",
+            "properties": {
+                "condition": {
+                    "type": "object",
+                    "properties": {
+                        "metricName": {
+                            "type": "string"
+                        },
+                        "metricUnit": {
+                            "type": "string"
+                        },
+                        "metricValue": {
+                            "type": "string"
+                        },
+                        "threshold": {
+                            "type": "string"
+                        },
+                        "windowSize": {
+                            "type": "string"
+                        },
+                        "timeAggregation": {
+                            "type": "string"
+                        },
+                        "operator": {
+                            "type": "string"
+                        }
+                    }
+                },
+                "resourceName": {
+                    "type": "string"
+                },
+                "resourceType": {
+                    "type": "string"
+                },
+                "resourceRegion": {
+                    "type": "string"
+                },
+                "portalLink": {
+                    "type": "string"
+                },
+                "timestamp": {
+                    "type": "string"
+                },
+                "id": {
+                    "type": "string"
+                },
+                "name": {
+                    "type": "string"
+                },
+                "description": {
+                    "type": "string"
+                },
+                "conditionType": {
+                    "type": "string"
+                },
+                "subscriptionId": {
+                    "type": "string"
+                },
+                "resourceId": {
+                    "type": "string"
+                },
+                "resourceGroupName": {
+                    "type": "string"
+                }
+            }
+        },
+        "properties": {
+            "type": "object",
+            "properties": {
+                "$type": {
+                    "type": "string"
+                },
+                "logicAppResourceId": {
+                    "type": "string"
+                }
+            }
+        }
+    }
+}

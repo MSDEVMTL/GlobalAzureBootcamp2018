@@ -227,15 +227,16 @@ Service Health is your personalized dashboard in the Azure Portal for receiving 
   * By clicking on the Logic App it should open directly in *Edit* mode, because it's a new one. 
   * We need to select a trigger. Logic Apps can connect to many different services but for this demo we will use the `HTTP Trigger`. Select the trigger named: When a HTTP request is received. 
   ![Selec Http Trigger][SelectHttpTrigger]
+  * In the *Request Body JSON Schema* copy paste the content of the file `LogicApp-Request-Schema.json` available [here](./LogicApp-Request-Schema.json). This schema is generated from some requests received by the Logic Apps. We will get back to it later.
   * Click the button `+ New step`, Then Add an action. ![Add New Step][AddNewStep]
   * We want an action related to our Application Insights, so enter "Application Insights into the search box. Then select the action that contain "Visualize Analytics query". ![Select View Analytics][ViewAnalytics]
   * Remeber those Application ID an API Key? It's now time to use them. Fill-up the authentification form. ![Enter Keys][EnterKeys]
   * Now let's add our a query. You could copy paste the query provieded here, or in another browser go to: https://analytics.applicationinsights.io create another one.
 
   ```
-    exceptions
-    | top 10 by timestamp desc nulls last
-    | project timestamp, type, method, outerMessage, customDimensions, customMeasurements
+exceptions
+| top 10 by timestamp desc nulls last
+| project timestamp, type, method, outerMessage, customDimensions, customMeasurements
   ```
   Once the query is in select Html Table from the Chart Type list.
 
@@ -244,15 +245,42 @@ Service Health is your personalized dashboard in the Azure Portal for receiving 
   * ~~Execute the Application Insight to get a sample of the `JSon` file.~~
   * Add a `Send an Email` step. You can you Outlook.com or another one.
   * Enter your email address and a Suject.
-  * For the body Enter some simple HTML and use the Dynamic content box to add elements from the query result or from the Trigger.
+  * For the body Enter some simple HTML and use the Dynamic content box to add elements from the query result or from the Trigger. For exemple you could use this HTML:
+  ```
+<h1>Something went wrong</h1>
+<p>Application Insights <b>   </b> as been triggered <br></p>
+
+<p>The metric <b>   </b> got greater than the expect limit</p>
+
+<h2>Here the top 10 if the last Exceptions</h2>
+
+<br>
+<p>Link to the portal:   </p>
+```
+And inject those element in it: `Name`, `MetricName`, `Body`, `PortalLink`
     ![email body][emailbody]
   * Click on the **Show advance options** and set Is HTML to Yes.
   * Don't forget to Save.
   
 * Step 4: Set the Binding
-  * ...
+  Now we will create an alert and bind our Logic App to it.
+  * From the Application Insights blade, Select the Alert option. Then click on *Add metric alert* on the top of the screen.
+  * Give a name and description to your Alert.
+  * Validate that the good Subscription, Resource group are selected.
+  * In the Resource we need to select our web application. Select the resource starting by: `gab2018-dev-web-app`
+  * In Metric you select many deferrent options. For this demo, we will use `Http Server Errors`.
+  * Now we need to set the condition that will make our alert to get triggered. In Condition select `Greater than`, threshold a value between 2 and 5. 
+  * The only thing missing is the binding to our Logic Apps. Click on the Take Action *Run a logic app from this alert* buttin.
+  * Select **Enabled**.
+  * Select your subscription where the Logic App is. Then select your Logic App.
+  * Click the *OK* button... twice.
+  * Once the you received the notification that your alert is Successfully created, you will be done.
+
 
 * Step 5: Test
+  * Now the easy part. Navigate to the web application an generate a few error. You can do that easily by navigating to the page **Let's crash**.
+  * Once you generate enought exception. Be patient and check your e-mail.
+
 
 ## Reference
 * [Monitoring Overview](https://docs.microsoft.com/en-us/azure/monitoring-and-diagnostics/monitoring-overview)
