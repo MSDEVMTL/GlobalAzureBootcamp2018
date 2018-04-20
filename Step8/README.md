@@ -199,9 +199,13 @@ A single dashboard can contain resources from multiple applications, resource gr
 
 Now that you configured your metrics, pin it to your dashboard using the menu on the right of the dashboard.
 
-![MetricMenu](Media/MetricMenu.Png)
+![MetricMenu](Media/MetricMenu.png)
 
-* Take two minutes to explore all options available in Azure metrics.
+You should now see pinned to you custom dashboard, the chart that you just designed.
+
+![MetricMenu](Media/CustomDashboard.png)
+
+* Take two minutes to explore all available options in Azure Metrics (Preview). Add different chart and try to customize them.
 
 ## Part 4 - Diagnostics Settings
 
