@@ -158,8 +158,6 @@ You can also review fired alerts in the Alert section of Azure Monitor.
 
 ![EmailAlert](Media/AzureMonitorAlertFired.PNG)
 
-
-
 ## Part 3 - Metrics and Dashboard
 
 Azure Monitor enables you to consume telemetry to gain visibility into the performance and health of your workloads on Azure. The most important type of Azure telemetry data is the metrics (also called performance counters) emitted by most Azure resources. Azure Monitor provides several ways to configure and consume these metrics for monitoring and troubleshooting.
@@ -168,18 +166,36 @@ Metrics have the following characteristics:
 
 * All metrics have one-minute frequency (unless specified otherwise in a metric's definition). You receive a metric value every minute from your resource, giving you near real-time visibility into the state and health of your resource.
 * Metrics are available immediately. You don't need to opt in or set up additional diagnostics.
-* You can access 93 days of history for each metric. You can quickly look at the recent and monthly trends in the performance or health of your resource.
+* You can access 90 days of history for each metric. You can quickly look at the recent and monthly trends in the performance or health of your resource.
 * Some metrics can have name-value pair attributes called dimensions. These enable you to further segments and explore a metric in a more meaningful way.
 
 ### LAB 3 - View the performance of your Web App in a single glance.
 
-**Scenario**: You want to make sure that your website is up and deliver the best performance at all time. You want to be able to quickly understand what is the current status of your Web App.  You want to measure the number of requests and the average response time.
+**Scenario**: You want to make sure that your website is up and deliver the best performance at all time. You want to be able to quickly understand what is the current status of your Web App.
 
-**Goal:** Create a dashboard using metrics.
+**Goal:** Create a custom dashboard using metrics.
 
+* Step 1: Create a new dashboard
 
-* Step 1: 
+A single dashboard can contain resources from multiple applications, resource groups, and subscriptions. 
 
+1.On the main screen of the portal, select New dashboard.
+
+![NewDashboard](https://docs.microsoft.com/en-us/azure/application-insights/media/app-insights-tutorial-dashboards/new-dashboard.png)
+2.Type a name for the dashboard example: "GAB 2018 Web App"
+3.Click **Done** customizing at the top of the screen to exit tile customization mode and then **Publish** changes to save your changes.
+
+* Step 2: Number of request per hour
+
+1. In the Azure Portal, click Azure Monitor, and then Metrics (Preview).
+2. Select your Web App in ....
+
+* Step 3: Average execution time per request per hour
+
+1. In the Azure Portal, click Azure Monitor, and then Metrics (Preview).
+2. Select your Web App in....
+
+* Step 4: Pin to your dashboard
 
 ## Part 4 - Diagnostics Settings
 
@@ -196,9 +212,7 @@ Resource diagnostic logs for non-Compute resources are configured using resource
 
 Service Health is your personalized dashboard in the Azure Portal for receiving notifications when Azure service issues, update or planned maintenance that could affect your resources.
 
-
-### Final Lab - Get smarter alerts with Logic App
-
+## Final Lab - Get smarter alerts with Logic App
 
 **Scenario**:You should receive two emails alert when a metric reach it's configured limits. One when it gets activated and another one when the metric is back under normal value. Receiving too many emails for alerts can be annoying and also the basic email alert template doesn't tell you much information on the current situation.
 
