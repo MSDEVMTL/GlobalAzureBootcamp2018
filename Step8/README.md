@@ -160,6 +160,8 @@ Azure Monitor now supports a new metric alert type. The newer alerts differ from
 
 ## Part 3 - Metrics and Dashboard
 
+  ![AzureDashboard](Media/AzureDashboard.png)
+
 Azure Monitor enables you to consume telemetry to gain visibility into the performance and health of your workloads on Azure. The most important type of Azure telemetry data is the metrics (also called performance counters) emitted by most Azure resources. Azure Monitor provides several ways to configure and consume these metrics for monitoring and troubleshooting.
 
 Metrics have the following characteristics:
@@ -177,25 +179,29 @@ Metrics have the following characteristics:
 
 * Step 1: Create a new dashboard
 
-A single dashboard can contain resources from multiple applications, resource groups, and subscriptions. 
+A single dashboard can contain resources from multiple applications, resource groups, and subscriptions.
 
 1.On the main screen of the portal, select New dashboard.
 
   ![NewDashboard](https://docs.microsoft.com/en-us/azure/application-insights/media/app-insights-tutorial-dashboards/new-dashboard.png)
+
 2.Type a name for the dashboard example: "GAB 2018 Web App"
-3.Click **Done** customizing at the top of the screen to exit tile customization mode and then **Publish** changes to save your changes.
 
-* Step 2: Number of request per hour
+3.Click **Done** customizing at the top of the screen to exit tile customization mode and then **Publish** changes to save your changes. Make sure that you newly created dashboard is the currently selected.
 
-  1. In the Azure Portal, click Azure Monitor, and then Metrics (Preview).
-  2. Select your Web App in ....
-
-* Step 3: Average execution time per request per hour
+* Step 2: Add Chart: Server response time
 
   1. In the Azure Portal, click Azure Monitor, and then Metrics (Preview).
-  2. Select your Web App in....
+  2. Using the metric fitler, select your Web App and metric **Average Response Time**
+  ![MetricAverageResponseTime](Media/MetricAverageResponseTime.png)
 
-* Step 4: Pin to your dashboard
+* Step 3: Pin to your dashboard
+
+Now that you configured your metrics, pin it to your dashboard using the menu on the right of the dashboard.
+
+![MetricMenu](Media/MetricMenu.Png)
+
+Take two minutes to explore all options available in Azure metrics.
 
 ## Part 4 - Diagnostics Settings
 
@@ -215,7 +221,6 @@ Service Health is your personalized dashboard in the Azure Portal for receiving 
 ## Final Lab - Get smarter alerts with Logic App
 
 **Scenario**:You should receive two emails alert when a metric reach it's configured limits. One when it gets activated and another one when the metric is back under normal value. Receiving too many emails for alerts can be annoying and also the basic email alert template doesn't tell you much information on the current situation.
-
 
 **Goal:** Generate a smarter alert email with Logic App
 
