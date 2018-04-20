@@ -133,11 +133,11 @@ Azure Monitor now supports a new metric alert type. The newer alerts differ from
 * Step 2: Using the top menu, click **+ New Alert Rule**
 * Step 3: Select your App Service as the target of your alert.
 
-![AzureMonitorAlertTarget](Media/AzureMonitorAlertTarget.PNG)
+  ![AzureMonitorAlertTarget](Media/AzureMonitorAlertTarget.PNG)
 
 * Step 4: Use **All Administrative operations** as criteria.
 
-![AzureMonitorAlertCriteria](Media/AzureMonitorAlertCriteria.PNG)
+  ![AzureMonitorAlertCriteria](Media/AzureMonitorAlertCriteria.PNG)
 
 * Step 5: Type a name and a description for your alert. ex: **GAB 2018 Web App Alert** and **A change has been made to your Web App**
 
@@ -145,18 +145,18 @@ Azure Monitor now supports a new metric alert type. The newer alerts differ from
 
 * Step 6: Use the Action Group generated in the previous step ( or create a new one)
 
-![AzureMonitorAlertActionGroup](Media/AzureMonitorAlertActionGroup.PNG)
+  ![AzureMonitorAlertActionGroup](Media/AzureMonitorAlertActionGroup.PNG)
 
 * Step 7: Review your alert definition and save. Note: Alert could take around 5 minutes to be activated.
 * Step 8: Let's now start back your Web App.
 
-This last step should generate an alert to your action group.
+  This last step should generate an alert to your action group.
 
-![EmailAlert](Media/EmailAlert.PNG)
+  ![EmailAlert](Media/EmailAlert.PNG)
 
-You can also review fired alerts in the Alert section of Azure Monitor.
+  You can also review fired alerts in the Alert section of Azure Monitor.
 
-![EmailAlert](Media/AzureMonitorAlertFired.PNG)
+  ![EmailAlert](Media/AzureMonitorAlertFired.PNG)
 
 ## Part 3 - Metrics and Dashboard
 
@@ -181,19 +181,19 @@ A single dashboard can contain resources from multiple applications, resource gr
 
 1.On the main screen of the portal, select New dashboard.
 
-![NewDashboard](https://docs.microsoft.com/en-us/azure/application-insights/media/app-insights-tutorial-dashboards/new-dashboard.png)
+  ![NewDashboard](https://docs.microsoft.com/en-us/azure/application-insights/media/app-insights-tutorial-dashboards/new-dashboard.png)
 2.Type a name for the dashboard example: "GAB 2018 Web App"
 3.Click **Done** customizing at the top of the screen to exit tile customization mode and then **Publish** changes to save your changes.
 
 * Step 2: Number of request per hour
 
-1. In the Azure Portal, click Azure Monitor, and then Metrics (Preview).
-2. Select your Web App in ....
+  1. In the Azure Portal, click Azure Monitor, and then Metrics (Preview).
+  2. Select your Web App in ....
 
 * Step 3: Average execution time per request per hour
 
-1. In the Azure Portal, click Azure Monitor, and then Metrics (Preview).
-2. Select your Web App in....
+  1. In the Azure Portal, click Azure Monitor, and then Metrics (Preview).
+  2. Select your Web App in....
 
 * Step 4: Pin to your dashboard
 
@@ -220,12 +220,14 @@ Service Health is your personalized dashboard in the Azure Portal for receiving 
 **Goal:** Generate a smarter alert email with Logic App
 
 * Step 1 : Create an Application Insights API Key
+
   ![Create API Key][CreateAPIKey]
   
   * From the Application Insights blade, select the API Access option from the left menu.
   * Click the Create API Key, on the top of the screen. 
   * Enter a description an check the Read Telemetry option before clicking the Generate key blue button.
   * **Note the Application ID and the API Key**, we will need those soon.
+
   ![Get API Key][GetAPIKey]
 
 * Step 2 : Create a Logic App
@@ -240,39 +242,56 @@ Service Health is your personalized dashboard in the Azure Portal for receiving 
 
   * By clicking on the Logic App it should open directly in *Edit* mode, because it's a new one. 
   * We need to select a trigger. Logic Apps can connect to many different services but for this demo we will use the `HTTP Trigger`. Select the trigger named: When a HTTP request is received. 
+
   ![Selec Http Trigger][SelectHttpTrigger]
+
   * In the *Request Body JSON Schema* copy paste the content of the file `LogicApp-Request-Schema.json` available [here](./LogicApp-Request-Schema.json). This schema is generated from some requests received by the Logic Apps. We will get back to it later.
-  * Click the button `+ New step`, Then Add an action. ![Add New Step][AddNewStep]
-  * We want an action related to our Application Insights, so enter "Application Insights into the search box. Then select the action that contain "Visualize Analytics query". ![Select View Analytics][ViewAnalytics]
-  * Remeber those Application ID an API Key? It's now time to use them. Fill-up the authentification form. ![Enter Keys][EnterKeys]
+  * Click the button `+ New step`, Then Add an action. 
+  
+  ![Add New Step][AddNewStep]
+
+  * We want an action related to our Application Insights, so enter "Application Insights into the search box. Then select the action that contain "Visualize Analytics query". 
+  
+  ![Select View Analytics][ViewAnalytics]
+
+  * Remeber those Application ID an API Key? It's now time to use them. Fill-up the authentification form. 
+  
+  ![Enter Keys][EnterKeys]
+
   * Now let's add our a query. You could copy paste the query provieded here, or in another browser go to: https://analytics.applicationinsights.io create another one.
 
   ```
-exceptions
-| top 10 by timestamp desc nulls last
-| project timestamp, type, method, outerMessage, customDimensions, customMeasurements
+  exceptions
+  | top 10 by timestamp desc nulls last
+  | project timestamp, type, method, outerMessage, customDimensions, customMeasurements
+
   ```
+
   Once the query is in select Html Table from the Chart Type list.
 
   ![Query and HTML table][Query_and_THMLtable]
-...
-  * ~~Execute the Application Insight to get a sample of the `JSon` file.~~
+
   * Add a `Send an Email` step. You can you Outlook.com or another one.
   * Enter your email address and a Suject.
   * For the body Enter some simple HTML and use the Dynamic content box to add elements from the query result or from the Trigger. For exemple you could use this HTML:
+
   ```
-<h1>Something went wrong</h1>
-<p>Application Insights <b>   </b> as been triggered <br></p>
+  <h1>Something went wrong</h1>
+  <p>Application Insights <b>   </b> as been triggered <br></p>
 
-<p>The metric <b>   </b> got greater than the expect limit</p>
+  <p>The metric <b>   </b> got greater than the expect limit</p>
 
-<h2>Here the top 10 if the last Exceptions</h2>
+  <h2>Here the top 10 if the last Exceptions</h2>
 
-<br>
-<p>Link to the portal:   </p>
-```
-And inject those element in it: `Name`, `MetricName`, `Body`, `PortalLink`
-    ![email body][emailbody]
+  <br>
+  <p>Link to the portal:   </p>
+
+  ```
+
+  And inject those element in it: `Name`, `MetricName`, `Body`, `PortalLink`
+  
+  ![email body][emailbody]
+
   * Click on the **Show advance options** and set Is HTML to Yes.
   * Don't forget to Save.
   
@@ -293,7 +312,7 @@ And inject those element in it: `Name`, `MetricName`, `Body`, `PortalLink`
 
 * Step 5: Test
   * Now the easy part. Navigate to the web application an generate a few error. You can do that easily by navigating to the page **Let's crash**.
-  * Once you generate enought exception. Be patient and check your e-mail.
+  * Once you generate enought exception. Be patient, it will takes a few minutes,  and check your e-mail.
 
 
 ## End
