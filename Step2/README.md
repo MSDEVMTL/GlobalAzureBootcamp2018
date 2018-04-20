@@ -33,6 +33,8 @@ Invoke the provisioning by typing:
 & .\Invoke-Provisioning.ps1
 ```
 
+> Presenter: While provisioning is running (~7min), you can show the scripts/templates around...
+
 ## Provision environment
 Open solution in Visual Studio:
 
@@ -63,6 +65,8 @@ Wait compilation to complete and publish process to take place. After a while yo
 ![webapp-is-deployed][webapp-is-deployed]
 
 # End
+[Previous Step](../Step1/README.md)
+[Next Step](../Step3/README.md)
 
 [gablogo]: ../media/logo-2018-500x444.png "Global Azure Bootcamp logo"
 [open-solution-menu-in-vs2017]: media/open-solution-menu-in-vs2017.png "Open solution menu in Visual Studio 2017"

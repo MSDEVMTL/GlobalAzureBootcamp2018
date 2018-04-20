@@ -146,7 +146,8 @@ The policy has been created and assigned to your subscription. Try to create a v
 
 
 
-## Addendum
+## End
+[Previous Step](../Step8/README.md)
 
 # Reference
 * [Azure Policy Introduction](https://docs.microsoft.com/en-us/azure/azure-policy/azure-policy-introduction)

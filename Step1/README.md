@@ -46,6 +46,8 @@ Invoke the provisioning by typing:
 & .\Invoke-Provisioning.ps1
 ```
 
+> Presenter: While provisioning is running (~1min), you can show the scripts/templates around...
+
 > ### NOTE: Log Analytics changed his pricing model in April 2018. If you encounter an error in the step above saying:
 > 
 > *Pricing tier doesn't match the subscription billing model*
@@ -72,6 +74,9 @@ A new pane will open, click the **Connect** button
 [Log Analytics Documentation](https://docs.microsoft.com/en-us/azure/log-analytics/)
 
 # End
+*Previous Step*
+[Next Step](../Step2/README.md)
+
 
 [gablogo]: ../media/logo-2018-500x444.png "Global Azure Bootcamp logo"
 [search-oms-in-portal]: media/search-oms-in-portal.png "Search for OMS in Azure portal"

@@ -151,6 +151,8 @@ Enter the following values:
 * [Key Vault Analytics Solution](https://azuremarketplace.microsoft.com/en-us/marketplace/apps/Microsoft.KeyVaultAnalyticsOMS?tab=Overview)
 
 # End
+[Previous Step](../Step3/README.md)
+[Next Step](../Step5/README.md)
 
 [gablogo]: ../media/logo-2018-500x444.png "Global Azure Bootcamp logo"
 [step4_001]: media/step4_001.jpg "1"

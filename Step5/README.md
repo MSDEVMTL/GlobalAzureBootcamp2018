@@ -199,7 +199,8 @@ To request access to a VM:
 ![alt text](media/ASC%20Lab%202_12b.png)
 
 # End
-
+[Previous Step](../Step4/README.md)
+[Next Step](../Step6/README.md)
 
 [gablogo]: ../media/logo-2018-500x444.png "Global Azure Bootcamp logo"
 

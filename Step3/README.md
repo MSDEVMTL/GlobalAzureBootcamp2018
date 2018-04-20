@@ -187,7 +187,8 @@ Liked mentioned in the introduction slide, all information collected by Applicat
 
 
 # End
-
+[Previous Step](../Step2/README.md)
+[Next Step](../Step4/README.md)
 
 [gablogo]: ../media/logo-2018-500x444.png "Global Azure Bootcamp logo"
 [CreateAzureFunction]: media/CreateAzureFunction.png "Create Azure Function"

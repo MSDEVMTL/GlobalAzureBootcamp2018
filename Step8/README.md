@@ -296,6 +296,10 @@ And inject those element in it: `Name`, `MetricName`, `Body`, `PortalLink`
   * Once you generate enought exception. Be patient and check your e-mail.
 
 
+## End
+[Previous Step](../Step7/README.md)
+[Next Step](../Step9/README.md)
+
 ## Reference
 * [Monitoring Overview](https://docs.microsoft.com/en-us/azure/monitoring-and-diagnostics/monitoring-overview)
 * [Azure Monitor Get-Started](https://docs.microsoft.com/en-us/azure/monitoring-and-diagnostics/monitoring-get-started)

@@ -115,7 +115,9 @@ _You can't step when viewing a snapshot, but you can place multiple snappoints i
 
 9. Double-click the snappoint to open the snapshot in the code editor.
 
-## end
+## End
+[Previous Step](../Step6/README.md)
+[Next Step](../Step8/README.md)
 
 # Reference
 Exception Snapshot:  https://docs.microsoft.com/en-us/azure/application-insights/app-insights-snapshot-debugger
