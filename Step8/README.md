@@ -181,18 +181,18 @@ Metrics have the following characteristics:
 
 A single dashboard can contain resources from multiple applications, resource groups, and subscriptions.
 
-1.On the main screen of the portal, select New dashboard.
+  * On the main screen of the portal, select New dashboard.
 
   ![NewDashboard](https://docs.microsoft.com/en-us/azure/application-insights/media/app-insights-tutorial-dashboards/new-dashboard.png)
 
-2.Type a name for the dashboard example: "GAB 2018 Web App"
+  * Type a name for the dashboard example: "GAB 2018 Web App"
 
-3.Click **Done** customizing at the top of the screen to exit tile customization mode and then **Publish** changes to save your changes. Make sure that you newly created dashboard is the currently selected.
+  * Click **Done** customizing at the top of the screen to exit tile customization mode and then **Publish** changes to save your changes. Make sure that you newly created dashboard is the currently selected.
 
 * Step 2: Add Chart: Server response time
 
-  1. In the Azure Portal, click Azure Monitor, and then Metrics (Preview).
-  2. Using the metric fitler, select your Web App and metric **Average Response Time**
+  * In the Azure Portal, click Azure Monitor, and then Metrics (Preview).
+  * Using the metric fitler, select your Web App and metric **Average Response Time**
   ![MetricAverageResponseTime](Media/MetricAverageResponseTime.png)
 
 * Step 3: Pin to your dashboard
@@ -201,7 +201,7 @@ Now that you configured your metrics, pin it to your dashboard using the menu on
 
 ![MetricMenu](Media/MetricMenu.Png)
 
-Take two minutes to explore all options available in Azure metrics.
+* Take two minutes to explore all options available in Azure metrics.
 
 ## Part 4 - Diagnostics Settings
 
