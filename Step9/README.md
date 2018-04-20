@@ -67,7 +67,7 @@ In the following labs we will perform the following:
  2. Apply the policy to your subscription to only allow resources to be created in a specific region.
 
 
-### LAB 1: Add default tag automatically
+## LAB 1: Add default tag automatically
 
 **Step 1: Launch Cloud Shell**
 
@@ -99,13 +99,15 @@ $defaultTag = @{
 	tagValue = 'Unknown'
 }
 
-New-AzureRmPolicyAssignment -Name "Apply default tag and value" -PolicyDefinition $policy -Scope "/subscriptions/$sub"
+New-AzureRmPolicyAssignment -Name "Apply default tag and value" -PolicyDefinition $policy -Scope "/subscriptions/$sub" -PolicyParameterObject $defaultTag
 ```
 
 **Step 4: Test the policy**
 
+In the portal, create whatever resource (suggested: storage or AppService), wait for it to be created and take a look at it's tags, you should see that a **costCenter: Unknown** tag was injected there automatically.
+![validate-default-tags][validate-default-tags]
 
-### LAB 2: Allow resources only in Canada Central / Canada East
+## LAB 2: Allow resources only in Canada Central / Canada East
 
 **Step 1: Launch Cloud Shell**
 
@@ -124,7 +126,9 @@ New-AzureRmPolicyDefinition -Name permittedLocationsCA -Description "This policy
 ```
 **Step 3: Verify**
 
-Go to the portal and chose the Policy (Preview) landing page. Under Assignments, verify that our new policy is there.
+Go to the portal, in the search box at the top type `policy` and choose **Policy (Preview)**
+
+Under *Definitions*, verify that our new policy is there.
 
 ![policyAssignment][policyAssignment]
 
@@ -142,8 +146,21 @@ New-AzureRmPolicyAssignment -Name "Permitted Locations for Canada Only" -PolicyD
 
 **Step 5: Test Policy**
 
-The policy has been created and assigned to your subscription. Try to create a virtual machine in EAST US, the expected result is that you should not be able to create the VM.
+The policy has been created and assigned to your subscription. Try to create a virtual machine or storage account in *EAST US*, the expected result is that you should not be able to create the VM.
 
+Create the resource
+
+![validate-location-restriction-new-storageaccount][validate-location-restriction-new-storageaccount]
+
+
+An error will occur
+
+![validate-location-restriction-new-storageaccount-error][validate-location-restriction-new-storageaccount-error]
+
+
+Error details point to policy
+
+![validate-location-restriction-new-storageaccount-errormsg][validate-location-restriction-new-storageaccount-errormsg]
 
 
 ## End
@@ -154,6 +171,10 @@ The policy has been created and assigned to your subscription. Try to create a v
 * [Create a policy assignment to identify non-compliant resources in your Azure environment](https://docs.microsoft.com/en-us/azure/azure-policy/assign-policy-definition)
 * [Governance in Azure](https://docs.microsoft.com/en-us/azure/security/governance-in-azure)
 
+[validate-location-restriction-new-storageaccount-errormsg]: media/validate-location-restriction-new-storageaccount-errormsg.png "Validate New storage account in EAST US -- Error"
+[validate-location-restriction-new-storageaccount-error]: media/validate-location-restriction-new-storageaccount-error.png "Validate New storage account in EAST US -- Error"
+[validate-location-restriction-new-storageaccount]: media/validate-location-restriction-new-storageaccount.png "Validate New storage account in EAST US"
+[validate-default-tags]: media/validate-default-tags.png "Validate default tags"
 [cloudShellLaunch]: ./media/cloudshelllaunch.png "Cloud Shell"
 [cloudshellpowershell]: ./media/cloudshellpowershell.png "Cloud Shell PowerShell"
 [RBAC]: ./media/azureRBAC.png "Azure RBAC"
