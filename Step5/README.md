@@ -186,7 +186,7 @@ To request access to a VM:
 
 ![alt text](media/ASC%20Lab%202_10.png)
 
-8. You can now navigate to your VM and click on **Connect**. This iwll download an .rpd file.
+8. You can now navigate to your VM and click on **Connect**. This will download an .rdp file.
 
 ![alt text](media/ASC%20Lab%202_11.png)
 
