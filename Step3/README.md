@@ -34,7 +34,7 @@ Deploy your application to the App Service **gab2018-dev-UNIQUE_STRING**
 
 ## Create an Azure Function
 
-Second, let's go in the Function App. Navigate to the Azure Portal ((portal.azure.com)[https://portal.azure.com]) and select the `ResourceGroup` **gab2018-dev**. Then select the Function App starting by `gab2018-dev-func-app-  `.
+Second, let's go in the Function App. Navigate to the Azure Portal ([portal.azure.com](https://portal.azure.com) and select the `ResourceGroup` **gab2018-dev**. Then select the Function App starting by `gab2018-dev-func-app-  `.
 
 ![CreateAzureFunction][CreateAzureFunction]
 
@@ -137,7 +137,7 @@ Another blade to get details on exceptions and different failures. Very useful. 
 ![Failures][Failures]
 
 > **Note:**
-> To know more about how you can bonify your managed exceptions, by using the Application Insights SDK, please refer to the [Global Azure BBootcamp 2017 - Step 6 - Analytics using Application Insights](https://github.com/MSDEVMTL/2017-04-22-GlobalAzureBootcamp2017/tree/master/Step%206%20-%20Analytics%20using%20Application%20Insights).
+> To know more about how you can bonify your managed exceptions, by using the Application Insights SDK, please refer to the [Global Azure Bootcamp 2017 - Step 6 - Analytics using Application Insights](https://github.com/MSDEVMTL/2017-04-22-GlobalAzureBootcamp2017/tree/master/Step%206%20-%20Analytics%20using%20Application%20Insights).
 
 ## Performance blade
 
