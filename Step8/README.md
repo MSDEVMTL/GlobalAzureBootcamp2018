@@ -86,12 +86,12 @@ The Activity Log contains several categories of data:
 
 * Step 1 : Go on Azure portal and choose the Azure Monitor landing page
 * Step 2: Select Activity log from the navigation pan
-* Step 3: Set your filter to Resource type: *App Services** and Operation: **Stop Web App (sites)**, then apply
-* Step 4: Observe : Your WebSite was stopped on [date] by [user].
+* Step 3: Set your filter to Resource type: **App Services** and Operation: **Stop Web App (sites)**, then apply
+* Step 4: Observe : Your Web App was stopped on [date] by [user].
 
 ![Lab 1 Search Result](Media/AzureMonitorSearchStopWebApp.PNG)
 
-Take two minutes to understand what are the available filters and options when qeury using the Azure Portal.
+Take two minutes to understand what are the available filters and options when query using the Azure Portal.
 
 * Save queries
 * Export result as CSV
@@ -179,7 +179,7 @@ Metrics have the following characteristics:
 
 * Step 1: Create a new dashboard
 
-A single dashboard can contain resources from multiple applications, resource groups, and subscriptions.
+  A single dashboard can contain resources from multiple applications, resource groups, and subscriptions.
 
   * On the main screen of the portal, select New dashboard.
 
@@ -197,13 +197,13 @@ A single dashboard can contain resources from multiple applications, resource gr
 
 * Step 3: Pin to your dashboard
 
-Now that you configured your metrics, pin it to your dashboard using the menu on the right of the dashboard.
+  Now that you configured your metrics, pin it to your dashboard using the menu on the right of the dashboard.
 
-![MetricMenu](Media/MetricMenu.png)
+  ![MetricMenu](Media/MetricMenu.png)
 
-You should now see, pinned to you custom dashboard, the chart that you've just designed.
+  You should now see, pinned to you custom dashboard, the chart that you've just designed.
 
-![MetricMenu](Media/CustomDashboard.png)
+  ![MetricMenu](Media/CustomDashboard.png)
 
 * Take two minutes to explore all available options in Azure Metrics (Preview). Add different chart and try to customize them.
 
@@ -332,7 +332,6 @@ Service Health is your personalized dashboard in the Azure Portal for receiving 
 * Step 5: Test
   * Now the easy part. Navigate to the web application an generate a few error. You can do that easily by navigating to the page **Let's crash**.
   * Once you generate enought exception. Be patient, it will takes a few minutes,  and check your e-mail.
-
 
 ## End
 [Previous Step](../Step7/README.md)
