@@ -230,7 +230,15 @@ To see the complete list of supported service, visit [Supported services, schema
 
 ## Part 5 - Service Health
 
-Service Health is your personalized dashboard in the Azure Portal for receiving notifications when Azure service issues, update or planned maintenance that could affect your resources.
+Service Health provides you with a customizable dashboard which tracks the health of your Azure services in the regions where you use them. In this dashboard, you can track active events like ongoing service issues, upcoming planned maintence, or relevant health advisories.
+
+Service Health tracks three types of health events that may impact your resources:
+
+* **Service issues** - Problems in the Azure services that affect you right now.
+* **Planned maintenance** - Upcoming maintenance that can affect the availability of your services in the future.
+* **Health advisories** - Changes in Azure services that require your attention. Examples include when Azure features are deprecated or if you exceed a usage quota.
+
+For more information, please visit [Azure Service Health page](https://docs.microsoft.com/en-us/azure/service-health/service-health-overview)
 
 ## Final Lab - Get smarter alerts with Logic App
 
